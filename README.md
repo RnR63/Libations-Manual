@@ -1,1 +1,0 @@
-# Bull-Barrel-Libations-Manuel
