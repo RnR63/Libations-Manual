@@ -1,11 +1,17 @@
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
+import * as SplashScreen from "expo-splash-screen";
 import { StyleSheet, Text, View } from "react-native";
 import Home from "./screens/Home";
 import LandingPage from "./screens/LandingPage";
 import CocktailModal from "./screens/CocktailModal";
+import VarelaRegular from "./assets/fonts/Varela-Regular.ttf";
+
+// Prevent the splash screen from auto-hiding
+SplashScreen.preventAutoHideAsync();
 
 const RootStack = createStackNavigator();
 const MainStack = createStackNavigator();
@@ -13,26 +19,43 @@ const MainStack = createStackNavigator();
 const MainStackScreen = () => {
   return (
     <MainStack.Navigator>
-      <MainStack.Screen name="LandingPage" component={LandingPage} />
-      <MainStack.Screen name="Home" component={Home} />
+      <MainStack.Screen
+        name="LandingPage"
+        component={LandingPage}
+        options={{ headerShown: false }}
+      />
+      <MainStack.Screen
+        name="Home"
+        component={Home}
+        options={{
+          animationEnabled: false, // Disable animation for Home screen
+        }}
+      />
     </MainStack.Navigator>
   );
 };
 
 const App = () => {
+  const [fontsLoaded] = useFonts({
+    "Varela-Regular": VarelaRegular,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
+  // Hide the splash screen once fonts are loaded
+  SplashScreen.hideAsync();
+
   return (
     <NavigationContainer>
-      <RootStack.Navigator mode="modal">
+      <RootStack.Navigator presentation="modal">
         <RootStack.Screen
           name="Main"
           component={MainStackScreen}
           options={{ headerShown: false }}
         />
-        <RootStack.Screen
-          name="CocktailModal"
-          component={CocktailModal}
-          // options={{ headerShown: false }}
-        />
+        <RootStack.Screen name="CocktailModal" component={CocktailModal} />
       </RootStack.Navigator>
     </NavigationContainer>
   );
