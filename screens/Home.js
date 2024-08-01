@@ -1,11 +1,21 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
-    <View>
+    <TouchableOpacity
+      style={styles.button}
+      onPress={() => {
+        navigation.navigate("CocktailModal");
+      }}
+    >
       <Text>Daddys home bitch!</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: "blue",
+  },
+});
 export default Home;

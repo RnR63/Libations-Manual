@@ -4,6 +4,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import Home from "./screens/Home";
+import LandingPage from "./screens/LandingPage";
+import CocktailModal from "./screens/CocktailModal";
 
 const RootStack = createStackNavigator();
 const MainStack = createStackNavigator();
@@ -11,6 +13,7 @@ const MainStack = createStackNavigator();
 const MainStackScreen = () => {
   return (
     <MainStack.Navigator>
+      <MainStack.Screen name="LandingPage" component={LandingPage} />
       <MainStack.Screen name="Home" component={Home} />
     </MainStack.Navigator>
   );
@@ -24,6 +27,11 @@ const App = () => {
           name="Main"
           component={MainStackScreen}
           options={{ headerShown: false }}
+        />
+        <RootStack.Screen
+          name="CocktailModal"
+          component={CocktailModal}
+          // options={{ headerShown: false }}
         />
       </RootStack.Navigator>
     </NavigationContainer>
