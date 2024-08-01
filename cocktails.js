@@ -1126,8 +1126,7 @@ const cocktails = [
   },
   {
     name: 'Vieux Carre',
-    ingredients:
-      Array(6)[
+    ingredients: [
         ('1 oz rye',
         '1 oz cognac',
         '3/4 oz sweet vermouth',
