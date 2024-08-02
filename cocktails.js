@@ -1146,3 +1146,4 @@ const cocktails = [
     garnish: "Lemon twist",
   },
 ];
+export default cocktails;

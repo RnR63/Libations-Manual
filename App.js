@@ -14,26 +14,27 @@ import VarelaRegular from "./assets/fonts/Varela-Regular.ttf";
 SplashScreen.preventAutoHideAsync();
 
 const RootStack = createStackNavigator();
-const MainStack = createStackNavigator();
+// const MainStack = createStackNavigator();
 
-const MainStackScreen = () => {
-  return (
-    <MainStack.Navigator>
-      <MainStack.Screen
-        name="LandingPage"
-        component={LandingPage}
-        options={{ headerShown: false }}
-      />
-      <MainStack.Screen
-        name="Home"
-        component={Home}
-        options={{
-          animationEnabled: false, // Disable animation for Home screen
-        }}
-      />
-    </MainStack.Navigator>
-  );
-};
+// const MainStackScreen = () => {
+//   return (
+//     <MainStack.Navigator>
+//       <MainStack.Screen
+//         name="LandingPage"
+//         component={LandingPage}
+//         options={{ headerShown: false }}
+//       />
+//       <MainStack.Screen
+//         name="Home"
+//         component={Home}
+//         options={{
+//           headerShown: false,
+//           animationEnabled: false, // Disable animation for Home screen
+//         }}
+//       />
+//     </MainStack.Navigator>
+//   );
+// };
 
 const App = () => {
   const [fontsLoaded] = useFonts({
@@ -51,11 +52,18 @@ const App = () => {
     <NavigationContainer>
       <RootStack.Navigator presentation="modal">
         <RootStack.Screen
-          name="Main"
-          component={MainStackScreen}
+          name="LandingPage"
+          component={LandingPage}
           options={{ headerShown: false }}
         />
-        <RootStack.Screen name="CocktailModal" component={CocktailModal} />
+        <RootStack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerShown: false,
+            animationEnabled: false, // Disable animation for Home screen
+          }}
+        />
       </RootStack.Navigator>
     </NavigationContainer>
   );
