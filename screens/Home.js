@@ -1,27 +1,41 @@
+import React, { useState, useCallback, useEffect } from "react";
 import {
-  View,
-  Text,
-  TouchableOpacity,
   StyleSheet,
   SafeAreaView,
   FlatList,
+  TextInput,
+  TouchableOpacity,
+  Text,
+  View,
 } from "react-native";
-import { useState, useCallback, useEffect } from "react";
+import { debounce } from "lodash";
 import getCocktails from "../getCocktails";
 import { COLORS, FONTS } from "../styles/theme";
 
 const Home = ({ navigation }) => {
   const [cocktails, setCocktails] = useState([]);
+  const [search, setSearch] = useState("");
+
+  const debouncedHandleTextChange = useCallback(
+    debounce((text) => {
+      setSearch(text);
+      console.log(text);
+    }, 200), // Adjust the delay as needed
+    [],
+  );
 
   const fetchCocktails = useCallback(async () => {
     const fetchedList = await getCocktails();
-    setCocktails(fetchedList);
-  }, []);
+    const filteredList = fetchedList.filter((cocktail) =>
+      cocktail.name.toLowerCase().startsWith(search.toLowerCase()),
+    );
+    setCocktails(filteredList);
+  }, [search]);
 
   useEffect(() => {
     fetchCocktails();
-  }, []);
-  
+  }, [search]);
+
   return (
     <SafeAreaView style={styles.container}>
       <View>
@@ -30,6 +44,11 @@ const Home = ({ navigation }) => {
       <View>
         <Text>A | B | C .... Z | #</Text>
       </View>
+      <TextInput
+        style={styles.searchContainer}
+        placeholder="Search"
+        onChangeText={debouncedHandleTextChange}
+      />
       <FlatList
         data={cocktails}
         renderItem={({ item }) => (
@@ -60,6 +79,17 @@ const styles = StyleSheet.create({
     font: FONTS.regular,
     fontSize: 32,
     alignSelf: "center",
+  },
+  searchContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginHorizontal: 16,
+    marginVertical: 12,
+    borderColor: COLORS.primary,
+    borderWidth: 1,
+    borderRadius: 12,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
   },
 });
 export default Home;
