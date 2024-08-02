@@ -1,10 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import {
-  View,
-  StyleSheet,
-  ImageBackground,
-  Animated,
-} from "react-native";
+import { View, StyleSheet, ImageBackground, Animated } from "react-native";
 import { COLORS, FONTS } from "../styles/theme";
 import splashImg from "../assets/Logo_Bull.png";
 
@@ -49,8 +44,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   image: {
-    width: 350,
-    height: 250,
+    width: 450,
+    height: 700,
     resizeMode: "contain",
   },
   imageContainer: {
