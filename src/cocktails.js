@@ -781,18 +781,6 @@ const cocktails = [
     garnish: "Lime wheel, ginger candy",
   },
   {
-    name: "Moscow Mule",
-    ingredients: [
-      "1/2 oz lime juice",
-      "3/4 oz ginger syrup",
-      "2 oz vodka",
-      "1-2 oz soda water",
-    ],
-    method: "Shake (except soda), pour over cracked ice, top with soda",
-    glassware: "Mule mug",
-    garnish: "Candy ginger",
-  },
-  {
     name: "Negroni",
     ingredients: ["1 1/2 oz gin", "1 oz Campari", "3/4 oz sweet vermouth"],
     method: "Stir",
@@ -841,18 +829,6 @@ const cocktails = [
     method: "Shake",
     glassware: "Coupe",
     garnish: "None specified",
-  },
-  {
-    name: "Penicillin",
-    ingredients: [
-      "3/4 oz lemon juice",
-      "3/8 oz ginger syrup",
-      "3/8 oz honey syrup",
-      "2 oz blended Scotch",
-    ],
-    method: "Shake",
-    glassware: "Single Old Fashioned (SOF)",
-    garnish: "Laphroaig spray",
   },
   {
     name: "Penicillin",
@@ -984,21 +960,6 @@ const cocktails = [
     method: "Shake",
     glassware: "Coupe",
     garnish: "Grapefruit twist",
-  },
-  {
-    name: "Siesta",
-    ingredients:
-      Array(6)[
-        ("1/2 oz lime juice",
-        "1/2 oz simple syrup",
-        "3/4 oz grapefruit juice",
-        "1/2 oz Campari",
-        "2 oz reposado tequila",
-        "1 dash mango bitters")
-      ],
-    method: "Shake",
-    glassware: "Coupe",
-    garnish: "Orange twist",
   },
   {
     name: "Smash",

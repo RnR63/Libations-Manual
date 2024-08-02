@@ -5,10 +5,10 @@ import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
 import { StyleSheet, Text, View } from "react-native";
-import Home from "./screens/Home";
-import LandingPage from "./screens/LandingPage";
-import CocktailModal from "./screens/CocktailModal";
-import VarelaRegular from "./assets/fonts/Varela-Regular.ttf";
+import Home from "./src/screens/Home";
+import LandingPage from "./src/screens/LandingPage";
+import CocktailPage from "./src/screens/CocktailPage";
+import VarelaRegular from "./src/assets/fonts/Varela-Regular.ttf";
 
 // Prevent the splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
@@ -50,7 +50,7 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <RootStack.Navigator presentation="modal">
+      <RootStack.Navigator>
         <RootStack.Screen
           name="LandingPage"
           component={LandingPage}
@@ -63,6 +63,14 @@ const App = () => {
             headerShown: false,
             animationEnabled: false, // Disable animation for Home screen
           }}
+        />
+        <RootStack.Screen
+          name="CocktailPage"
+          component={CocktailPage}
+          options={({ route }) => ({
+            title: route.params.cocktail.name,
+            headerTitleStyle: { fontFamily: "VarelaRegular", fontSize: 24 },
+          })}
         />
       </RootStack.Navigator>
     </NavigationContainer>
