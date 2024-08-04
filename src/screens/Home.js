@@ -38,24 +38,19 @@ const Home = ({ navigation }) => {
     fetchCocktails();
   }, [search]);
 
-  const windowWidth = Dimensions.get("window").width;
-  const itemSize = (windowWidth - 50) / 3;
 
   return (
     <SafeAreaView style={styles.container}>
       <View>
         <Text style={styles.heading}>Cocktails</Text>
       </View>
-      {/* <View><Text>A | B | C .... Z | #</Text></View> */}
+      <View><Text>A | B | C .... Z | #</Text></View>
       <TextInput
         style={styles.searchContainer}
         placeholder="Search"
         onChangeText={debouncedHandleTextChange}
       />
       <FlatList
-        style={styles.flatList}
-        contentContainerStyle={styles.flatListContent}
-        numColumns={3}
         data={cocktails}
         keyExtractor={(item) => item.name}
         renderItem={({ item }) => (
@@ -66,10 +61,8 @@ const Home = ({ navigation }) => {
                 cocktail: item,
               });
             }}
-            itemSize={itemSize}
           />
         )}
-        columnWrappersytle={styles.row}
       />
     </SafeAreaView>
   );
@@ -78,16 +71,6 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  flatList: {
-    flex: 1,
-  },
-  flatListContent: {
-    padding: 10,
-  },
-  row: {
-    flex: 1,
-    justifyContent: "space-evenly",
   },
   heading: {
     font: FONTS.regular,
