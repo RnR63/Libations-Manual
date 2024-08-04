@@ -1,6 +1,7 @@
 const cocktails = [
   {
     name: "19th Century",
+    spirit: "whiskey",
     ingredients: [
       "3/4 oz lemon juice",
       "3/4 oz creme de cacao",

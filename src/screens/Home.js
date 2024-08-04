@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Text,
   View,
+  Dimensions,
 } from "react-native";
 import { debounce } from "lodash";
 import getCocktails from "../getCocktails";
@@ -37,22 +38,26 @@ const Home = ({ navigation }) => {
     fetchCocktails();
   }, [search]);
 
+  const windowWidth = Dimensions.get("window").width;
+  const itemSize = (windowWidth - 50) / 3;
+
   return (
     <SafeAreaView style={styles.container}>
       <View>
         <Text style={styles.heading}>Cocktails</Text>
       </View>
-      <View>
-        <Text>A | B | C .... Z | #</Text>
-      </View>
+      {/* <View><Text>A | B | C .... Z | #</Text></View> */}
       <TextInput
         style={styles.searchContainer}
         placeholder="Search"
         onChangeText={debouncedHandleTextChange}
       />
       <FlatList
+        style={styles.flatList}
+        contentContainerStyle={styles.flatListContent}
+        numColumns={3}
         data={cocktails}
-        keyExtractor={(item) => item.name} 
+        keyExtractor={(item) => item.name}
         renderItem={({ item }) => (
           <MenuItem
             item={item}
@@ -61,19 +66,28 @@ const Home = ({ navigation }) => {
                 cocktail: item,
               });
             }}
+            itemSize={itemSize}
           />
         )}
+        columnWrappersytle={styles.row}
       />
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  button: {
-    backgroundColor: "blue",
-  },
   container: {
     flex: 1,
+  },
+  flatList: {
+    flex: 1,
+  },
+  flatListContent: {
+    padding: 10,
+  },
+  row: {
+    flex: 1,
+    justifyContent: "space-evenly",
   },
   heading: {
     font: FONTS.regular,
