@@ -8,7 +8,9 @@ import { StyleSheet, Text, View } from "react-native";
 import Home from "./src/screens/Home";
 import LandingPage from "./src/screens/LandingPage";
 import CocktailPage from "./src/screens/CocktailPage";
+import SpiritsPage from "./src/screens/SpiritsPage";
 import VarelaRegular from "./src/assets/fonts/Varela-Regular.ttf";
+import PeraltaRegular from "./src/assets/fonts/Varela-Regular.ttf";
 
 // Prevent the splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
@@ -39,6 +41,7 @@ const RootStack = createStackNavigator();
 const App = () => {
   const [fontsLoaded] = useFonts({
     "Varela-Regular": VarelaRegular,
+    "Peralta-Regular": PeraltaRegular,
   });
 
   if (!fontsLoaded) {
@@ -70,6 +73,14 @@ const App = () => {
           options={({ route }) => ({
             title: route.params.cocktail.name,
             headerTitleStyle: { fontFamily: "VarelaRegular", fontSize: 24 },
+          })}
+        />
+        <RootStack.Screen
+          name="SpiritsPage"
+          component={SpiritsPage}
+          options={({ route }) => ({
+            // title: route.params.cocktail.name,
+            // headerTitleStyle: { fontFamily: "PeraltaRegular", fontSize: 24 },
           })}
         />
       </RootStack.Navigator>

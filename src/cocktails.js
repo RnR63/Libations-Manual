@@ -1,7 +1,7 @@
 const cocktails = [
   {
     name: "19th Century",
-    spirit: "whiskey",
+    spirit: "Whiskey",
     ingredients: [
       "3/4 oz lemon juice",
       "3/4 oz creme de cacao",
@@ -14,6 +14,7 @@ const cocktails = [
   },
   {
     name: "Agave Bravo",
+    spirit: "Mezcal",
     ingredients: [
       "1 tsp agave",
       "2 dashes Angostura bitters",
@@ -26,6 +27,7 @@ const cocktails = [
   },
   {
     name: "Airmail",
+    spirit: "Rum",
     ingredients: [
       "1/2 oz lime juice",
       "1/2 oz honey",
@@ -38,6 +40,7 @@ const cocktails = [
   },
   {
     name: "Alaska",
+    spirit: "Gin",
     ingredients: [
       "2 oz gin",
       "3/4 oz dry vermouth",
@@ -50,6 +53,7 @@ const cocktails = [
   },
   {
     name: "American Trilogy",
+    spirit: "Whiskey",
     ingredients: [
       "1 brown sugar cube",
       "3-4 dashes orange bitters",
@@ -62,6 +66,7 @@ const cocktails = [
   },
   {
     name: "Americano",
+    spirit: "Misc",
     ingredients: ["1 1/2 oz Campari", "1 oz sweet vermouth", "2 oz soda"],
     method: "Build in glass",
     glassware: "Collins",
@@ -69,15 +74,14 @@ const cocktails = [
   },
   {
     name: "Ancient Mariner",
-    ingredients:
-      Array(6)[
-        ("3/4 oz lime juice",
-        "1/2 oz grapefruit juice",
-        "1/2 oz simple syrup",
-        "1/4 oz allspice dram",
-        "1 oz Jamaican rum",
-        "1 oz Demerara rum")
-      ],
+    ingredients: [
+      ("3/4 oz lime juice",
+      "1/2 oz grapefruit juice",
+      "1/2 oz simple syrup",
+      "1/4 oz allspice dram",
+      "1 oz Jamaican rum",
+      "1 oz Demerara rum"),
+    ],
     method: "Shake, pour over crushed ice",
     glassware: "Single Old Fashioned (SOF)",
     garnish: "Mint sprig",
@@ -179,6 +183,7 @@ const cocktails = [
   },
   {
     name: "Buck",
+    spirit: "Vodka",
     ingredients: [
       "1/2 oz lime juice",
       "3/4 oz ginger syrup",
@@ -582,16 +587,15 @@ const cocktails = [
   },
   {
     name: "Jane's Addiction",
-    ingredients:
-      Array(7)[
-        ("1 orange wedge",
-        "3/4 oz lemon juice",
-        "3/4 oz simple syrup",
-        "1/2 oz fino sherry",
-        "2 oz vodka",
-        "3 dashes Angostura bitters",
-        "2 oz soda")
-      ],
+    ingredients: [
+      ("1 orange wedge",
+      "3/4 oz lemon juice",
+      "3/4 oz simple syrup",
+      "1/2 oz fino sherry",
+      "2 oz vodka",
+      "3 dashes Angostura bitters",
+      "2 oz soda"),
+    ],
     method: "Muddle orange, shake (except soda), top with soda",
     glassware: "Collins",
     garnish: "Orange peel",
@@ -871,17 +875,16 @@ const cocktails = [
   },
   {
     name: "Ramos Gin Fizz",
-    ingredients:
-      Array(8)[
-        ("1 egg white",
-        "1 oz cream",
-        "3/8 oz lime juice",
-        "3/8 oz lemon juice",
-        "3/4 oz simple syrup",
-        "3 drops orange flower water",
-        "2 oz gin",
-        "1 oz soda water")
-      ],
+    ingredients: [
+      ("1 egg white",
+      "1 oz cream",
+      "3/8 oz lime juice",
+      "3/8 oz lemon juice",
+      "3/4 oz simple syrup",
+      "3 drops orange flower water",
+      "2 oz gin",
+      "1 oz soda water"),
+    ],
     method: "Dry shake, then shake with ice, strain, add soda",
     glassware: "Fizz glass",
     garnish: "Orange twist",

@@ -10,11 +10,17 @@ import {
   Dimensions,
 } from "react-native";
 import { debounce } from "lodash";
-import getCocktails from "../getCocktails";
 import { COLORS, FONTS } from "../styles/theme";
+import getCocktails from "../getCocktails";
 import MenuItem from "../components/MenuItem";
+import SpiritBox from "../components/SpiritBox";
+
+const SPIRIT_TYPES = ["Vodka", "Gin", "Rum", "Tequila", "Mezcal", "Whiskey", "Misc"];
+// const windowWidth = Dimensions.get('window').width;
+// const itemSize = (windowWidth - 50) / 3;
 
 const Home = ({ navigation }) => {
+  // const [spirits, setSpiritBox] = useState([]);
   const [cocktails, setCocktails] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -25,6 +31,18 @@ const Home = ({ navigation }) => {
     }, 200), // Adjust the delay as needed
     []
   );
+
+  // const fetchCocktailsBySpirit = useCallback(async () => {
+  //   const fetchedList = await getCocktails();
+  //   const filteredListBySpirit = fetchedList.filter((spirits) =>
+  //     spirits.spirit
+  //   );
+  //   setSpiritBox(filteredListBySpirit);
+  // }, []);
+
+  // useEffect(() => {
+  //   fetchCocktailsBySpirit();
+  // }, []);
 
   const fetchCocktails = useCallback(async () => {
     const fetchedList = await getCocktails();
@@ -38,17 +56,31 @@ const Home = ({ navigation }) => {
     fetchCocktails();
   }, [search]);
 
-
   return (
     <SafeAreaView style={styles.container}>
       <View>
         <Text style={styles.heading}>Cocktails</Text>
       </View>
-      <View><Text>A | B | C .... Z | #</Text></View>
+      <View>{/* <Text>A | B | C .... Z | #</Text> */}</View>
       <TextInput
         style={styles.searchContainer}
         placeholder="Search"
         onChangeText={debouncedHandleTextChange}
+      />
+      <FlatList
+        numColumns={3}
+        data={SPIRIT_TYPES}
+        keyExtractor={(item) => item}
+        renderItem={({ item }) => (
+          <SpiritBox
+            item={item}
+            handlePress={() => {
+              navigation.navigate("SpiritsPage", {
+                cocktail: item,
+              });
+            }} // this will navigate to all cocktails with that same spirit
+          />
+        )}
       />
       <FlatList
         data={cocktails}

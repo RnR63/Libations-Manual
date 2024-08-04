@@ -8,7 +8,6 @@ const CocktailPage = ({ route }) => {
       {/* <Text>Name: {cocktail.name}</Text> */}
       <FlatList
         style={styles.list}
-        contentContainerStyle={styles.listContent}
         data={cocktail.ingredients}
         keyExtractor={(item) => item}
         ListHeaderComponent={<Text>Ingredients:</Text>}
