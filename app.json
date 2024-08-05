@@ -24,12 +24,12 @@
       "favicon": "./src/assets/favicon.png"
     },
     "plugins": [
-      [
-        "expo-font",
-        {
-          "fonts": ["./src/assets/fonts/Varela-Regular.ttf"]
-        }
-      ]
+        [
+          "expo-font",
+          {
+            "fonts": ["./src/assets/fonts/Varela-Regular.ttf", "./src/assets/fonts/Peralta-Regular.ttf", "./src/assets/fonts/OpenSans-VariableFont_wdth,wght.ttf"]
+          }
+        ]
     ]
   }
 }

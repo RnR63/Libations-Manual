@@ -1,5 +1,5 @@
 import { View, Text, FlatList, StyleSheet } from "react-native";
-
+// import { COLORS, FONTS } from "../styles/theme";
 
 const CocktailPage = ({ route }) => {
   const { cocktail } = route.params;
@@ -22,6 +22,7 @@ const CocktailPage = ({ route }) => {
 
 const styles = StyleSheet.create({
   container: {
+    // backgroundColor: COLORS.background,
     flex: 1,
     justifyContent: "flex-start",
     padding: 24,

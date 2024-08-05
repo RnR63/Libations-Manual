@@ -1,18 +1,5 @@
 const cocktails = [
   {
-    name: "19th Century",
-    spirit: "Whiskey",
-    ingredients: [
-      "3/4 oz lemon juice",
-      "3/4 oz creme de cacao",
-      "3/4 oz sweet vermouth",
-      "1 1/2 oz bourbon",
-    ],
-    method: "Shake",
-    glassware: "Coupe",
-    garnish: "None specified",
-  },
-  {
     name: "Agave Bravo",
     spirit: "Mezcal",
     ingredients: [
@@ -1109,6 +1096,19 @@ const cocktails = [
     method: "Shake",
     glassware: "Coupe or Single Old Fashioned (SOF)",
     garnish: "Lemon twist",
+  },
+  {
+    name: "19th Century",
+    spirit: "Whiskey",
+    ingredients: [
+      "3/4 oz lemon juice",
+      "3/4 oz creme de cacao",
+      "3/4 oz sweet vermouth",
+      "1 1/2 oz bourbon",
+    ],
+    method: "Shake",
+    glassware: "Coupe",
+    garnish: "None specified",
   },
 ];
 export default cocktails;

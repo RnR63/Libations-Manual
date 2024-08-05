@@ -3,10 +3,27 @@ import { COLORS, FONTS } from "../styles/theme";
 
 const MenuItem = ({ item, handlePress }) => {
   return (
-    <TouchableOpacity onPress={handlePress}>
+    <TouchableOpacity style={styles.itemBox} onPress={handlePress}>
       <Text style={styles.cocktailText}>{item.name}</Text>
     </TouchableOpacity>
   );
 };
 export default MenuItem;
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  cocktailText: {
+    color: COLORS.text_white,
+    fontFamily: FONTS.openSans,
+    fontWeight: 'bold',
+  },
+  itemBox: {
+    backgroundColor: COLORS.primary,
+    borderColor: COLORS.primary,
+    borderWidth: 1,
+    borderRadius: 5,
+    marginHorizontal: 16,
+    marginVertical: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    justifyContent: 'center',
+  }
+});

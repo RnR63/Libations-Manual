@@ -8,48 +8,32 @@ import { StyleSheet, Text, View } from "react-native";
 import Home from "./src/screens/Home";
 import LandingPage from "./src/screens/LandingPage";
 import CocktailPage from "./src/screens/CocktailPage";
-import SpiritsPage from "./src/screens/SpiritsPage";
 import VarelaRegular from "./src/assets/fonts/Varela-Regular.ttf";
-import PeraltaRegular from "./src/assets/fonts/Varela-Regular.ttf";
+import PeraltaRegular from "./src/assets/fonts/Peralta-Regular.ttf";
+import OpenSans from  "./src/assets/fonts/OpenSans-VariableFont_wdth,wght.ttf";
+import { useEffect } from "react";
 
 // Prevent the splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
 
 const RootStack = createStackNavigator();
-// const MainStack = createStackNavigator();
-
-// const MainStackScreen = () => {
-//   return (
-//     <MainStack.Navigator>
-//       <MainStack.Screen
-//         name="LandingPage"
-//         component={LandingPage}
-//         options={{ headerShown: false }}
-//       />
-//       <MainStack.Screen
-//         name="Home"
-//         component={Home}
-//         options={{
-//           headerShown: false,
-//           animationEnabled: false, // Disable animation for Home screen
-//         }}
-//       />
-//     </MainStack.Navigator>
-//   );
-// };
 
 const App = () => {
   const [fontsLoaded] = useFonts({
     "Varela-Regular": VarelaRegular,
     "Peralta-Regular": PeraltaRegular,
+    "OpenSans-Regular": OpenSans,
   });
+// OpenSans-VariableFont_wdth,wght
+  useEffect(() => {
+      if (fontsLoaded) {
+        SplashScreen.hideAsync();
+      }
+    }, [fontsLoaded]);
 
-  if (!fontsLoaded) {
-    return null;
-  }
-
-  // Hide the splash screen once fonts are loaded
-  SplashScreen.hideAsync();
+    if (!fontsLoaded) {
+      return null;
+    }
 
   return (
     <NavigationContainer>
@@ -72,15 +56,8 @@ const App = () => {
           component={CocktailPage}
           options={({ route }) => ({
             title: route.params.cocktail.name,
-            headerTitleStyle: { fontFamily: "VarelaRegular", fontSize: 24 },
-          })}
-        />
-        <RootStack.Screen
-          name="SpiritsPage"
-          component={SpiritsPage}
-          options={({ route }) => ({
-            // title: route.params.cocktail.name,
-            // headerTitleStyle: { fontFamily: "PeraltaRegular", fontSize: 24 },
+            headerTitleStyle: { fontFamily: "Peralta-Regular", fontSize: 24 },
+            headerBackTitle: "Back",
           })}
         />
       </RootStack.Navigator>

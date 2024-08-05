@@ -8,6 +8,6 @@ export const COLORS = {
 
 export const FONTS = {
   regular: "Varela-Regular",
-  // Add more font styles as needed
   peralta: "Peralta-Regular",
+  openSans: "OpenSans-Regular",
 };

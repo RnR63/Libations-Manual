@@ -13,15 +13,9 @@ import { debounce } from "lodash";
 import { COLORS, FONTS } from "../styles/theme";
 import getCocktails from "../getCocktails";
 import MenuItem from "../components/MenuItem";
-import SpiritBox from "../components/SpiritBox";
-import cocktailsTest from "../cocktailsTest";
-
-const SPIRIT_TYPES = ["Vodka", "Gin", "Rum", "Tequila", "Mezcal", "Whiskey", "Misc"];
-const windowWidth = Dimensions.get('window').width;
-// const itemSize = (windowWidth - 50) / 3;
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 const Home = ({ navigation }) => {
-  // const [spirits, setSpirits] = useState([]);
   const [cocktails, setCocktails] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -33,18 +27,6 @@ const Home = ({ navigation }) => {
     []
   );
 
-  // handling spirit hooks
-  // const fetchCocktailsBySpirit = useCallback(async () => {
-  //   const fetchedList = await getCocktails();
-  //   const filteredListBySpirit = fetchedList.filter((cocktail) =>
-  //     cocktail.spirit
-  //   );
-  //   setSpirits(filteredListBySpirit);
-  // }, []);
-
-  // useEffect(() => {
-  //   fetchCocktailsBySpirit();
-  // }, []);
 
   // handling search hooks
   const fetchCocktails = useCallback(async () => {
@@ -62,7 +44,7 @@ const Home = ({ navigation }) => {
   const fetchSpirit = useCallback(async () => {
     const fetchedList = await getCocktails();
     const filteredList = fetchedList.filter((cocktail) =>
-      cocktail.spirit.toLowerCase().startsWith(search.toLowerCase())
+      cocktail.name.toLowerCase().startsWith(search.toLowerCase())
     );
     setCocktails(filteredList);
   }, [search]);
@@ -81,21 +63,7 @@ const Home = ({ navigation }) => {
         style={styles.searchContainer}
         placeholder="Search"
         onChangeText={debouncedHandleTextChange}
-      />
-      <FlatList
-        numColumns={3}
-        data={SPIRIT_TYPES}
-        keyExtractor={(item) => item}
-        renderItem={({ item }) => (
-          <SpiritBox
-            item={item}
-            handlePress={() => {
-              navigation.navigate("SpiritsPage", {
-                cocktail: item,
-              });
-            }} // this will navigate to all cocktails with that same spirit
-          />
-        )}
+        clearButtonMode="while-editing"
       />
       <FlatList
         data={cocktails}
@@ -120,7 +88,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   heading: {
-    font: FONTS.regular,
+    fontFamily: FONTS.peralta,
     fontSize: 32,
     alignSelf: "center",
   },
