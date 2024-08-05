@@ -14,13 +14,14 @@ import { COLORS, FONTS } from "../styles/theme";
 import getCocktails from "../getCocktails";
 import MenuItem from "../components/MenuItem";
 import SpiritBox from "../components/SpiritBox";
+import cocktailsTest from "../cocktailsTest";
 
-const SPIRIT_TYPES = ["Vodka", "Gin", "Rum", "Tequila", "Mezcal", "Whiskey", "Misc"];
+// const SPIRIT_TYPES = ["Vodka", "Gin", "Rum", "Tequila", "Mezcal", "Whiskey", "Misc"];
 // const windowWidth = Dimensions.get('window').width;
 // const itemSize = (windowWidth - 50) / 3;
 
 const Home = ({ navigation }) => {
-  // const [spirits, setSpiritBox] = useState([]);
+  // const [spirits, setSpirits] = useState([]);
   const [cocktails, setCocktails] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -32,18 +33,20 @@ const Home = ({ navigation }) => {
     []
   );
 
+  // handling spirit hooks
   // const fetchCocktailsBySpirit = useCallback(async () => {
   //   const fetchedList = await getCocktails();
-  //   const filteredListBySpirit = fetchedList.filter((spirits) =>
-  //     spirits.spirit
+  //   const filteredListBySpirit = fetchedList.filter((cocktail) =>
+  //     cocktail.spirit
   //   );
-  //   setSpiritBox(filteredListBySpirit);
+  //   setSpirits(filteredListBySpirit);
   // }, []);
 
   // useEffect(() => {
   //   fetchCocktailsBySpirit();
   // }, []);
 
+  // handling search hooks
   const fetchCocktails = useCallback(async () => {
     const fetchedList = await getCocktails();
     const filteredList = fetchedList.filter((cocktail) =>
@@ -56,6 +59,18 @@ const Home = ({ navigation }) => {
     fetchCocktails();
   }, [search]);
 
+  const fetchSpirit = useCallback(async () => {
+    const fetchedList = await getCocktails();
+    const filteredList = fetchedList.filter((cocktail) =>
+      cocktail.spirit.toLowerCase().startsWith(search.toLowerCase())
+    );
+    setCocktails(filteredList);
+  }, [search]);
+
+  useEffect(() => {
+    fetchSpirit();
+  }, [search])
+
   return (
     <SafeAreaView style={styles.container}>
       <View>
@@ -67,7 +82,7 @@ const Home = ({ navigation }) => {
         placeholder="Search"
         onChangeText={debouncedHandleTextChange}
       />
-      <FlatList
+      {/* <FlatList
         numColumns={3}
         data={SPIRIT_TYPES}
         keyExtractor={(item) => item}
@@ -81,7 +96,7 @@ const Home = ({ navigation }) => {
             }} // this will navigate to all cocktails with that same spirit
           />
         )}
-      />
+      /> */}
       <FlatList
         data={cocktails}
         keyExtractor={(item) => item.name}

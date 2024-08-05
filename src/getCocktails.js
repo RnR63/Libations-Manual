@@ -1,9 +1,10 @@
-import cocktails from "./cocktails";
+// import cocktails from "./cocktails"; 
+import cocktailsTest from "./cocktailsTest";
 
 const getCocktails = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(cocktails);
+      resolve(cocktailsTest);
     }, 100); // Simulate network delay
   });
 };
