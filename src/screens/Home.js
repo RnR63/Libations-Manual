@@ -16,8 +16,8 @@ import MenuItem from "../components/MenuItem";
 import SpiritBox from "../components/SpiritBox";
 import cocktailsTest from "../cocktailsTest";
 
-// const SPIRIT_TYPES = ["Vodka", "Gin", "Rum", "Tequila", "Mezcal", "Whiskey", "Misc"];
-// const windowWidth = Dimensions.get('window').width;
+const SPIRIT_TYPES = ["Vodka", "Gin", "Rum", "Tequila", "Mezcal", "Whiskey", "Misc"];
+const windowWidth = Dimensions.get('window').width;
 // const itemSize = (windowWidth - 50) / 3;
 
 const Home = ({ navigation }) => {
@@ -82,7 +82,7 @@ const Home = ({ navigation }) => {
         placeholder="Search"
         onChangeText={debouncedHandleTextChange}
       />
-      {/* <FlatList
+      <FlatList
         numColumns={3}
         data={SPIRIT_TYPES}
         keyExtractor={(item) => item}
@@ -96,7 +96,7 @@ const Home = ({ navigation }) => {
             }} // this will navigate to all cocktails with that same spirit
           />
         )}
-      /> */}
+      />
       <FlatList
         data={cocktails}
         keyExtractor={(item) => item.name}
