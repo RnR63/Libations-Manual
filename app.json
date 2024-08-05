@@ -27,7 +27,7 @@
         [
           "expo-font",
           {
-            "fonts": ["./src/assets/fonts/Varela-Regular.ttf", "./src/assets/fonts/Peralta-Regular.ttf", "./src/assets/fonts/OpenSans-VariableFont_wdth,wght.ttf"]
+            "fonts": ["./src/assets/fonts/Lato-Regular.ttf", "./src/assets/fonts/Lato-Bold.ttf", "./src/assets/fonts/Peralta-Regular.ttf"]
           }
         ]
     ]

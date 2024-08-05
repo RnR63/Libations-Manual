@@ -12,8 +12,8 @@ export default MenuItem;
 const styles = StyleSheet.create({
   cocktailText: {
     color: COLORS.text_white,
-    fontFamily: FONTS.openSans,
-    fontWeight: 'bold',
+    fontFamily: FONTS.latoBold,
+
   },
   itemBox: {
     backgroundColor: COLORS.primary,

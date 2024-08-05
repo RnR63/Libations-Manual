@@ -62,12 +62,12 @@ const cocktails = [
   {
     name: "Ancient Mariner",
     ingredients: [
-      ("3/4 oz lime juice",
+      "3/4 oz lime juice",
       "1/2 oz grapefruit juice",
       "1/2 oz simple syrup",
       "1/4 oz allspice dram",
       "1 oz Jamaican rum",
-      "1 oz Demerara rum"),
+      "1 oz Demerara rum",
     ],
     method: "Shake, pour over crushed ice",
     glassware: "Single Old Fashioned (SOF)",

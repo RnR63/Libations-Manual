@@ -7,7 +7,7 @@ export const COLORS = {
 };
 
 export const FONTS = {
-  regular: "Varela-Regular",
   peralta: "Peralta-Regular",
-  openSans: "OpenSans-Regular",
+  latoRegular: "Lato-Regular",
+  latoBold: "Lato-Bold",
 };
