@@ -5,7 +5,6 @@ import { useFonts } from "expo-font";
 // import { StatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
 import Home from "./src/screens/Home";
-import LandingPage from "./src/screens/LandingPage";
 import CocktailPage from "./src/screens/CocktailPage";
 import PeraltaRegular from "./src/assets/fonts/Peralta-Regular.ttf";
 import LatoRegular from "./src/assets/fonts/Lato-Regular.ttf";
@@ -37,11 +36,6 @@ const App = () => {
   return (
     <NavigationContainer>
       <RootStack.Navigator>
-        <RootStack.Screen
-          name="LandingPage"
-          component={LandingPage}
-          options={{ headerShown: false }}
-        />
         <RootStack.Screen
           name="Home"
           component={Home}

@@ -4,16 +4,13 @@ import {
   SafeAreaView,
   FlatList,
   TextInput,
-  TouchableOpacity,
   Text,
   View,
-  Dimensions,
 } from "react-native";
 import { debounce } from "lodash";
 import { COLORS, FONTS } from "../styles/theme";
 import getCocktails from "../getCocktails";
 import MenuItem from "../components/MenuItem";
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 const Home = ({ navigation }) => {
   const [cocktails, setCocktails] = useState([]);
@@ -22,7 +19,6 @@ const Home = ({ navigation }) => {
   const debouncedHandleTextChange = useCallback(
     debounce((text) => {
       setSearch(text);
-      console.log(text);
     }, 200), // Adjust the delay as needed
     []
   );
@@ -58,7 +54,6 @@ const Home = ({ navigation }) => {
       <View>
         <Text style={styles.heading}>Cocktails</Text>
       </View>
-      <View>{/* <Text>A | B | C .... Z | #</Text> */}</View>
       <TextInput
         style={styles.searchContainer}
         placeholder="Search"

@@ -1,5 +1,5 @@
 {
-  "name": "bullbarrellm",
+  "name": "libationsmanual",
   "version": "1.0.0",
   "main": "expo/AppEntry.js",
   "scripts": {
@@ -12,7 +12,6 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@expo/vector-icons": "^14.0.2",
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/stack": "^6.4.1",
     "expo": "~51.0.24",
