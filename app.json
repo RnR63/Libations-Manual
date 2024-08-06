@@ -4,7 +4,7 @@
     "slug": "libationsmanual",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/libations_manual_icon.svg",
+    "icon": "./src/assets/libations_manual_icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./src/assets/Logo_Bull.png",
@@ -25,6 +25,17 @@
           ]
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "898dac73-87e1-4552-b018-970d12c38935"
+      }
+    },
+    "android": {
+      "package": "com.grncoder6.libationsmanual"
+    },
+    "ios": {
+      "bundleIdentifier": "com.grncoder6.libationsmanual"
+    }
   }
 }
