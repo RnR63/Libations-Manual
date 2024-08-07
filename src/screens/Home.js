@@ -52,13 +52,17 @@ const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text style={styles.heading}>Cocktails</Text>
+        <Text style={styles.heading} accessibilityRole="header">
+          Cocktails
+        </Text>
       </View>
       <TextInput
         style={styles.searchContainer}
         placeholder="Search"
         onChangeText={debouncedHandleTextChange}
         clearButtonMode="while-editing"
+        accessibilityLabel="Search for cocktails"
+        accessibilityHint="Type to search for cocktails"
       />
       <FlatList
         data={cocktails}
@@ -71,6 +75,8 @@ const Home = ({ navigation }) => {
                 cocktail: item,
               });
             }}
+            accessibilityLabel={`View details for ${item.name}`}
+            accessibilityRole="button"
           />
         )}
       />

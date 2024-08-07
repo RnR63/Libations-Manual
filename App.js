@@ -42,6 +42,7 @@ const App = () => {
           options={{
             headerShown: false,
             animationEnabled: false, // Disable animation for Home screen
+            accessibilityLabel: "Home Screen",
           }}
         />
         <RootStack.Screen
@@ -56,6 +57,7 @@ const App = () => {
               shadowOpacity: 0,
               elevation: 0,
             },
+            accessibilityLabel: `Cocktail Page for ${route.params.cocktail.name}`,
           })}
         />
       </RootStack.Navigator>

@@ -3,7 +3,13 @@ import { COLORS, FONTS } from "../styles/theme";
 
 const MenuItem = ({ item, handlePress }) => {
   return (
-    <TouchableOpacity style={styles.itemBox} onPress={handlePress}>
+    <TouchableOpacity
+      style={styles.itemBox}
+      onPress={handlePress}
+      accessibilityLabel={`Menu item: ${item.name}`}
+      accessibilityRole="button"
+      accessibilityHint="Tap to view details"
+    >
       <Text style={styles.cocktailText}>{item.name}</Text>
     </TouchableOpacity>
   );

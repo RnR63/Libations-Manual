@@ -9,21 +9,32 @@ const CocktailPage = ({ route }) => {
         style={styles.list}
         data={cocktail.ingredients}
         keyExtractor={(item) => item}
-        ListHeaderComponent={<Text style={styles.textBold}>Ingredients:</Text>}
+        ListHeaderComponent={
+          <Text style={styles.textBold} accessibilityRole="header">
+            Ingredients:
+          </Text>
+        }
         renderItem={({ item }) => (
-          <Text style={[styles.text, styles.listItem]}>{item}</Text>
+          <Text
+            style={[styles.text, styles.listItem]}
+            accessibilityLabel={`Ingredient: ${item}`}
+          >
+            {item}
+          </Text>
         )}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
       />
-          <Text style={styles.text}>
-        <Text style={styles.textBold}>Method: </Text>
+      <Text style={styles.text}>
+        <Text style={styles.textBold} accessibilityLabel="Method">
+          Method:{" "}
+        </Text>
         {cocktail.method}
       </Text>
-      <Text style={styles.text}>
+      <Text style={styles.text} accessibilityLabel="Glassware">
         <Text style={styles.textBold}>Glassware: </Text>
         {cocktail.glassware}
       </Text>
-      <Text style={styles.text}>
+      <Text style={styles.text} accessibilityLabel="Garnish">
         <Text style={styles.textBold}>Garnish: </Text>
         {cocktail.garnish}
       </Text>
@@ -43,8 +54,6 @@ const styles = StyleSheet.create({
     margin: 0,
     padding: 0,
     flexGrow: 0,
-    // borderColor: "#1c11c1",
-    // borderWidth: 1,
   },
   listItem: {
     marginVertical: 8,
