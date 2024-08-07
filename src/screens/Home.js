@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.peralta,
     fontSize: 32,
     alignSelf: "center",
+    marginVertical: 4,
   },
   searchContainer: {
     flexDirection: "row",

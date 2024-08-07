@@ -2,14 +2,13 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useFonts } from "expo-font";
-// import { StatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
 import Home from "./src/screens/Home";
 import CocktailPage from "./src/screens/CocktailPage";
 import PeraltaRegular from "./src/assets/fonts/Peralta-Regular.ttf";
 import LatoRegular from "./src/assets/fonts/Lato-Regular.ttf";
 import LatoBold from "./src/assets/fonts/Lato-Bold.ttf";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 
 // Prevent the splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
@@ -22,12 +21,17 @@ const App = () => {
     "Lato-Regular": LatoRegular,
     "Lato-Bold": LatoBold,
   });
-  
-  useEffect(() => {
+
+  const loadSplashScreen = useCallback(async () => {
     if (fontsLoaded) {
-      SplashScreen.hideAsync();
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      await SplashScreen.hideAsync();
     }
   }, [fontsLoaded]);
+
+useEffect(() => {
+  loadSplashScreen();
+}, [loadSplashScreen]);
 
   if (!fontsLoaded) {
     return null;
@@ -41,7 +45,6 @@ const App = () => {
           component={Home}
           options={{
             headerShown: false,
-            animationEnabled: false, // Disable animation for Home screen
             accessibilityLabel: "Home Screen",
           }}
         />
@@ -50,7 +53,7 @@ const App = () => {
           component={CocktailPage}
           options={({ route }) => ({
             title: route.params.cocktail.name,
-            headerTitleStyle: { fontFamily: "Peralta-Regular", fontSize: 24 },
+            headerTitleStyle: { fontFamily: "Peralta-Regular", fontSize: 32 },
             headerBackTitle: "Back",
             headerStyle: {
               borderBottomWidth: 0,
