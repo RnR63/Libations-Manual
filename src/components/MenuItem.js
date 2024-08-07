@@ -1,5 +1,5 @@
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
-import { COLORS, FONTS } from "../styles/theme";
+import { COLORS, FONTS, SIZES } from "../styles/theme";
 
 const MenuItem = ({ item, handlePress }) => {
   return (
@@ -11,6 +11,7 @@ const MenuItem = ({ item, handlePress }) => {
       accessibilityHint="Tap to view details"
     >
       <Text style={styles.cocktailText}>{item.name}</Text>
+      <Text style={styles.cocktailText}>{'>'}</Text>
     </TouchableOpacity>
   );
 };
@@ -18,18 +19,17 @@ export default MenuItem;
 const styles = StyleSheet.create({
   cocktailText: {
     color: COLORS.text_white,
-    fontFamily: FONTS.latoBold,
-
+    fontFamily: FONTS.latoRegular,
+    fontSize: SIZES.body_reg,
   },
   itemBox: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     backgroundColor: COLORS.primary,
-    borderColor: COLORS.primary,
-    borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: 12,
     marginHorizontal: 16,
     marginVertical: 8,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    justifyContent: 'center',
-  }
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+  },
 });

@@ -1,5 +1,5 @@
 import { View, Text, FlatList, StyleSheet } from "react-native";
-import { COLORS, FONTS } from "../styles/theme";
+import { COLORS, FONTS, SIZES } from "../styles/theme";
 
 const CocktailPage = ({ route }) => {
   const { cocktail } = route.params;
@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.background,
     flex: 1,
     justifyContent: "flex-start",
-    padding: 24,
-    gap: 24,
+    padding: 28,
+    gap: 28,
   },
   list: {
     margin: 0,
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     flexGrow: 0,
   },
   listItem: {
-    marginVertical: 8,
+    marginVertical: 12,
     marginHorizontal: 12,
     paddingVertical: 0,
 
@@ -67,11 +67,11 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: FONTS.latoRegular,
-    fontSize: 16,
+    fontSize: SIZES.body_reg,
   },
   textBold: {
     fontFamily: FONTS.latoBold,
-    fontSize: 20,
+    fontSize: SIZES.body_bold,
   },
 });
 
