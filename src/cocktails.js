@@ -575,13 +575,13 @@ const cocktails = [
   {
     name: "Jane's Addiction",
     ingredients: [
-      ("1 orange wedge",
+      "1 orange wedge",
       "3/4 oz lemon juice",
       "3/4 oz simple syrup",
       "1/2 oz fino sherry",
       "2 oz vodka",
       "3 dashes Angostura bitters",
-      "2 oz soda"),
+      "2 oz soda",
     ],
     method: "Muddle orange, shake (except soda), top with soda",
     glassware: "Collins",
@@ -863,14 +863,14 @@ const cocktails = [
   {
     name: "Ramos Gin Fizz",
     ingredients: [
-      ("1 egg white",
+      "1 egg white",
       "1 oz cream",
       "3/8 oz lime juice",
       "3/8 oz lemon juice",
       "3/4 oz simple syrup",
       "3 drops orange flower water",
       "2 oz gin",
-      "1 oz soda water"),
+      "1 oz soda water",
     ],
     method: "Dry shake, then shake with ice, strain, add soda",
     glassware: "Fizz glass",
@@ -1079,12 +1079,12 @@ const cocktails = [
   {
     name: "Vieux Carre",
     ingredients: [
-      ("1 oz rye",
+      "1 oz rye",
       "1 oz cognac",
       "3/4 oz sweet vermouth",
       "1 bar spoon Benedictine",
       "2 dashes Angostura bitters",
-      "2 dashes Peychaud's bitters"),
+      "2 dashes Peychaud's bitters",
     ],
     method: "Stir",
     glassware: "Double Old Fashioned (DOF)",
