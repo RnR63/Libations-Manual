@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Libations Manual",
-    "slug": "Libations Manual",
+    "slug": "libationsmanual",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/libations_manual_icon.png",
