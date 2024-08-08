@@ -5,10 +5,10 @@
   "author": "RnR63inc",
   "repository": {
     "type": "git",
-    "url": "https://github.com/RnR63inc/libationsmanual.git"
+    "url": "https://github.com/RnR63/Libations-Manual"
   },
   "bugs": {
-    "url": "https://github.com/RnR63inc/libationsmanual/issues"
+    "url": "https://github.com/RnR63/Libations-Manual/issues"
   },
   "scripts": {
     "start": "expo start",

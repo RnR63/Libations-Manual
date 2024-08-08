@@ -966,8 +966,9 @@ const cocktails = [
   },
   {
     name: "Smoke of Scotland",
+    spirit: "Scotch",
     ingredients: [
-      "2 oz Laphroaig",
+      "2 oz peated Scotch",
       "1/2 oz elderflower liqueur",
       "1/2 oz dry vermouth",
     ],
@@ -989,6 +990,7 @@ const cocktails = [
   },
   {
     name: "Talent Scout",
+    spirit: "Bourbon",
     ingredients: [
       "2 oz bourbon",
       "1/2 oz curaçao",
@@ -1001,9 +1003,10 @@ const cocktails = [
   },
   {
     name: "Tattletale",
+    spirit: "Scotch",
     ingredients: [
       "1 1/2 oz blended Scotch",
-      "1/2 oz Laphroaig",
+      "1/2 oz peated Scotch",
       "1 bar spoon honey",
       "2-3 dashes Angostura bitters",
     ],
@@ -1013,6 +1016,7 @@ const cocktails = [
   },
   {
     name: "The Diplomat",
+    spririt: "Misc",
     ingredients: [
       "1 1/2 oz dry vermouth",
       "1 oz sweet vermouth",
@@ -1025,6 +1029,7 @@ const cocktails = [
   },
   {
     name: "The Dude Abides",
+    spririt: "Vodka",
     ingredients: [
       "1 oz vodka",
       "1 1/2 oz coffee liqueur",
@@ -1036,6 +1041,7 @@ const cocktails = [
   },
   {
     name: "The Last Word",
+    spirit: "Gin",
     ingredients: [
       "3/4 oz lime juice",
       "3/4 oz green Chartreuse",
@@ -1048,6 +1054,7 @@ const cocktails = [
   },
   {
     name: "Tipperary",
+    spirit: "Irish whiskey",
     ingredients: [
       "2 oz Irish whiskey",
       "1/4 oz green Chartreuse",
@@ -1059,6 +1066,7 @@ const cocktails = [
   },
   {
     name: "Trinidad Sour",
+    spirit: "Misc",
     ingredients: [
       "3/4 oz lemon juice",
       "1 oz orgeat",
@@ -1071,6 +1079,7 @@ const cocktails = [
   },
   {
     name: "Vesper",
+    spirit: "Vodka",
     ingredients: ["3/4 oz Cocchi Americano", "1 1/2 oz vodka", "1 oz gin"],
     method: "Stir",
     glassware: "Coupe",
