@@ -1,5 +1,5 @@
 import { View, Text, FlatList, StyleSheet } from "react-native";
-import { COLORS, FONTS } from "../styles/theme";
+import { COLORS, FONTS, SIZES } from "../styles/theme";
 
 const CocktailPage = ({ route }) => {
   const { cocktail } = route.params;
@@ -9,21 +9,32 @@ const CocktailPage = ({ route }) => {
         style={styles.list}
         data={cocktail.ingredients}
         keyExtractor={(item) => item}
-        ListHeaderComponent={<Text style={styles.textBold}>Ingredients:</Text>}
+        ListHeaderComponent={
+          <Text style={styles.textBold} accessibilityRole="header">
+            Ingredients:
+          </Text>
+        }
         renderItem={({ item }) => (
-          <Text style={[styles.text, styles.listItem]}>{item}</Text>
+          <Text
+            style={[styles.text, styles.listItem]}
+            accessibilityLabel={`Ingredient: ${item}`}
+          >
+            {item}
+          </Text>
         )}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
       />
-          <Text style={styles.text}>
-        <Text style={styles.textBold}>Method: </Text>
+      <Text style={styles.text}>
+        <Text style={styles.textBold} accessibilityLabel="Method">
+          Method:{" "}
+        </Text>
         {cocktail.method}
       </Text>
-      <Text style={styles.text}>
+      <Text style={styles.text} accessibilityLabel="Glassware">
         <Text style={styles.textBold}>Glassware: </Text>
         {cocktail.glassware}
       </Text>
-      <Text style={styles.text}>
+      <Text style={styles.text} accessibilityLabel="Garnish">
         <Text style={styles.textBold}>Garnish: </Text>
         {cocktail.garnish}
       </Text>
@@ -36,18 +47,16 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.background,
     flex: 1,
     justifyContent: "flex-start",
-    padding: 24,
-    gap: 24,
+    padding: 28,
+    gap: 28,
   },
   list: {
     margin: 0,
     padding: 0,
     flexGrow: 0,
-    // borderColor: "#1c11c1",
-    // borderWidth: 1,
   },
   listItem: {
-    marginVertical: 8,
+    marginVertical: 12,
     marginHorizontal: 12,
     paddingVertical: 0,
 
@@ -58,11 +67,11 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: FONTS.latoRegular,
-    fontSize: 16,
+    fontSize: SIZES.body_reg,
   },
   textBold: {
     fontFamily: FONTS.latoBold,
-    fontSize: 20,
+    fontSize: SIZES.body_bold,
   },
 });
 

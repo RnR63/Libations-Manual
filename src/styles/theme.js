@@ -11,3 +11,9 @@ export const FONTS = {
   latoRegular: "Lato-Regular",
   latoBold: "Lato-Bold",
 };
+
+export const SIZES = {
+  body_reg: 18,
+  body_bold: 22,
+  heading: 32,
+};

@@ -1,7 +1,15 @@
 {
   "name": "libationsmanual",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "expo/AppEntry.js",
+  "author": "RnR63inc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RnR63inc/libationsmanual.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RnR63inc/libationsmanual/issues"
+  },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
