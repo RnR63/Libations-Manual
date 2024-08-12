@@ -60,8 +60,9 @@ const App = () => {
               <AdaptiveText
                 style={{
                   fontFamily: "Peralta-Regular",
+                  alignSelf: 'center',
                   fontSize: 32,
-                  width: screenWidth - 120,
+                  maxWidth: screenWidth - 120,
                   textAlign: "center",
                 }}
                 minFontSize={16}
@@ -69,7 +70,6 @@ const App = () => {
               >
                 {route.params.cocktail.name}
               </AdaptiveText>
-            
             ),
             headerBackTitle: "Back",
             headerStyle: {

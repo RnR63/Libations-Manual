@@ -1,5 +1,3 @@
-// import { useState, useRef, useEffect } from "react";
-import { max } from "lodash";
 import { Text, View } from "react-native";
 
 const AdaptiveText = ({
