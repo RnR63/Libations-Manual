@@ -12,9 +12,14 @@ const AdaptiveText = ({
         style={[
           style,
           {
+            // borderColor: 'blue',
+            // borderWidth: 1,
             fontSize: maxFontSize,
             lineHeight: maxFontSize * 1.2,
             flexShrink: 1,
+            padding: 0,
+            textAlignVertical: 'center',
+            alignSelf: 'baseline',
           },
         ]}
         numberOfLines={2}

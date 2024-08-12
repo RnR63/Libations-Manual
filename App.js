@@ -1,6 +1,6 @@
 import "react-native-gesture-handler";
-import { Dimensions } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { Dimensions, View, Text, TouchableOpacity } from "react-native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useFonts } from "expo-font";
 import { useEffect, useCallback } from "react";
@@ -11,13 +11,15 @@ import AdaptiveText from "./src/components/AdaptiveText";
 import PeraltaRegular from "./src/assets/fonts/Peralta-Regular.ttf";
 import LatoRegular from "./src/assets/fonts/Lato-Regular.ttf";
 import LatoBold from "./src/assets/fonts/Lato-Bold.ttf";
-
+import Ionicons from "@expo/vector-icons/Ionicons";
 // Prevent the splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
 
 const RootStack = createStackNavigator();
 
 const App = () => {
+  // const navigation = useNavigation();
+  
   const [fontsLoaded] = useFonts({
     "Peralta-Regular": PeraltaRegular,
     "Lato-Regular": LatoRegular,
@@ -55,15 +57,19 @@ const App = () => {
         <RootStack.Screen
           name="CocktailPage"
           component={CocktailPage}
-          options={({ route }) => ({
+          options={({ navigation, route }) => ({
             headerTitle: () => (
               <AdaptiveText
                 style={{
+                  flex: 1,
                   fontFamily: "Peralta-Regular",
-                  alignSelf: 'center',
+                  alignItems: "center",
+                  justifyContent: "center",
                   fontSize: 32,
                   maxWidth: screenWidth - 120,
                   textAlign: "center",
+                  lineHeight: 32,
+                  paddingVertical: 0,
                 }}
                 minFontSize={16}
                 maxFontSize={32}
@@ -71,12 +77,24 @@ const App = () => {
                 {route.params.cocktail.name}
               </AdaptiveText>
             ),
-            headerBackTitle: "Back",
+            headerBackTitleVisible: false,
             headerStyle: {
               borderBottomWidth: 0,
               shadowOpacity: 0,
               elevation: 0,
             },
+            headerTitleStyle: {
+              fontSize: 32,
+              lineHeight: 32,
+              textAlign: "center",
+            },
+            headerLeft: () => (
+              <View style={{ paddingLeft: 24 }}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                  <Ionicons name="arrow-back-sharp" size={24} color="black" />
+                </TouchableOpacity>
+              </View>
+            ),
             accessibilityLabel: `Cocktail Page for ${route.params.cocktail.name}`,
           })}
         />

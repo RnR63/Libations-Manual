@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useMemo } from "react";
 import {
   StyleSheet,
   SafeAreaView,
@@ -23,12 +23,21 @@ const Home = ({ navigation }) => {
     []
   );
 
-  const fetchCocktails = useCallback(async () => {
-    const fetchedList = await getCocktails();
-    const filteredList = fetchedList.filter((cocktail) =>
+  const filterListMemo = useMemo(() => {
+    return cocktails.filter((cocktail) =>
       cocktail.name.toLowerCase().startsWith(search.toLowerCase())
     );
-    setCocktails(filteredList);
+  }, [search]);
+
+  // maybe we need to account for useMemo in clicking not just in search??
+  const fetchCocktails = useCallback(async () => {
+    const fetchedList = await getCocktails();
+    if (search === "") {
+      setCocktails(fetchedList);
+    } else {
+      const filteredList = filterListMemo;
+      setCocktails(filteredList);
+    }
   }, [search]);
 
   useEffect(() => {
@@ -103,6 +112,6 @@ const styles = StyleSheet.create({
     fontSize: SIZES.body_reg,
     alignSelf: "center",
     marginTop: 24,
-  }
+  },
 });
 export default Home;
