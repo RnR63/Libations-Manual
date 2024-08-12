@@ -37,7 +37,7 @@
     },
     "ios": {
       "bundleIdentifier": "com.grncoder6.libationsmanual",
-      "buildNumber": 2
+      "buildNumber": "2"
     },
     "runtimeVersion": {
       "policy": "appVersion"
