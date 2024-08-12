@@ -32,10 +32,12 @@
       }
     },
     "android": {
-      "package": "com.grncoder6.libationsmanual"
+      "package": "com.grncoder6.libationsmanual",
+      "versionCode": 2
     },
     "ios": {
-      "bundleIdentifier": "com.grncoder6.libationsmanual"
+      "bundleIdentifier": "com.grncoder6.libationsmanual",
+      "buildNumber": 2
     },
     "runtimeVersion": {
       "policy": "appVersion"
