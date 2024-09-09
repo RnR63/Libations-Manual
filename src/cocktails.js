@@ -40,7 +40,7 @@ const cocktails = [
   },
   {
     name: "American Trilogy",
-    spirit: "Whiskey",
+    spirit: "Rye",
     ingredients: [
       "1 brown sugar cube",
       "3-4 dashes orange bitters",
@@ -61,6 +61,7 @@ const cocktails = [
   },
   {
     name: "Ancient Mariner",
+    spirit: "Rum",
     ingredients: [
       "3/4 oz lime juice",
       "1/2 oz grapefruit juice",
@@ -75,6 +76,7 @@ const cocktails = [
   },
   {
     name: "Anejo Honey Sour",
+    spirit: "Tequila",
     ingredients: ["3/4 oz lemon juice", "3/4 oz honey", "2 oz anejo tequila"],
     method: "Shake",
     glassware: "Single Old Fashioned (SOF)",
@@ -82,6 +84,7 @@ const cocktails = [
   },
   {
     name: "Aperol Spritz",
+    spirit: "Misc",
     ingredients: ["2 oz Aperol", "3 oz champagne", "1 oz soda water"],
     method: "Build in glass",
     glassware: "Wine glass",
@@ -89,6 +92,7 @@ const cocktails = [
   },
   {
     name: "Army Navy",
+    spirit: "Gin",
     ingredients: [
       "3/4 oz lemon juice",
       "3/4 oz orgeat",
@@ -101,6 +105,7 @@ const cocktails = [
   },
   {
     name: "Aviation #1",
+    spirit: "Gin",
     ingredients: [
       "3/4 oz lemon juice",
       "3/8 oz maraschino",
@@ -113,6 +118,7 @@ const cocktails = [
   },
   {
     name: "Bee's Kiss",
+    spirit: "Rum",
     ingredients: ["3/4 oz honey", "3/4 oz cream", "2 oz aged rum"],
     method: "Shake",
     glassware: "Coupe",
@@ -120,6 +126,7 @@ const cocktails = [
   },
   {
     name: "Bee's Knees",
+    spirit: "Gin",
     ingredients: ["3/4 oz lemon juice", "3/4 oz honey", "2 oz gin"],
     method: "Shake",
     glassware: "Coupe",
@@ -127,6 +134,7 @@ const cocktails = [
   },
   {
     name: "Bensonhurst",
+    spirit: "Rye",
     ingredients: [
       "2 oz rye",
       "1 oz dry vermouth",
@@ -139,6 +147,7 @@ const cocktails = [
   },
   {
     name: "Bobby Burns",
+    spirit: "Scotch",
     ingredients: [
       "2 oz Scotch",
       "1/4 oz Benedictine",
@@ -151,6 +160,7 @@ const cocktails = [
   },
   {
     name: "Boulevardier",
+    spirit: "Bourbon",
     ingredients: ["1 1/2 oz bourbon", "1 oz Campari", "3/4 oz sweet vermouth"],
     method: "Stir",
     glassware: "Coupe or Double Old Fashioned (DOF)",
@@ -158,6 +168,7 @@ const cocktails = [
   },
   {
     name: "Brooklyn",
+    spirit: "Rye",
     ingredients: [
       "2 oz rye or bourbon",
       "3/4 oz dry vermouth",
@@ -170,7 +181,7 @@ const cocktails = [
   },
   {
     name: "Buck",
-    spirit: "Vodka",
+    spirit: "Misc",
     ingredients: [
       "1/2 oz lime juice",
       "3/4 oz ginger syrup",
@@ -183,6 +194,7 @@ const cocktails = [
   },
   {
     name: "Caipirinha",
+    spirit: "Rum",
     ingredients: [
       "1 brown sugar cube",
       "3/4 oz simple syrup",
@@ -195,6 +207,7 @@ const cocktails = [
   },
   {
     name: "Cameron's Kick",
+    spirit: "Irish",
     ingredients: [
       "3/4 oz lemon juice",
       "3/4 oz orgeat",
@@ -207,6 +220,7 @@ const cocktails = [
   },
   {
     name: "Carol Gardens",
+    spirit: "Rye",
     ingredients: [
       "2 oz rye",
       "1/2 oz Punt e Mes",
@@ -219,6 +233,7 @@ const cocktails = [
   },
   {
     name: "Casino Cocktail",
+    spirit: "Gin",
     ingredients: [
       "3/4 oz lemon juice",
       "3/4 oz maraschino",
@@ -231,6 +246,7 @@ const cocktails = [
   },
   {
     name: "Champs Elysees",
+    spirit: "Misc",
     ingredients: [
       "3/4 oz lemon juice",
       "1/2 oz simple syrup",
@@ -244,6 +260,7 @@ const cocktails = [
   },
   {
     name: "Chartreuse Swizzle",
+    spirit: "Misc",
     ingredients: [
       "3/4 oz lime juice",
       "1 oz pineapple juice",
@@ -256,6 +273,7 @@ const cocktails = [
   },
   {
     name: "Chet Baker",
+    spirit: "Rum",
     ingredients: [
       "1 bar spoon honey",
       "2 bar spoons Punt e Mes",
@@ -268,6 +286,7 @@ const cocktails = [
   },
   {
     name: "Clover Club",
+    spirit: "Gin",
     ingredients: [
       "1 egg white",
       "3/4 oz raspberry preserves",
@@ -280,6 +299,7 @@ const cocktails = [
   },
   {
     name: "Collins",
+    spirit: "Misc",
     ingredients: [
       "3/4 oz lemon juice",
       "3/4 oz simple syrup",
@@ -292,6 +312,7 @@ const cocktails = [
   },
   {
     name: "Constantino's Revenge",
+    spirit: "Rum",
     ingredients: [
       "3/4 oz lemon juice",
       "3/4 oz honey",
@@ -304,6 +325,7 @@ const cocktails = [
   },
   {
     name: "Corpse Reviver #2",
+    spirit: "Gin",
     ingredients: [
       "3/4 oz lemon juice",
       "3/4 oz Cointreau",
@@ -316,6 +338,7 @@ const cocktails = [
   },
   {
     name: "Cosmopolitan",
+    spirit: "Vodka",
     ingredients: [
       "1 oz lime juice",
       "3/8 oz curaçao",
@@ -328,6 +351,7 @@ const cocktails = [
   },
   {
     name: "Crusta",
+    spirit: "Misc",
     ingredients: [
       "3/4 oz lemon juice",
       "3/8 oz maraschino",
@@ -340,6 +364,7 @@ const cocktails = [
   },
   {
     name: "Daiquiri",
+    spirit: "Rum",
     ingredients: [
       "1 oz lime juice",
       "3/4 oz simple syrup",
@@ -353,6 +378,7 @@ const cocktails = [
   },
   {
     name: "Daisy",
+    spirit: "Misc",
     ingredients: ["1 oz lemon juice", "1 oz curaçao", "2 oz spirit"],
     method: "Shake",
     glassware: "Coupe",
@@ -360,8 +386,9 @@ const cocktails = [
   },
   {
     name: "Downtime",
+    spirit: "Scotch",
     ingredients: [
-      "3/4 oz Kilchoman Machir Bay",
+      "3/4 oz peated Scotch",
       "3/4 oz Benedictine",
       "3/4 oz Cynar",
       "2 dashes orange bitters",
@@ -372,6 +399,7 @@ const cocktails = [
   },
   {
     name: "East Side",
+    spirit: "Gin",
     ingredients: [
       "2-3 cucumber slices",
       "Pinch of mint",
@@ -385,6 +413,7 @@ const cocktails = [
   },
   {
     name: "El Diablo",
+    spirit: "Tequila",
     ingredients: [
       "1/2 oz lime juice",
       "3/4 oz ginger syrup",
@@ -397,6 +426,7 @@ const cocktails = [
   },
   {
     name: "El Nacional",
+    spirit: "Mezcal",
     ingredients: [
       "1 oz mezcal",
       "1 oz Campari",
@@ -410,6 +440,7 @@ const cocktails = [
   },
   {
     name: "Fancy Free",
+    spirit: "Bourbon",
     ingredients: [
       "2 oz bourbon",
       "1/2 oz maraschino",
@@ -422,6 +453,7 @@ const cocktails = [
   },
   {
     name: "Fix",
+    spirit: "Misc",
     ingredients: ["3/4 oz lemon juice", "3/4 oz simple syrup", "2 oz spirit"],
     method: "Whip shake, strain over crushed ice",
     glassware: "Double Old Fashioned (DOF)",
@@ -429,6 +461,7 @@ const cocktails = [
   },
   {
     name: "Fizz",
+    spirit: "Misc",
     ingredients: [
       "1 egg white",
       "3/4 oz lemon juice",
@@ -442,6 +475,7 @@ const cocktails = [
   },
   {
     name: "French 75",
+    spirit: "Misc",
     ingredients: [
       "1/2 oz lemon juice",
       "1/2 oz simple syrup",
@@ -454,6 +488,7 @@ const cocktails = [
   },
   {
     name: "Frisco Sour",
+    spirit: "Rye",
     ingredients: [
       "3/4 oz lemon juice",
       "1/2 oz simple syrup",
@@ -466,6 +501,7 @@ const cocktails = [
   },
   {
     name: "Gold Rush",
+    spirit: "Bourbon",
     ingredients: ["3/4 oz lemon juice", "3/4 oz honey syrup", "2 oz bourbon"],
     method: "Shake",
     glassware: "Single Old Fashioned (SOF)",
@@ -473,6 +509,7 @@ const cocktails = [
   },
   {
     name: "Gordon's Cup",
+    spirit: "Gin",
     ingredients: [
       "6 pieces of lime",
       "2-3 cucumber slices",
@@ -486,6 +523,7 @@ const cocktails = [
   },
   {
     name: "Green Point",
+    spirit: "Rye",
     ingredients: [
       "2 oz rye",
       "1/2 oz Punt e Mes",
@@ -499,6 +537,7 @@ const cocktails = [
   },
   {
     name: "Havana Special",
+    spirit: "Rum",
     ingredients: [
       "3/4 oz lime juice",
       "1 oz pineapple juice",
@@ -511,6 +550,7 @@ const cocktails = [
   },
   {
     name: "Hemingway Daiquiri",
+    spirit: "Rum",
     ingredients: [
       "1/2 oz lime juice",
       "1 oz grapefruit juice",
@@ -523,13 +563,19 @@ const cocktails = [
   },
   {
     name: "Holland Razor Blade",
-    ingredients: ["3/4 oz lemon juice", "3/4 oz simple syrup", "2 oz genever"],
+    spirit: "Gin",
+    ingredients: [
+      "3/4 oz lemon juice",
+      "3/4 oz simple syrup",
+      "2 oz genever gin",
+    ],
     method: "Shake",
     glassware: "Coupe",
     garnish: "Cayenne dust",
   },
   {
     name: "Hotel National",
+    spirit: "Misc",
     ingredients: [
       "3/4 oz lime juice",
       "1 oz pineapple juice",
@@ -543,6 +589,7 @@ const cocktails = [
   },
   {
     name: "Hunter Cocktail",
+    spirit: "Rye",
     ingredients: ["2 oz rye", "1/2 oz Cherry Heering"],
     method: "Stir",
     glassware: "Double Old Fashioned (DOF)",
@@ -550,6 +597,7 @@ const cocktails = [
   },
   {
     name: "Intro to Aperol",
+    spirit: "Misc",
     ingredients: [
       "3/4 oz lemon juice",
       "1/4 oz simple syrup",
@@ -563,6 +611,7 @@ const cocktails = [
   },
   {
     name: "Jack Rose",
+    spirit: "Misc",
     ingredients: [
       "3/4 oz lime juice",
       "3/4 oz grenadine",
@@ -574,6 +623,7 @@ const cocktails = [
   },
   {
     name: "Jane's Addiction",
+    spirit: "Vodka",
     ingredients: [
       "1 orange wedge",
       "3/4 oz lemon juice",
@@ -589,13 +639,15 @@ const cocktails = [
   },
   {
     name: "Japanese Cocktail",
-    ingredients: ["2 oz Kikori whiskey", "Soda water"],
+    spirit: "Japanese",
+    ingredients: ["2 oz Japanese whiskey", "Soda water"],
     method: "Build in glass",
     glassware: "Collins",
     garnish: "Lemon twist",
   },
   {
     name: "Jungle Bird",
+    spirit: "Rum",
     ingredients: [
       "1/2 oz lemon juice",
       "1/2 oz simple syrup",
@@ -609,6 +661,7 @@ const cocktails = [
   },
   {
     name: "Maguey Sour",
+    spirit: "Mezcal",
     ingredients: [
       "1 egg white",
       "3/4 oz lime juice",
@@ -622,6 +675,7 @@ const cocktails = [
   },
   {
     name: "Mai Tai",
+    spirit: "Rum",
     ingredients: [
       "1 oz lime juice",
       "1/2 oz orgeat",
@@ -634,6 +688,7 @@ const cocktails = [
   },
   {
     name: "Maid",
+    spirit: "Misc",
     ingredients: [
       "1 lime",
       "3/4 oz simple syrup",
@@ -647,6 +702,7 @@ const cocktails = [
   },
   {
     name: "Manhattan",
+    spirit: "Rye",
     ingredients: [
       "2 oz rye",
       "1 oz sweet vermouth",
@@ -658,6 +714,7 @@ const cocktails = [
   },
   {
     name: "Margarita",
+    spirit: "Tequila",
     ingredients: [
       "1 oz lime juice",
       "1/2 oz agave nectar",
@@ -670,6 +727,7 @@ const cocktails = [
   },
   {
     name: "Martinez",
+    spirit: "Gin",
     ingredients: [
       "2 oz gin",
       "1/4 oz maraschino",
@@ -683,6 +741,7 @@ const cocktails = [
   },
   {
     name: "Martini",
+    spirit: "Gin",
     ingredients: ["2 oz gin", "3/4 oz dry vermouth", "2 dashes orange bitters"],
     method: "Stir",
     glassware: "Coupe",
@@ -690,6 +749,7 @@ const cocktails = [
   },
   {
     name: "Mexican Firing Squad",
+    spirit: "Tequila",
     ingredients: [
       "1 oz lime juice",
       "3/4 oz simple syrup",
@@ -702,6 +762,7 @@ const cocktails = [
   },
   {
     name: "Mint Julep",
+    spirit: "Bourbon",
     ingredients: [
       "1 sugar cube",
       "1/4 oz simple syrup",
@@ -714,6 +775,7 @@ const cocktails = [
   },
   {
     name: "Mojito",
+    spirit: "Rum",
     ingredients: [
       "Mint leaves",
       "1 oz lime juice",
@@ -727,6 +789,7 @@ const cocktails = [
   },
   {
     name: "Monarch",
+    spirit: "Tequila",
     ingredients: [
       "2 oz añejo tequila",
       "1 heavy bar spoon maple syrup",
@@ -739,6 +802,7 @@ const cocktails = [
   },
   {
     name: "Monte Carlo",
+    spirit: "Rye",
     ingredients: [
       "2 oz rye",
       "1/2 oz Benedictine",
@@ -750,6 +814,7 @@ const cocktails = [
   },
   {
     name: "Morning Glory Fizz",
+    spirit: "Scotch",
     ingredients: [
       "1 egg white",
       "3/4 oz lemon juice",
@@ -762,6 +827,7 @@ const cocktails = [
   },
   {
     name: "Moscow Mule",
+    spirit: "Vodka",
     ingredients: [
       "1/2 oz lime juice",
       "3/4 oz ginger syrup",
@@ -774,6 +840,7 @@ const cocktails = [
   },
   {
     name: "Negroni",
+    spirit: "Gin",
     ingredients: ["1 1/2 oz gin", "1 oz Campari", "3/4 oz sweet vermouth"],
     method: "Stir",
     glassware: "Double Old Fashioned (DOF)",
@@ -781,6 +848,7 @@ const cocktails = [
   },
   {
     name: "Old Fashioned",
+    spirit: "Bourbon",
     ingredients: [
       "1 sugar cube",
       "3-4 dashes Angostura bitters",
@@ -792,6 +860,7 @@ const cocktails = [
   },
   {
     name: "Old Pal",
+    spirit: "Rye",
     ingredients: ["1 1/2 oz rye", "3/4 oz dry vermouth", "3/4 oz Campari"],
     method: "Stir",
     glassware: "Coupe",
@@ -799,6 +868,7 @@ const cocktails = [
   },
   {
     name: "Paper Plane",
+    spirit: "Bourbon",
     ingredients: [
       "3/4 oz lemon juice",
       "3/4 oz bourbon",
@@ -811,6 +881,7 @@ const cocktails = [
   },
   {
     name: "Pegu Club",
+    spirit: "Gin",
     ingredients: [
       "3/4 oz lime juice",
       "3/4 oz curaçao",
@@ -824,12 +895,13 @@ const cocktails = [
   },
   {
     name: "Penicillin",
+    spirit: "Scotch",
     ingredients: [
       "3/4 oz lemon juice",
       "3/8 oz honey syrup",
       "3/8 oz ginger syrup",
       "1 oz blended Scotch",
-      "1 oz Laphroaig",
+      "1 oz peated Scotch",
     ],
     method: "Shake",
     glassware: "Double Old Fashioned (DOF) or Mug",
@@ -837,6 +909,7 @@ const cocktails = [
   },
   {
     name: "Pisco Sour",
+    spirit: "Rum",
     ingredients: [
       "1 egg white",
       "3/8 oz lime juice",
@@ -850,6 +923,7 @@ const cocktails = [
   },
   {
     name: "Poet's Dream",
+    spirit: "Gin",
     ingredients: [
       "2 oz gin",
       "1/4 oz Benedictine",
@@ -862,6 +936,7 @@ const cocktails = [
   },
   {
     name: "Ramos Gin Fizz",
+    spirit: "Gin",
     ingredients: [
       "1 egg white",
       "1 oz cream",
@@ -878,6 +953,7 @@ const cocktails = [
   },
   {
     name: "Red Hook",
+    spirit: "Rye",
     ingredients: ["2 oz rye", "1/2 oz Punt e Mes", "1/2 oz maraschino"],
     method: "Stir",
     glassware: "Coupe",
@@ -885,6 +961,7 @@ const cocktails = [
   },
   {
     name: "Rickey",
+    spirit: "Misc",
     ingredients: ["1 lime", "3/4 oz simple syrup", "2 oz spirit", "2 oz soda"],
     method: "Shake (except soda), top with soda",
     glassware: "Collins",
@@ -892,6 +969,7 @@ const cocktails = [
   },
   {
     name: "Rob Roy",
+    spirit: "Scotch",
     ingredients: [
       "2 oz Scotch",
       "1 oz sweet vermouth",
@@ -903,6 +981,7 @@ const cocktails = [
   },
   {
     name: "Rome with a View",
+    spirit: "Misc",
     ingredients: [
       "1 oz lime juice",
       "3/4 oz simple syrup",
@@ -916,6 +995,7 @@ const cocktails = [
   },
   {
     name: "Sazerac",
+    spirit: "Rye",
     ingredients: ["1 sugar cube", "3-4 dashes Peychaud's bitters", "2 oz rye"],
     method: "Stir",
     glassware: "Single Old Fashioned (SOF) with absinthe rinse",
@@ -923,6 +1003,7 @@ const cocktails = [
   },
   {
     name: "Shin-Shin",
+    spirit: "Japanese",
     ingredients: [
       "1 1/2 oz Japanese whiskey",
       "1 oz Campari",
@@ -934,6 +1015,7 @@ const cocktails = [
   },
   {
     name: "Sidecar",
+    spirit: "Misc",
     ingredients: ["1/2 oz lemon juice", "1 oz Cointreau", "1 1/2 oz cognac"],
     method: "Shake",
     glassware: "Coupe with sugar rim",
@@ -941,6 +1023,7 @@ const cocktails = [
   },
   {
     name: "Siesta",
+    spirit: "Tequila",
     ingredients: [
       "1/2 oz lime juice",
       "1/2 oz simple syrup",
@@ -954,6 +1037,7 @@ const cocktails = [
   },
   {
     name: "Smash",
+    spirit: "Misc",
     ingredients: [
       "4 lemon pieces",
       "Pinch of mint",
@@ -978,6 +1062,7 @@ const cocktails = [
   },
   {
     name: "Sour",
+    spirit: "Misc",
     ingredients: [
       "1 egg white",
       "3/4 oz lemon juice",
@@ -1054,7 +1139,7 @@ const cocktails = [
   },
   {
     name: "Tipperary",
-    spirit: "Irish whiskey",
+    spirit: "Irish",
     ingredients: [
       "2 oz Irish whiskey",
       "1/4 oz green Chartreuse",
@@ -1087,6 +1172,7 @@ const cocktails = [
   },
   {
     name: "Vieux Carre",
+    spirit: "Rye",
     ingredients: [
       "1 oz rye",
       "1 oz cognac",
@@ -1101,6 +1187,7 @@ const cocktails = [
   },
   {
     name: "Ward 8",
+    spirit: "Bourbon",
     ingredients: ["3/4 oz lemon juice", "3/4 oz grenadine", "2 oz bourbon"],
     method: "Shake",
     glassware: "Coupe or Single Old Fashioned (SOF)",
@@ -1108,7 +1195,7 @@ const cocktails = [
   },
   {
     name: "19th Century",
-    spirit: "Whiskey",
+    spirit: "Bourbon",
     ingredients: [
       "3/4 oz lemon juice",
       "3/4 oz creme de cacao",
