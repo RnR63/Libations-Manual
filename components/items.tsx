@@ -7,5 +7,3 @@ export default function Items() {
     </View>
   );
 }
-
-

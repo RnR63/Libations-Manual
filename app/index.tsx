@@ -1,27 +1,80 @@
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { Link } from "expo-router";
-
+import { SafeAreaView } from "react-native-safe-area-context";
+import { COLORS, FONTS, SIZES } from "../styles/theme";
+// import { Link } from "expo-router";
+const SPIRITS: string[] = [
+  "Vodka",
+  "Gin",
+  "Rum",
+  "Tequila",
+  "Mezcal",
+  "Bourbon",
+  "Rye",
+  "Scotch",
+  "Irish",
+  "Japanese",
+  "Misc",
+];
 export default function App() {
+  //naviagtion buttons: TouchableOpacity
+  // i would need to render a button for each spirit type
+  // have them each be a toublable opacity that links to a
+  // component that would populate with each corresponding spirit cocktails
+  // or would i need a screen for each spirit type.  that doesnt sound right!!!
   return (
-    <View style={styles.container}>
-      {/* <Link
-        href="/counter"
-        style={{ textAlign: "center", marginBottom: 18, fontSize: 24 }}
-      >
-        Go to counter
-      </Link> */}
-      <Text>render spirit boxes here</Text>
+    <SafeAreaView style={styles.container}>
+      {/* <View>
+        <Text style={styles.heading} accessibilityRole="header">
+          Cocktails by Spirit
+        </Text>
+      </View> */}
       <StatusBar style="auto" />
-    </View>
+      <FlatList
+        data={SPIRITS}
+        keyExtractor={(item) => item}
+        renderItem={({ item }) => (
+          <TouchableOpacity style={styles.spiritBox}>
+            <Text style={styles.text}>{item}</Text>
+          </TouchableOpacity>
+        )}
+      />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.background,
+  },
+  heading: {
+    fontFamily: FONTS.peralta,
+    fontSize: SIZES.heading,
+    alignSelf: "center",
+    marginVertical: 4,
+  },
+  spiritBox: {
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: COLORS.primary,
+    borderColor: COLORS.primary,
+    borderWidth: 1,
+    borderRadius: 12,
+    // paddingHorizontal: 16,
+    paddingVertical: 12,
+    marginHorizontal: 16,
+    marginVertical: 18,
+  },
+  text: {
+    color: COLORS.text_white,
+    fontFamily: FONTS.peralta,
+    fontSize: SIZES.body_reg,
   },
 });
