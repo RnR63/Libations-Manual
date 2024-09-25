@@ -12,27 +12,31 @@ import { COLORS } from "../styles/theme";
 // Prevent the splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
 
-export default function Layout() {
-  const [fontsLoaded] = useFonts({
+export default function Layout(): JSX.Element {
+  const [fontsLoaded, error]: [boolean, Error | null] = useFonts({
     "Peralta-Regular": PeraltaRegular,
     "Lato-Regular": LatoRegular,
     "Lato-Bold": LatoBold,
   });
+  if (error) {
+    console.error(error);
+  }
+  if (!fontsLoaded) {
+    console.error("Fonts not loaded");
+  }
 
-  const loadSplashScreen = useCallback(async () => {
-    if (fontsLoaded) {
-      await new Promise((resolve) => setTimeout(resolve, 3000));
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
+  const loadSplashScreen: () => Promise<void> =
+    useCallback(async (): Promise<void> => {
+      if (fontsLoaded) {
+        await new Promise<void>((resolve) => setTimeout(resolve, 3000));
+        await SplashScreen.hideAsync();
+      }
+    }, [fontsLoaded]);
 
-  useEffect(() => {
+  useEffect((): void => {
     loadSplashScreen();
   }, [loadSplashScreen]);
 
-  if (!fontsLoaded) {
-    return null;
-  }
   return (
     <Tabs screenOptions={{ tabBarActiveTintColor: COLORS.primary }}>
       <Tabs.Screen
