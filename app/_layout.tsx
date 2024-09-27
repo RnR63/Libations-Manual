@@ -12,8 +12,8 @@ import { COLORS } from "../styles/theme";
 // Prevent the splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
 
-export default function Layout(): JSX.Element {
-  const [fontsLoaded, error]: [boolean, Error | null] = useFonts({
+export default function Layout() {
+  const [fontsLoaded, error] = useFonts({
     "Peralta-Regular": PeraltaRegular,
     "Lato-Regular": LatoRegular,
     "Lato-Bold": LatoBold,
