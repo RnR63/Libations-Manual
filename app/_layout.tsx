@@ -6,11 +6,8 @@ import LatoRegular from "../assets/fonts/Lato-Regular.ttf";
 import LatoBold from "../assets/fonts/Lato-Bold.ttf";
 import Feather from "@expo/vector-icons/Feather";
 import Entypo from "@expo/vector-icons/Entypo";
-import { Tabs } from "expo-router";
+import { Tabs, Stack } from "expo-router";
 import { COLORS } from "../styles/theme";
-
-// Prevent the splash screen from auto-hiding
-SplashScreen.preventAutoHideAsync();
 
 export default function Layout(): JSX.Element {
   const [fontsLoaded, error]: [boolean, Error | null] = useFonts({
@@ -38,37 +35,11 @@ export default function Layout(): JSX.Element {
   }, [loadSplashScreen]);
 
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: COLORS.primary }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "Home",
-          tabBarShowLabel: false,
-          tabBarIcon: ({ color, size }) => (
-            <Entypo name="home" size={size} color={color} />
-          ),
-        }}
+    <Stack>
+      <Stack.Screen
+        name="(tabs)"
+        options={{ headerShown: false, animation: "fade" }}
       />
-      <Tabs.Screen
-        name="search"
-        options={{
-          title: "Search",
-          tabBarShowLabel: false,
-          tabBarIcon: ({ color, size }) => (
-            <Feather name="search" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="recipe"
-        options={{
-          title: "Current Recipe",
-          tabBarShowLabel: false,
-          tabBarIcon: ({ color, size }) => (
-            <Entypo name="list" size={size} color={color} />
-          ),
-        }}
-      />
-    </Tabs>
+    </Stack>
   );
 }
