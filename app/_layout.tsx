@@ -1,5 +1,5 @@
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
 import { useFonts } from "expo-font";
 import PeraltaRegular from "../assets/fonts/Peralta-Regular.ttf";
 import LatoRegular from "../assets/fonts/Lato-Regular.ttf";
@@ -10,29 +10,37 @@ import { Tabs, Stack } from "expo-router";
 import { COLORS } from "../styles/theme";
 
 export default function Layout(): JSX.Element {
-  const [fontsLoaded, error]: [boolean, Error | null] = useFonts({
+  const [fontsLoaded, _]: [boolean, Error | null] = useFonts({
     "Peralta-Regular": PeraltaRegular,
     "Lato-Regular": LatoRegular,
     "Lato-Bold": LatoBold,
   });
-  if (error) {
-    console.error(error);
-  }
-  if (!fontsLoaded) {
-    console.error("Fonts not loaded");
-  }
+  const [loading, setLoading] = useState(true);
 
-  const loadSplashScreen: () => Promise<void> =
-    useCallback(async (): Promise<void> => {
-      if (fontsLoaded) {
-        await new Promise<void>((resolve) => setTimeout(resolve, 3000));
-        await SplashScreen.hideAsync();
-      }
-    }, [fontsLoaded]);
+  const loadSplashScreen = useCallback(async (): Promise<void> => {
+    if (fontsLoaded) {
+      await new Promise<void>((resolve) => setTimeout(resolve, 3000));
+      await SplashScreen.hideAsync();
+      setLoading(false);
+    }
+  }, [fontsLoaded]);
 
   useEffect((): void => {
     loadSplashScreen();
   }, [loadSplashScreen]);
+
+  useEffect(() => {
+    if (!loading && !fontsLoaded) {
+      console.error("Fonts not loaded");
+    }
+  }, [loading, fontsLoaded]);
+
+  // if (error) {
+  //   console.error(error);
+  // }
+  // if (!fontsLoaded) {
+  //   console.error("Fonts not loaded");
+  // }
 
   return (
     <Stack>
