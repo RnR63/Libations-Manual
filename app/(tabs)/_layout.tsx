@@ -7,7 +7,7 @@ import LatoBold from "../../assets/fonts/Lato-Bold.ttf";
 import Feather from "@expo/vector-icons/Feather";
 import Entypo from "@expo/vector-icons/Entypo";
 import { Tabs } from "expo-router";
-import { COLORS } from "../../styles/theme";
+import { COLORS } from "../../src/styles/theme";
 
 // Prevent the splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
@@ -43,6 +43,7 @@ export default function Layout(): JSX.Element {
         name="(home)"
         options={{
           title: "Home",
+          headerShown: false,
           tabBarShowLabel: false,
           tabBarIcon: ({ color, size }) => (
             <Entypo name="home" size={size} color={color} />

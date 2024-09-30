@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { COLORS, FONTS, SIZES } from "../../../styles/theme";
+import { COLORS, FONTS, SIZES } from "../../../src/styles/theme";
 import { useRouter } from "expo-router";
 // import { Link } from "expo-router";
 

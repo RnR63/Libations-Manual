@@ -1,0 +1,1290 @@
+{
+  "cocktails": [
+    {
+      "name": "Agave Bravo",
+      "spirit": "Mezcal",
+      "ingredients": [
+        "1 tsp agave",
+        "2 dashes Angostura bitters",
+        "2 oz reposado tequila",
+        "1/2 oz mezcal"
+      ],
+      "method": "Stir",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Flamed grapefruit"
+    },
+    {
+      "name": "Airmail",
+      "spirit": "Rum",
+      "ingredients": [
+        "1/2 oz lime juice",
+        "1/2 oz honey",
+        "1 oz aged rum",
+        "2 oz champagne"
+      ],
+      "method": "Shake (except champagne), top with champagne",
+      "glassware": "Flute or coupe",
+      "garnish": "None specified"
+    },
+    {
+      "name": "Alaska",
+      "spirit": "Gin",
+      "ingredients": [
+        "2 oz gin",
+        "3/4 oz dry vermouth",
+        "1/4 oz yellow Chartreuse",
+        "2 dashes orange bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "American Trilogy",
+      "spirit": "Rye",
+      "ingredients": [
+        "1 brown sugar cube",
+        "3-4 dashes orange bitters",
+        "1 oz rye",
+        "1 oz apple jack"
+      ],
+      "method": "Stir",
+      "glassware": "Not specified (likely Old Fashioned)",
+      "garnish": "Flamed orange peel"
+    },
+    {
+      "name": "Americano",
+      "spirit": "Misc",
+      "ingredients": [
+        "1 1/2 oz Campari",
+        "1 oz sweet vermouth",
+        "2 oz soda"
+      ],
+      "method": "Build in glass",
+      "glassware": "Collins",
+      "garnish": "None specified"
+    },
+    {
+      "name": "Ancient Mariner",
+      "spirit": "Rum",
+      "ingredients": [
+        "3/4 oz lime juice",
+        "1/2 oz grapefruit juice",
+        "1/2 oz simple syrup",
+        "1/4 oz allspice dram",
+        "1 oz Jamaican rum",
+        "1 oz Demerara rum"
+      ],
+      "method": "Shake, pour over crushed ice",
+      "glassware": "Single Old Fashioned (SOF)",
+      "garnish": "Mint sprig"
+    },
+    {
+      "name": "Anejo Honey Sour",
+      "spirit": "Tequila",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/4 oz honey",
+        "2 oz anejo tequila"
+      ],
+      "method": "Shake",
+      "glassware": "Single Old Fashioned (SOF)",
+      "garnish": "Flamed grapefruit"
+    },
+    {
+      "name": "Aperol Spritz",
+      "spirit": "Misc",
+      "ingredients": [
+        "2 oz Aperol",
+        "3 oz champagne",
+        "1 oz soda water"
+      ],
+      "method": "Build in glass",
+      "glassware": "Wine glass",
+      "garnish": "Orange twist"
+    },
+    {
+      "name": "Army Navy",
+      "spirit": "Gin",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/4 oz orgeat",
+        "1 dash Angostura bitters",
+        "2 oz gin"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Lemon peel"
+    },
+    {
+      "name": "Aviation #1",
+      "spirit": "Gin",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/8 oz maraschino",
+        "3/8 oz creme de violette",
+        "2 oz gin"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Cherry"
+    },
+    {
+      "name": "Bee's Kiss",
+      "spirit": "Rum",
+      "ingredients": [
+        "3/4 oz honey",
+        "3/4 oz cream",
+        "2 oz aged rum"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Grated cinnamon"
+    },
+    {
+      "name": "Bee's Knees",
+      "spirit": "Gin",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/4 oz honey",
+        "2 oz gin"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "None specified"
+    },
+    {
+      "name": "Bensonhurst",
+      "spirit": "Rye",
+      "ingredients": [
+        "2 oz rye",
+        "1 oz dry vermouth",
+        "2 tsp maraschino",
+        "1 tsp Cynar"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "None specified"
+    },
+    {
+      "name": "Bobby Burns",
+      "spirit": "Scotch",
+      "ingredients": [
+        "2 oz Scotch",
+        "1/4 oz Benedictine",
+        "3/4 oz sweet vermouth",
+        "2-3 dashes Angostura bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Cherry"
+    },
+    {
+      "name": "Boulevardier",
+      "spirit": "Bourbon",
+      "ingredients": [
+        "1 1/2 oz bourbon",
+        "1 oz Campari",
+        "3/4 oz sweet vermouth"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe or Double Old Fashioned (DOF)",
+      "garnish": "Flamed orange twist"
+    },
+    {
+      "name": "Brooklyn",
+      "spirit": "Rye",
+      "ingredients": [
+        "2 oz rye or bourbon",
+        "3/4 oz dry vermouth",
+        "2 tsp maraschino",
+        "2 tsp Amer Picon"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Cherry"
+    },
+    {
+      "name": "Buck",
+      "spirit": "Misc",
+      "ingredients": [
+        "1/2 oz lime juice",
+        "3/4 oz ginger syrup",
+        "2 oz spirit",
+        "2 oz soda"
+      ],
+      "method": "Shake (except soda), top with soda",
+      "glassware": "Collins",
+      "garnish": "Lime wedge and candy ginger"
+    },
+    {
+      "name": "Caipirinha",
+      "spirit": "Rum",
+      "ingredients": [
+        "1 brown sugar cube",
+        "3/4 oz simple syrup",
+        "6 lime cubes",
+        "2 oz cachaca"
+      ],
+      "method": "Muddle, shake, dump",
+      "glassware": "Single Old Fashioned (SOF)",
+      "garnish": "None specified"
+    },
+    {
+      "name": "Cameron's Kick",
+      "spirit": "Irish",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/4 oz orgeat",
+        "1 oz blended scotch",
+        "1 oz Irish whiskey"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Carol Gardens",
+      "spirit": "Rye",
+      "ingredients": [
+        "2 oz rye",
+        "1/2 oz Punt e Mes",
+        "1/2 oz Nardini amaro",
+        "1 tsp maraschino"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Casino Cocktail",
+      "spirit": "Gin",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/4 oz maraschino",
+        "2 dashes orange bitters",
+        "2 oz old tom gin"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Champs Elysees",
+      "spirit": "Misc",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "1/2 oz simple syrup",
+        "1/2 oz green Chartreuse",
+        "1 1/2 oz cognac",
+        "1 dash Angostura bitters"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Discarded lemon twist"
+    },
+    {
+      "name": "Chartreuse Swizzle",
+      "spirit": "Misc",
+      "ingredients": [
+        "3/4 oz lime juice",
+        "1 oz pineapple juice",
+        "1/2 oz falernum",
+        "1 1/2 oz green Chartreuse"
+      ],
+      "method": "Swizzle with crushed ice",
+      "glassware": "Collins",
+      "garnish": "Mint sprig and grated nutmeg"
+    },
+    {
+      "name": "Chet Baker",
+      "spirit": "Rum",
+      "ingredients": [
+        "1 bar spoon honey",
+        "2 bar spoons Punt e Mes",
+        "3-4 dashes Angostura bitters",
+        "2 oz aged rum"
+      ],
+      "method": "Stir",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Flamed orange twist"
+    },
+    {
+      "name": "Clover Club",
+      "spirit": "Gin",
+      "ingredients": [
+        "1 egg white",
+        "3/4 oz raspberry preserves",
+        "3/4 oz lemon juice",
+        "2 oz gin"
+      ],
+      "method": "Dry shake, then shake with ice",
+      "glassware": "Coupe",
+      "garnish": "Raspberry"
+    },
+    {
+      "name": "Collins",
+      "spirit": "Misc",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/4 oz simple syrup",
+        "2 oz spirit",
+        "2 oz soda"
+      ],
+      "method": "Shake (except soda), top with soda",
+      "glassware": "Collins",
+      "garnish": "Lemon wedge"
+    },
+    {
+      "name": "Constantino's Revenge",
+      "spirit": "Rum",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/4 oz honey",
+        "1 oz pineapple juice",
+        "2 oz Diplomatico rum"
+      ],
+      "method": "Shake",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Heavy Angostura float"
+    },
+    {
+      "name": "Corpse Reviver #2",
+      "spirit": "Gin",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/4 oz Cointreau",
+        "3/4 oz Cocchi Americano",
+        "3/4 oz gin"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe (with absinthe rinse)",
+      "garnish": "None specified"
+    },
+    {
+      "name": "Cosmopolitan",
+      "spirit": "Vodka",
+      "ingredients": [
+        "1 oz lime juice",
+        "3/8 oz curaçao",
+        "3/8 oz grenadine",
+        "2 oz vodka"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Lime wedge"
+    },
+    {
+      "name": "Crusta",
+      "spirit": "Misc",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/8 oz maraschino",
+        "3/8 oz curaçao",
+        "2 oz spirit"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe with sugar rim",
+      "garnish": "Long lemon twist"
+    },
+    {
+      "name": "Daiquiri",
+      "spirit": "Rum",
+      "ingredients": [
+        "1 oz lime juice",
+        "3/4 oz simple syrup",
+        "2 oz white rum",
+        "1 dash lime bitters",
+        "Pinch of salt"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Lime wheel"
+    },
+    {
+      "name": "Daisy",
+      "spirit": "Misc",
+      "ingredients": [
+        "1 oz lemon juice",
+        "1 oz curaçao",
+        "2 oz spirit"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Lemon wedge"
+    },
+    {
+      "name": "Downtime",
+      "spirit": "Scotch",
+      "ingredients": [
+        "3/4 oz peated Scotch",
+        "3/4 oz Benedictine",
+        "3/4 oz Cynar",
+        "2 dashes orange bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Grapefruit twist"
+    },
+    {
+      "name": "East Side",
+      "spirit": "Gin",
+      "ingredients": [
+        "2-3 cucumber slices",
+        "Pinch of mint",
+        "1 oz lime juice",
+        "3/4 oz simple syrup",
+        "2 oz gin"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Cucumber flag"
+    },
+    {
+      "name": "El Diablo",
+      "spirit": "Tequila",
+      "ingredients": [
+        "1/2 oz lime juice",
+        "3/4 oz ginger syrup",
+        "2 oz blanco tequila",
+        "2 oz soda"
+      ],
+      "method": "Shake (except soda), top with soda",
+      "glassware": "Collins",
+      "garnish": "Creme de cassis float, lime wheel, ginger candy"
+    },
+    {
+      "name": "El Nacional",
+      "spirit": "Mezcal",
+      "ingredients": [
+        "1 oz mezcal",
+        "1 oz Campari",
+        "1/2 oz dry vermouth",
+        "1/2 oz Ramazzotti",
+        "3 dashes mole bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Laphroaig spray"
+    },
+    {
+      "name": "Fancy Free",
+      "spirit": "Bourbon",
+      "ingredients": [
+        "2 oz bourbon",
+        "1/2 oz maraschino",
+        "2 dashes orange bitters",
+        "1 dash Angostura bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Flamed orange twist"
+    },
+    {
+      "name": "Fix",
+      "spirit": "Misc",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/4 oz simple syrup",
+        "2 oz spirit"
+      ],
+      "method": "Whip shake, strain over crushed ice",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Berries and ornate garnish"
+    },
+    {
+      "name": "Fizz",
+      "spirit": "Misc",
+      "ingredients": [
+        "1 egg white",
+        "3/4 oz lemon juice",
+        "3/4 oz simple syrup",
+        "2 oz spirit",
+        "1 oz soda water"
+      ],
+      "method": "Whip shake, then shake with ice",
+      "glassware": "Fizz glass",
+      "garnish": "None specified"
+    },
+    {
+      "name": "French 75",
+      "spirit": "Misc",
+      "ingredients": [
+        "1/2 oz lemon juice",
+        "1/2 oz simple syrup",
+        "1 oz cognac or gin",
+        "2-4 oz champagne"
+      ],
+      "method": "Shake (except champagne), top with champagne",
+      "glassware": "Flute or coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Frisco Sour",
+      "spirit": "Rye",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "1/2 oz simple syrup",
+        "1/2 oz Benedictine",
+        "2 oz rye"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Cherry"
+    },
+    {
+      "name": "Gold Rush",
+      "spirit": "Bourbon",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/4 oz honey syrup",
+        "2 oz bourbon"
+      ],
+      "method": "Shake",
+      "glassware": "Single Old Fashioned (SOF)",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Gordon's Cup",
+      "spirit": "Gin",
+      "ingredients": [
+        "6 pieces of lime",
+        "2-3 cucumber slices",
+        "3/4 oz simple syrup",
+        "2 oz gin",
+        "Pinch of salt"
+      ],
+      "method": "Muddle, shake, dump",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "None specified"
+    },
+    {
+      "name": "Green Point",
+      "spirit": "Rye",
+      "ingredients": [
+        "2 oz rye",
+        "1/2 oz Punt e Mes",
+        "1/2 oz yellow Chartreuse",
+        "1 dash Angostura bitters",
+        "1 dash orange bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Cherry"
+    },
+    {
+      "name": "Havana Special",
+      "spirit": "Rum",
+      "ingredients": [
+        "3/4 oz lime juice",
+        "1 oz pineapple juice",
+        "3/4 oz maraschino",
+        "1 1/2 oz white rum"
+      ],
+      "method": "Shake",
+      "glassware": "Rocks glass",
+      "garnish": "Cherry skewer"
+    },
+    {
+      "name": "Hemingway Daiquiri",
+      "spirit": "Rum",
+      "ingredients": [
+        "1/2 oz lime juice",
+        "1 oz grapefruit juice",
+        "3/4 oz maraschino",
+        "1 1/2 oz white rum"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Cherry"
+    },
+    {
+      "name": "Holland Razor Blade",
+      "spirit": "Gin",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/4 oz simple syrup",
+        "2 oz genever gin"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Cayenne dust"
+    },
+    {
+      "name": "Hotel National",
+      "spirit": "Misc",
+      "ingredients": [
+        "3/4 oz lime juice",
+        "1 oz pineapple juice",
+        "1/2 oz simple syrup",
+        "1/2 oz apricot brandy",
+        "1 1/2 oz aged rum"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Lime twist"
+    },
+    {
+      "name": "Hunter Cocktail",
+      "spirit": "Rye",
+      "ingredients": [
+        "2 oz rye",
+        "1/2 oz Cherry Heering"
+      ],
+      "method": "Stir",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Intro to Aperol",
+      "spirit": "Misc",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "1/4 oz simple syrup",
+        "1 oz gin",
+        "2 oz Aperol",
+        "1 dash Angostura bitters"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Flamed orange twist"
+    },
+    {
+      "name": "Jack Rose",
+      "spirit": "Misc",
+      "ingredients": [
+        "3/4 oz lime juice",
+        "3/4 oz grenadine",
+        "1 1/2 oz apple brandy"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Lime wheel"
+    },
+    {
+      "name": "Jane's Addiction",
+      "spirit": "Vodka",
+      "ingredients": [
+        "1 orange wedge",
+        "3/4 oz lemon juice",
+        "3/4 oz simple syrup",
+        "1/2 oz fino sherry",
+        "2 oz vodka",
+        "3 dashes Angostura bitters",
+        "2 oz soda"
+      ],
+      "method": "Muddle orange, shake (except soda), top with soda",
+      "glassware": "Collins",
+      "garnish": "Orange peel"
+    },
+    {
+      "name": "Japanese Cocktail",
+      "spirit": "Japanese",
+      "ingredients": [
+        "2 oz Japanese whiskey",
+        "Soda water"
+      ],
+      "method": "Build in glass",
+      "glassware": "Collins",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Jungle Bird",
+      "spirit": "Rum",
+      "ingredients": [
+        "1/2 oz lemon juice",
+        "1/2 oz simple syrup",
+        "1 1/2 oz pineapple juice",
+        "3/4 oz Campari",
+        "1 1/2 oz Cruzan Black Strap rum"
+      ],
+      "method": "Shake, pour over crushed ice",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Pineapple stalk and cherry"
+    },
+    {
+      "name": "Maguey Sour",
+      "spirit": "Mezcal",
+      "ingredients": [
+        "1 egg white",
+        "3/4 oz lime juice",
+        "1/2 oz orgeat",
+        "1/2 oz Benedictine",
+        "2 oz mezcal"
+      ],
+      "method": "Dry shake, then shake with ice",
+      "glassware": "Coupe",
+      "garnish": "Grated nutmeg, orange twist"
+    },
+    {
+      "name": "Mai Tai",
+      "spirit": "Rum",
+      "ingredients": [
+        "1 oz lime juice",
+        "1/2 oz orgeat",
+        "3/4 oz curaçao",
+        "2 oz Appleton rum"
+      ],
+      "method": "Shake, pour over crushed ice",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Mint sprig"
+    },
+    {
+      "name": "Maid",
+      "spirit": "Misc",
+      "ingredients": [
+        "1 lime",
+        "3/4 oz simple syrup",
+        "2 oz spirit",
+        "Pinch of mint",
+        "2-3 cucumber slices"
+      ],
+      "method": "Shake",
+      "glassware": "Single Old Fashioned (SOF)",
+      "garnish": "Cucumber and mint"
+    },
+    {
+      "name": "Manhattan",
+      "spirit": "Rye",
+      "ingredients": [
+        "2 oz rye",
+        "1 oz sweet vermouth",
+        "2-3 dashes Angostura bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Cherry"
+    },
+    {
+      "name": "Margarita",
+      "spirit": "Tequila",
+      "ingredients": [
+        "1 oz lime juice",
+        "1/2 oz agave nectar",
+        "1/2 oz curaçao",
+        "2 oz tequila blanco"
+      ],
+      "method": "Shake",
+      "glassware": "Single Old Fashioned (SOF)",
+      "garnish": "Lime wheel, salt rim (optional)"
+    },
+    {
+      "name": "Martinez",
+      "spirit": "Gin",
+      "ingredients": [
+        "2 oz gin",
+        "1/4 oz maraschino",
+        "3/4 oz sweet vermouth",
+        "2 dashes orange bitters",
+        "2 dashes Angostura bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Martini",
+      "spirit": "Gin",
+      "ingredients": [
+        "2 oz gin",
+        "3/4 oz dry vermouth",
+        "2 dashes orange bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Mexican Firing Squad",
+      "spirit": "Tequila",
+      "ingredients": [
+        "1 oz lime juice",
+        "3/4 oz simple syrup",
+        "2 oz tequila blanco",
+        "2 oz soda"
+      ],
+      "method": "Shake (except soda), top with soda",
+      "glassware": "Collins",
+      "garnish": "Angostura float, lime wheel"
+    },
+    {
+      "name": "Mint Julep",
+      "spirit": "Bourbon",
+      "ingredients": [
+        "1 sugar cube",
+        "1/4 oz simple syrup",
+        "Big pinch of mint",
+        "2 1/2 oz bourbon"
+      ],
+      "method": "Muddle mint and sugar, add bourbon and crushed ice, swizzle",
+      "glassware": "Julep mug",
+      "garnish": "Crushed ice mound, mint sprig"
+    },
+    {
+      "name": "Mojito",
+      "spirit": "Rum",
+      "ingredients": [
+        "Mint leaves",
+        "1 oz lime juice",
+        "3/4 oz simple syrup",
+        "2 oz white rum",
+        "2 oz soda"
+      ],
+      "method": "Muddle mint, shake (except soda), top with soda",
+      "glassware": "Collins",
+      "garnish": "Mint sprig"
+    },
+    {
+      "name": "Monarch",
+      "spirit": "Tequila",
+      "ingredients": [
+        "2 oz añejo tequila",
+        "1 heavy bar spoon maple syrup",
+        "1 bar spoon Carpano Antica",
+        "2-3 dashes of dandelion bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Orange twist"
+    },
+    {
+      "name": "Monte Carlo",
+      "spirit": "Rye",
+      "ingredients": [
+        "2 oz rye",
+        "1/2 oz Benedictine",
+        "2 dashes Angostura bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Lemon peel"
+    },
+    {
+      "name": "Morning Glory Fizz",
+      "spirit": "Scotch",
+      "ingredients": [
+        "1 egg white",
+        "3/4 oz lemon juice",
+        "3/4 oz simple syrup",
+        "2 oz Scotch"
+      ],
+      "method": "Dry shake, then shake with ice",
+      "glassware": "Fizz glass with absinthe rinse",
+      "garnish": "None specified"
+    },
+    {
+      "name": "Moscow Mule",
+      "spirit": "Vodka",
+      "ingredients": [
+        "1/2 oz lime juice",
+        "3/4 oz ginger syrup",
+        "2 oz vodka",
+        "2 oz soda"
+      ],
+      "method": "Shake (except soda), top with soda",
+      "glassware": "Collins",
+      "garnish": "Lime wheel, ginger candy"
+    },
+    {
+      "name": "Negroni",
+      "spirit": "Gin",
+      "ingredients": [
+        "1 1/2 oz gin",
+        "1 oz Campari",
+        "3/4 oz sweet vermouth"
+      ],
+      "method": "Stir",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Flamed orange twist"
+    },
+    {
+      "name": "Old Fashioned",
+      "spirit": "Bourbon",
+      "ingredients": [
+        "1 sugar cube",
+        "3-4 dashes Angostura bitters",
+        "2 oz bourbon or rye"
+      ],
+      "method": "Muddle sugar and bitters, add whiskey and ice, stir",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Orange twist and lemon twist"
+    },
+    {
+      "name": "Old Pal",
+      "spirit": "Rye",
+      "ingredients": [
+        "1 1/2 oz rye",
+        "3/4 oz dry vermouth",
+        "3/4 oz Campari"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Paper Plane",
+      "spirit": "Bourbon",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/4 oz bourbon",
+        "3/4 oz Amaro Nonino",
+        "3/4 oz Aperol"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "None specified"
+    },
+    {
+      "name": "Pegu Club",
+      "spirit": "Gin",
+      "ingredients": [
+        "3/4 oz lime juice",
+        "3/4 oz curaçao",
+        "1 dash orange bitters",
+        "1 dash Angostura bitters",
+        "2 oz gin"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "None specified"
+    },
+    {
+      "name": "Penicillin",
+      "spirit": "Scotch",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/8 oz honey syrup",
+        "3/8 oz ginger syrup",
+        "1 oz blended Scotch",
+        "1 oz peated Scotch"
+      ],
+      "method": "Shake",
+      "glassware": "Double Old Fashioned (DOF) or Mug",
+      "garnish": "Candied ginger"
+    },
+    {
+      "name": "Pisco Sour",
+      "spirit": "Rum",
+      "ingredients": [
+        "1 egg white",
+        "3/8 oz lime juice",
+        "3/8 oz lemon juice",
+        "3/4 oz simple syrup",
+        "2 oz pisco"
+      ],
+      "method": "Dry shake, then shake with ice",
+      "glassware": "Coupe",
+      "garnish": "Angostura bitters or cinnamon tincture"
+    },
+    {
+      "name": "Poet's Dream",
+      "spirit": "Gin",
+      "ingredients": [
+        "2 oz gin",
+        "1/4 oz Benedictine",
+        "3/4 oz dry vermouth",
+        "2 dashes orange bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Ramos Gin Fizz",
+      "spirit": "Gin",
+      "ingredients": [
+        "1 egg white",
+        "1 oz cream",
+        "3/8 oz lime juice",
+        "3/8 oz lemon juice",
+        "3/4 oz simple syrup",
+        "3 drops orange flower water",
+        "2 oz gin",
+        "1 oz soda water"
+      ],
+      "method": "Dry shake, then shake with ice, strain, add soda",
+      "glassware": "Fizz glass",
+      "garnish": "Orange twist"
+    },
+    {
+      "name": "Red Hook",
+      "spirit": "Rye",
+      "ingredients": [
+        "2 oz rye",
+        "1/2 oz Punt e Mes",
+        "1/2 oz maraschino"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Cherry"
+    },
+    {
+      "name": "Rickey",
+      "spirit": "Misc",
+      "ingredients": [
+        "1 lime",
+        "3/4 oz simple syrup",
+        "2 oz spirit",
+        "2 oz soda"
+      ],
+      "method": "Shake (except soda), top with soda",
+      "glassware": "Collins",
+      "garnish": "Lime wedge"
+    },
+    {
+      "name": "Rob Roy",
+      "spirit": "Scotch",
+      "ingredients": [
+        "2 oz Scotch",
+        "1 oz sweet vermouth",
+        "2-3 dashes Angostura bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Cherry"
+    },
+    {
+      "name": "Rome with a View",
+      "spirit": "Misc",
+      "ingredients": [
+        "1 oz lime juice",
+        "3/4 oz simple syrup",
+        "1 oz Campari",
+        "1 oz dry vermouth",
+        "2 oz soda water"
+      ],
+      "method": "Shake (except soda), top with soda",
+      "glassware": "Collins",
+      "garnish": "Lime or lemon wheel"
+    },
+    {
+      "name": "Sazerac",
+      "spirit": "Rye",
+      "ingredients": [
+        "1 sugar cube",
+        "3-4 dashes Peychaud's bitters",
+        "2 oz rye"
+      ],
+      "method": "Stir",
+      "glassware": "Single Old Fashioned (SOF) with absinthe rinse",
+      "garnish": "Lemon twist (discarded)"
+    },
+    {
+      "name": "Shin-Shin",
+      "spirit": "Japanese",
+      "ingredients": [
+        "1 1/2 oz Japanese whiskey",
+        "1 oz Campari",
+        "3/4 oz sweet vermouth"
+      ],
+      "method": "Stir",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Sidecar",
+      "spirit": "Misc",
+      "ingredients": [
+        "1/2 oz lemon juice",
+        "1 oz Cointreau",
+        "1 1/2 oz cognac"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe with sugar rim",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Siesta",
+      "spirit": "Tequila",
+      "ingredients": [
+        "1/2 oz lime juice",
+        "1/2 oz simple syrup",
+        "1/2 oz Campari",
+        "3/4 oz grapefruit juice",
+        "2 oz tequila blanco"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Grapefruit twist"
+    },
+    {
+      "name": "Smash",
+      "spirit": "Misc",
+      "ingredients": [
+        "4 lemon pieces",
+        "Pinch of mint",
+        "3/4 oz simple syrup",
+        "2 oz spirit"
+      ],
+      "method": "Muddle, whip shake",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Ornate garnish"
+    },
+    {
+      "name": "Smoke of Scotland",
+      "spirit": "Scotch",
+      "ingredients": [
+        "2 oz peated Scotch",
+        "1/2 oz elderflower liqueur",
+        "1/2 oz dry vermouth"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Grapefruit twist"
+    },
+    {
+      "name": "Sour",
+      "spirit": "Misc",
+      "ingredients": [
+        "1 egg white",
+        "3/4 oz lemon juice",
+        "3/4 oz simple syrup",
+        "2 oz spirit"
+      ],
+      "method": "Whip shake",
+      "glassware": "Sour glass",
+      "garnish": "Angostura bitters"
+    },
+    {
+      "name": "Talent Scout",
+      "spirit": "Bourbon",
+      "ingredients": [
+        "2 oz bourbon",
+        "1/2 oz curaçao",
+        "2 dashes Angostura bitters",
+        "2 dashes orange bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Lemon and orange twist"
+    },
+    {
+      "name": "Tattletale",
+      "spirit": "Scotch",
+      "ingredients": [
+        "1 1/2 oz blended Scotch",
+        "1/2 oz peated Scotch",
+        "1 bar spoon honey",
+        "2-3 dashes Angostura bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "The Diplomat",
+      "spirit": "Misc",
+      "ingredients": [
+        "1 1/2 oz dry vermouth",
+        "1 oz sweet vermouth",
+        "3/4 oz maraschino",
+        "2 dashes orange bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "The Dude Abides",
+      "spirit": "Vodka",
+      "ingredients": [
+        "1 oz vodka",
+        "1 1/2 oz coffee liqueur",
+        "1/2 dash pecan bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Heavy cream float, grated cinnamon"
+    },
+    {
+      "name": "The Last Word",
+      "spirit": "Gin",
+      "ingredients": [
+        "3/4 oz lime juice",
+        "3/4 oz green Chartreuse",
+        "3/4 oz maraschino",
+        "3/4 oz gin"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "None specified"
+    },
+    {
+      "name": "Tipperary",
+      "spirit": "Irish",
+      "ingredients": [
+        "2 oz Irish whiskey",
+        "1/4 oz green Chartreuse",
+        "3/4 oz sweet vermouth"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Trinidad Sour",
+      "spirit": "Misc",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "1 oz orgeat",
+        "1 oz Angostura bitters",
+        "1/2 oz rye"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Vesper",
+      "spirit": "Vodka",
+      "ingredients": [
+        "3/4 oz Cocchi Americano",
+        "1 1/2 oz vodka",
+        "1 oz gin"
+      ],
+      "method": "Stir",
+      "glassware": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "Vieux Carre",
+      "spirit": "Rye",
+      "ingredients": [
+        "1 oz rye",
+        "1 oz cognac",
+        "3/4 oz sweet vermouth",
+        "1 bar spoon Benedictine",
+        "2 dashes Angostura bitters",
+        "2 dashes Peychaud's bitters"
+      ],
+      "method": "Stir",
+      "glassware": "Double Old Fashioned (DOF)",
+      "garnish": "Lemon and orange peel"
+    },
+    {
+      "name": "Ward 8",
+      "spirit": "Bourbon",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/4 oz grenadine",
+        "2 oz bourbon"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe or Single Old Fashioned (SOF)",
+      "garnish": "Lemon twist"
+    },
+    {
+      "name": "19th Century",
+      "spirit": "Bourbon",
+      "ingredients": [
+        "3/4 oz lemon juice",
+        "3/4 oz creme de cacao",
+        "3/4 oz sweet vermouth",
+        "1 1/2 oz bourbon"
+      ],
+      "method": "Shake",
+      "glassware": "Coupe",
+      "garnish": "None specified"
+    }
+  ]
+};

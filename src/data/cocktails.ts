@@ -1,4 +1,13 @@
-const cocktails = [
+interface Cocktail {
+  name: string;
+  spirit: string;
+  ingredients: string[];
+  method: string;
+  glassware: string;
+  garnish: string;
+}
+
+const cocktails: Cocktail[] = [
   {
     name: "Agave Bravo",
     spirit: "Mezcal",
@@ -1101,7 +1110,7 @@ const cocktails = [
   },
   {
     name: "The Diplomat",
-    spririt: "Misc",
+    spirit: "Misc",
     ingredients: [
       "1 1/2 oz dry vermouth",
       "1 oz sweet vermouth",
@@ -1114,7 +1123,7 @@ const cocktails = [
   },
   {
     name: "The Dude Abides",
-    spririt: "Vodka",
+    spirit: "Vodka",
     ingredients: [
       "1 oz vodka",
       "1 1/2 oz coffee liqueur",

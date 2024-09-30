@@ -6,7 +6,10 @@ export default function Layout() {
       <Stack.Screen name="index" options={{ title: "Spirits" }} />
       <Stack.Screen
         name="spiritCategory"
-        options={{ title: "spiritCategory" }}
+        options={{
+          title: "spiritCategory",
+          headerBackTitle: "Back",
+        }}
       />
     </Stack>
   );
