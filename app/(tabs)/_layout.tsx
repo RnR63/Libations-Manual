@@ -43,6 +43,7 @@ export default function Layout(): JSX.Element {
         name="(home)"
         options={{
           title: "Home",
+          headerShown: false,
           tabBarShowLabel: false,
           tabBarIcon: ({ color, size }) => (
             <Entypo name="home" size={size} color={color} />

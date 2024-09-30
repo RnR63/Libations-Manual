@@ -10,7 +10,7 @@ import { Tabs, Stack } from "expo-router";
 import { COLORS } from "../styles/theme";
 
 export default function Layout(): JSX.Element {
-  const [fontsLoaded, _]: [boolean, Error | null] = useFonts({
+  const [fontsLoaded]: [boolean, Error | null] = useFonts({
     "Peralta-Regular": PeraltaRegular,
     "Lato-Regular": LatoRegular,
     "Lato-Bold": LatoBold,
@@ -46,7 +46,10 @@ export default function Layout(): JSX.Element {
     <Stack>
       <Stack.Screen
         name="(tabs)"
-        options={{ headerShown: false, animation: "fade" }}
+        options={{
+          headerShown: false,
+          animation: "fade",
+        }}
       />
     </Stack>
   );
