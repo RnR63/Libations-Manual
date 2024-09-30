@@ -2,7 +2,9 @@ import { FlatList, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, FONTS, SIZES } from "../../../styles/theme";
+import { useRouter } from "expo-router";
 // import { Link } from "expo-router";
+
 const SPIRITS: string[] = [
   "Vodka",
   "Gin",
@@ -21,7 +23,17 @@ export default function App() {
   // i would need to render a button for each spirit type
   // have them each be a toublable opacity that links to a
   // component that would populate with each corresponding spirit cocktails
-  // or would i need a screen for each spirit type.  that doesnt sound right!!!
+
+  const router = useRouter();
+
+  const handlePress = (spirit: string): void => {
+    console.log(`handlePress submit for: ${spirit}`);
+    router.navigate({
+      pathname: "/spiritCategory",
+      params: { spirit },
+    });
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       {/* <View>
@@ -34,7 +46,12 @@ export default function App() {
         data={SPIRITS}
         keyExtractor={(item) => item}
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.spiritBox}>
+          <TouchableOpacity
+            style={styles.spiritBox}
+            onPress={() => {
+              handlePress(item);
+            }}
+          >
             <Text style={styles.text}>{item}</Text>
           </TouchableOpacity>
         )}
