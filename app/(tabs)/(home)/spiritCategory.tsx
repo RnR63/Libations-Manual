@@ -9,14 +9,6 @@ import {
 import { FONTS, COLORS } from "../../../src/styles/theme";
 import { useLocalSearchParams } from "expo-router";
 
-// interface Cocktail {
-//   name: string;
-//   spirit: string;
-//   ingredients: string[];
-//   method: string;
-//   glassware: string;
-//   garnish: string;
-// }
 
 const SpiritCategory: React.FC = () => {
   const { spirit } = useLocalSearchParams<{ spirit: string }>();
@@ -25,7 +17,7 @@ const SpiritCategory: React.FC = () => {
 
   return (
     <View>
-      <FlatList
+      {/* <FlatList
         data={tempArray}
         keyExtractor={(item) => item.name} //each element in array
         renderItem={({ item }) => (
@@ -42,7 +34,7 @@ const SpiritCategory: React.FC = () => {
         }
         stickyHeaderIndices={[0]}
         // ListHeaderComponentStyle={styles.searchContainer}
-      />
+      /> */}
     </View>
   );
 };

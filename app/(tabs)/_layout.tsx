@@ -6,15 +6,24 @@ import LatoRegular from "../../assets/fonts/Lato-Regular.ttf";
 import LatoBold from "../../assets/fonts/Lato-Bold.ttf";
 import Feather from "@expo/vector-icons/Feather";
 import Entypo from "@expo/vector-icons/Entypo";
-import { Tabs, useLocalSearchParams } from "expo-router";
+import { Tabs, UnknownOutputParams, useLocalSearchParams } from "expo-router";
+import { Cocktail } from "../../src/types";
 import { COLORS } from "../../src/styles/theme";
-
-// Prevent the splash screen from auto-hiding
-SplashScreen.preventAutoHideAsync();
+// import cocktails from "../../src/data/cocktails";
 
 export default function Layout(): JSX.Element {
-  const firstCocktail = useLocalSearchParams()[0];
-  console.log("firstCocktail in tabs layout", firstCocktail);
+  const params = useLocalSearchParams<{ serializedCocktails: string }>();
+  let cocktails: Cocktail[] = [];
+
+  if (params.serializedCocktails) {
+    try {
+      cocktails = JSON.parse(params.serializedCocktails);
+    } catch (error) {
+      console.error("Error parsing cocktails:", error);
+    }
+  }
+
+  console.log("Cocktails in tabs layout", cocktails[29].name);
 
   return (
     <Tabs screenOptions={{ tabBarActiveTintColor: COLORS.primary }}>
@@ -28,6 +37,7 @@ export default function Layout(): JSX.Element {
             <Entypo name="home" size={size} color={color} />
           ),
         }}
+        initialParams={{ serializedCocktails: JSON.stringify(cocktails) }}
       />
       <Tabs.Screen
         name="search"

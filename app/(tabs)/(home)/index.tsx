@@ -3,6 +3,8 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, FONTS, SIZES } from "../../../src/styles/theme";
 import { useLocalSearchParams, useRouter } from "expo-router";
+import { Cocktail } from "../../../src/types";
+import { useEffect, useState } from "react";
 // import { Link } from "expo-router";
 
 const SPIRITS: string[] = [
@@ -19,15 +21,18 @@ const SPIRITS: string[] = [
   "Misc",
 ];
 export default function App() {
-  //naviagtion buttons: TouchableOpacity
-  // i would need to render a button for each spirit type
-  // have them each be a toublable opacity that links to a
-  // component that would populate with each corresponding spirit cocktails
-
   const router = useRouter();
+  const params = useLocalSearchParams<{ serializedCocktails: string }>();
+  let cocktails: Cocktail[] = [];
 
-  const firstCocktail = useLocalSearchParams();
-  console.log("firstCocktail in index", firstCocktail[0]);
+  if (params.serializedCocktails) {
+    try {
+      cocktails = JSON.parse(params.serializedCocktails);
+    } catch (error) {
+      console.error("Error parsing cocktails:", error);
+    }
+  }
+  console.log("cocktails in index.tsx:", cocktails[1]);
 
   const handlePress = (spirit: string): void => {
     console.log(`handlePress submit for: ${spirit}`);
@@ -36,6 +41,8 @@ export default function App() {
       params: { spirit },
     });
   };
+
+  // filter out cocktails by spirit
 
   return (
     <SafeAreaView style={styles.container}>
