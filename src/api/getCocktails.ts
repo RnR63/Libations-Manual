@@ -1,14 +1,5 @@
-// import "../../assets/cocktails.json";
 import cocktails from "../../src/data/cocktails";
-
-interface Cocktail {
-  name: string;
-  spirit: string;
-  ingredients: string[];
-  method: string;
-  glassware: string;
-  garnish: string;
-}
+import { Cocktail } from "../types";
 
 export default function getCocktails(): Promise<Cocktail[]> {
   return new Promise<Cocktail[]>((resolve) => {

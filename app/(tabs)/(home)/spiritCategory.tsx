@@ -9,14 +9,14 @@ import {
 import { FONTS, COLORS } from "../../../src/styles/theme";
 import { useLocalSearchParams } from "expo-router";
 
-interface Cocktail {
-  name: string;
-  spirit: string;
-  ingredients: string[];
-  method: string;
-  glassware: string;
-  garnish: string;
-}
+// interface Cocktail {
+//   name: string;
+//   spirit: string;
+//   ingredients: string[];
+//   method: string;
+//   glassware: string;
+//   garnish: string;
+// }
 
 const SpiritCategory: React.FC = () => {
   const { spirit } = useLocalSearchParams<{ spirit: string }>();

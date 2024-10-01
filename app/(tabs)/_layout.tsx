@@ -6,36 +6,15 @@ import LatoRegular from "../../assets/fonts/Lato-Regular.ttf";
 import LatoBold from "../../assets/fonts/Lato-Bold.ttf";
 import Feather from "@expo/vector-icons/Feather";
 import Entypo from "@expo/vector-icons/Entypo";
-import { Tabs } from "expo-router";
+import { Tabs, useLocalSearchParams } from "expo-router";
 import { COLORS } from "../../src/styles/theme";
 
 // Prevent the splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
 
 export default function Layout(): JSX.Element {
-  // const [fontsLoaded, error]: [boolean, Error | null] = useFonts({
-  //   "Peralta-Regular": PeraltaRegular,
-  //   "Lato-Regular": LatoRegular,
-  //   "Lato-Bold": LatoBold,
-  // });
-  // if (error) {
-  //   console.error(error);
-  // }
-  // if (!fontsLoaded) {
-  //   console.error("Fonts not loaded");
-  // }
-
-  // const loadSplashScreen: () => Promise<void> =
-  //   useCallback(async (): Promise<void> => {
-  //     if (fontsLoaded) {
-  //       await new Promise<void>((resolve) => setTimeout(resolve, 3000));
-  //       await SplashScreen.hideAsync();
-  //     }
-  //   }, [fontsLoaded]);
-
-  // useEffect((): void => {
-  //   loadSplashScreen();
-  // }, [loadSplashScreen]);
+  const firstCocktail = useLocalSearchParams()[0];
+  console.log("firstCocktail in tabs layout", firstCocktail);
 
   return (
     <Tabs screenOptions={{ tabBarActiveTintColor: COLORS.primary }}>

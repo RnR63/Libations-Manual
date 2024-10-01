@@ -2,7 +2,7 @@ import { FlatList, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, FONTS, SIZES } from "../../../src/styles/theme";
-import { useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 // import { Link } from "expo-router";
 
 const SPIRITS: string[] = [
@@ -25,6 +25,9 @@ export default function App() {
   // component that would populate with each corresponding spirit cocktails
 
   const router = useRouter();
+
+  const firstCocktail = useLocalSearchParams();
+  console.log("firstCocktail in index", firstCocktail[0]);
 
   const handlePress = (spirit: string): void => {
     console.log(`handlePress submit for: ${spirit}`);

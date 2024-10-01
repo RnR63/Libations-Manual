@@ -1,11 +1,4 @@
-interface Cocktail {
-  name: string;
-  spirit: string;
-  ingredients: string[];
-  method: string;
-  glassware: string;
-  garnish: string;
-}
+import { Cocktail } from "../types";
 
 const cocktails: Cocktail[] = [
   {
