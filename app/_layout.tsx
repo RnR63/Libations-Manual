@@ -25,7 +25,7 @@ export default function Layout(): JSX.Element {
         // Fetch cocktails
         const fetchedCocktails = await getCocktails();
         setCocktails(fetchedCocktails);
-        await new Promise((resolve) => setTimeout(resolve, 3000));
+        await new Promise((resolve) => setTimeout(resolve, 3000)); //lengthen the splash screen time
       } catch (e) {
         console.warn(e);
       } finally {
@@ -54,6 +54,7 @@ export default function Layout(): JSX.Element {
               headerShown: false,
               animation: "fade",
             }}
+            // initialParams={{ cocktails }}
             initialParams={{ serializedCocktails: JSON.stringify(cocktails) }}
           />
         </Stack>

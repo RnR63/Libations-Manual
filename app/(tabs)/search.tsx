@@ -1,6 +1,10 @@
+import { useLocalSearchParams } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 
 export default function Search() {
+  const params = useLocalSearchParams<{ serializedCocktails: string }>();
+  console.log("params in search.tsx:", params);
+  
   return (
     <View style={styles.container}>
       <Text style={{ textAlign: "center", marginBottom: 18, fontSize: 24 }}>

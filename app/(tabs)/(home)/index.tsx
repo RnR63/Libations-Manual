@@ -2,7 +2,7 @@ import { FlatList, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, FONTS, SIZES } from "../../../src/styles/theme";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter, router } from "expo-router";
 import { Cocktail } from "../../../src/types";
 import { useEffect, useState } from "react";
 // import { Link } from "expo-router";
@@ -20,19 +20,55 @@ const SPIRITS: string[] = [
   "Japanese",
   "Misc",
 ];
-export default function App() {
+export default function App(): JSX.Element {
+  const { serializedCocktails } = useLocalSearchParams<{
+    serializedCocktails: string;
+  }>();
   const router = useRouter();
-  const params = useLocalSearchParams<{ serializedCocktails: string }>();
-  let cocktails: Cocktail[] = [];
+  // const newRouter = router();
+  // consolnpme.log("serialized Cocktails in index.tsx:", serializedCocktails);
+  // const params = useLocalSearchParams<{ serializedCocktails: string }>();
+  // console.log("params in index.tsx:", params, "route:", route);
+  // let cocktails: Cocktail[] = [];
+  const [cocktails, setCocktails] = useState<Cocktail[]>([]);
 
-  if (params.serializedCocktails) {
+  // if (serializedCocktails) {
+  //   try {
+  //     cocktails = JSON.parse(serializedCocktails);
+  //   } catch (error) {
+  //     console.error("Error parsing cocktails:", error);
+  //   }
+  // }
+
+  // const { serializedCocktails } = useLocalSearchParams<{
+  //   serializedCocktails: string;
+  // }>();
+
+  async function parsedCocktails() {
     try {
-      cocktails = JSON.parse(params.serializedCocktails);
+      if (cocktails.length === 0) {
+        const fetchedCocktails = await JSON.parse(serializedCocktails);
+        setCocktails(fetchedCocktails);
+      }
     } catch (error) {
       console.error("Error parsing cocktails:", error);
     }
   }
-  console.log("cocktails in index.tsx:", cocktails[1]);
+
+  useEffect(() => {
+    if (serializedCocktails) {
+      parsedCocktails();
+      console.log("Cocktails in index.tsx:", cocktails[0]);
+    }
+  }, [cocktails]);
+
+  // useEffect(() => {
+  //   if (cocktails.length > 3) {
+  //     console.log("cocktails[3] in index.tsx:", cocktails[3]);
+  //   } else {
+  //     console.log("Not enough cocktails to access index 3");
+  //   }
+  // }, [cocktails]);
 
   const handlePress = (spirit: string): void => {
     console.log(`handlePress submit for: ${spirit}`);
