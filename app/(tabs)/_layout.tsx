@@ -8,18 +8,18 @@ import { COLORS } from "../../src/styles/theme";
 export default function Layout(): JSX.Element {
   const { serializedCocktails } = useLocalSearchParams<{ serializedCocktails: string }>();
   // const params = useLocalSearchParams<{ serializedCocktails: string }>();
-  let cocktails: Cocktail[] = [];
+  // let cocktails: Cocktail[] = [];
 
-  if (serializedCocktails) {
-    try {
-      cocktails = JSON.parse(serializedCocktails);
-      // console.log("Cocktails after parsing in tabs layout", cocktails[0]);
-    } catch (error) {
-      console.error("Error parsing cocktails:", error);
-    }
-  }
+  // if (serializedCocktails) {
+  //   try {
+  //     cocktails = JSON.parse(serializedCocktails);
+  //     // console.log("Cocktails after parsing in tabs layout", cocktails[0]);
+  //   } catch (error) {
+  //     console.error("Error parsing cocktails:", error);
+  //   }
+  // }
 
-  console.log("Cocktails in tabs layout", cocktails[9].name);
+  // console.log("Cocktails in tabs layout", cocktails[9].name);
 
   return (
     <Tabs screenOptions={{ tabBarActiveTintColor: COLORS.primary }}>
@@ -34,8 +34,8 @@ export default function Layout(): JSX.Element {
           ),
         }}
         // initialParams={{ cocktails }}
-        // initialParams={{ serializedCocktails }}
-        initialParams={{ serializedCocktails: JSON.stringify(cocktails) }}
+        initialParams={{ serializedCocktails }}
+        // initialParams={{ serializedCocktails: JSON.stringify(cocktails) }}
       />
       <Tabs.Screen
         name="search"
@@ -46,6 +46,7 @@ export default function Layout(): JSX.Element {
             <Feather name="search" size={size} color={color} />
           ),
         }}
+        initialParams={{ serializedCocktails }}
       />
       <Tabs.Screen
         name="recipe"

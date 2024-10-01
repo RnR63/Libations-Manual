@@ -21,54 +21,14 @@ const SPIRITS: string[] = [
   "Misc",
 ];
 export default function App(): JSX.Element {
+  const router = useRouter();
   const { serializedCocktails } = useLocalSearchParams<{
     serializedCocktails: string;
   }>();
-  const router = useRouter();
-  // const newRouter = router();
-  // consolnpme.log("serialized Cocktails in index.tsx:", serializedCocktails);
-  // const params = useLocalSearchParams<{ serializedCocktails: string }>();
-  // console.log("params in index.tsx:", params, "route:", route);
-  // let cocktails: Cocktail[] = [];
-  const [cocktails, setCocktails] = useState<Cocktail[]>([]);
+  // console.log("serializedCocktails in index.tsx:", !!serializedCocktails);
 
-  // if (serializedCocktails) {
-  //   try {
-  //     cocktails = JSON.parse(serializedCocktails);
-  //   } catch (error) {
-  //     console.error("Error parsing cocktails:", error);
-  //   }
-  // }
-
-  // const { serializedCocktails } = useLocalSearchParams<{
-  //   serializedCocktails: string;
-  // }>();
-
-  async function parsedCocktails() {
-    try {
-      if (cocktails.length === 0) {
-        const fetchedCocktails = await JSON.parse(serializedCocktails);
-        setCocktails(fetchedCocktails);
-      }
-    } catch (error) {
-      console.error("Error parsing cocktails:", error);
-    }
-  }
-
-  useEffect(() => {
-    if (serializedCocktails) {
-      parsedCocktails();
-      console.log("Cocktails in index.tsx:", cocktails[0]);
-    }
-  }, [cocktails]);
-
-  // useEffect(() => {
-  //   if (cocktails.length > 3) {
-  //     console.log("cocktails[3] in index.tsx:", cocktails[3]);
-  //   } else {
-  //     console.log("Not enough cocktails to access index 3");
-  //   }
-  // }, [cocktails]);
+  const cocktails: Cocktail[] = JSON.parse(serializedCocktails);
+  console.log("Cocktails in index.tsx:", cocktails[1].name);
 
   const handlePress = (spirit: string): void => {
     console.log(`handlePress submit for: ${spirit}`);
