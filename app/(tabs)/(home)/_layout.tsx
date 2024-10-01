@@ -4,10 +4,12 @@ import { FONTS } from "../../../styles/theme";
 export default function Layout() {
   return (
     <Stack>
+      <Stack.Screen name="index" options={{ title: "Spirits" }} />
       <Stack.Screen
-        name="index"
+        name="spiritCategory"
         options={{
-          title: "Spirits",
+          title: "spiritCategory",
+          headerBackTitle: "Back",
         }}
       />
     </Stack>
