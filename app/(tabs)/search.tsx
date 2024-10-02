@@ -1,5 +1,4 @@
 import { useLocalSearchParams } from "expo-router";
-import { useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Cocktail } from "../../src/types";
 

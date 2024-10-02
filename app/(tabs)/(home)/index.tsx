@@ -1,11 +1,10 @@
-import { FlatList, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, FONTS, SIZES } from "../../../src/styles/theme";
-import { useLocalSearchParams, useRouter, router } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { Cocktail } from "../../../src/types";
-import { useEffect, useState } from "react";
-// import { Link } from "expo-router";
+import CocktailsBySpirit from "../../../src/components/cocktailsBySpirit";
 
 const SPIRITS: string[] = [
   "Vodka",
@@ -30,36 +29,43 @@ export default function App(): JSX.Element {
   const cocktails: Cocktail[] = JSON.parse(serializedCocktails);
   console.log("Cocktails in index.tsx:", cocktails[1].name);
 
-  const handlePress = (spirit: string): void => {
-    console.log(`handlePress submit for: ${spirit}`);
-    router.navigate({
-      pathname: "/spiritCategory",
-      params: { spirit },
-    });
+  const filterCocktails = (spirit: string): string => {
+    const filterArr = cocktails.filter(
+      (cocktail) => cocktail.spirit === spirit,
+    );
+    return JSON.stringify(filterArr);
   };
 
-  // filter out cocktails by spirit
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <View>
+      <View>
         <Text style={styles.heading} accessibilityRole="header">
-          Cocktails by Spirit
+          Choose a Spirit
         </Text>
-      </View> */}
+      </View>
       <StatusBar style="auto" />
       <FlatList
         data={SPIRITS}
         keyExtractor={(item) => item}
         renderItem={({ item }) => (
-          <TouchableOpacity
-            style={styles.spiritBox}
-            onPress={() => {
-              handlePress(item);
+          <CocktailsBySpirit
+            item={item}
+            handlePress={(): void => {
+              router.navigate({
+                pathname: "/spiritCategory",
+                params: { spirit: item, data: filterCocktails(item) },
+              });
             }}
-          >
-            <Text style={styles.text}>{item}</Text>
-          </TouchableOpacity>
+          />
+          // <TouchableOpacity
+          //   style={styles.spiritBox}
+          //   onPress={() => {
+          //     handlePress(item);
+          //   }}
+          // >
+          //   <Text style={styles.text}>{item}</Text>
+          // </TouchableOpacity>
         )}
       />
     </SafeAreaView>

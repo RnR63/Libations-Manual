@@ -54,7 +54,6 @@ export default function Layout(): JSX.Element {
               headerShown: false,
               animation: "fade",
             }}
-            // initialParams={{ cocktails }}
             initialParams={{ serializedCocktails: JSON.stringify(cocktails) }}
           />
         </Stack>
