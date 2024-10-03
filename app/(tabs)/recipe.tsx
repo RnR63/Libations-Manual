@@ -1,15 +1,20 @@
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { useState, useMemo, useEffect } from "react";
+import {
+  View,
+  Text,
+  FlatList,
+  StyleSheet,
+  TouchableOpacity,
+  Alert,
+  Share,
+} from "react-native";
 import { COLORS, FONTS, SIZES } from "../../src/styles/theme";
 import { useLocalSearchParams } from "expo-router";
-import { useState, useMemo, useEffect } from "react";
 import { Cocktail } from "../../src/types";
 
 const Recipe = () => {
   const [recipe, setRecipe] = useState<Cocktail | null>(null);
-
-  const { data } = useLocalSearchParams<{
-    data: string;
-  }>();
+  const { data } = useLocalSearchParams<{ data: string }>();
 
   const parsedRecipe: Cocktail | null = useMemo(() => {
     return data ? JSON.parse(data) : null;
@@ -18,6 +23,31 @@ const Recipe = () => {
   useEffect(() => {
     if (parsedRecipe) setRecipe(parsedRecipe);
   }, [parsedRecipe]);
+
+  const shareRecipe = async () => {
+    if (!recipe) return;
+
+    try {
+      const message = `Check out this recipe from the Libations Manual: ${recipe.name}!\n\nIngredients:\n${recipe.ingredients.join("\n")}\n\nMethod: ${recipe.method}\n\nGlassware: ${recipe.glassware}\n\nGarnish: ${recipe.garnish}`;
+      const result = await Share.share({
+        message: message,
+        title: `${recipe.name} Recipe`,
+      });
+
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          console.log(`Shared with activity type:`, result.activityType);
+        } else {
+          console.log("Shared successfully");
+        }
+      } else if (result.action === Share.dismissedAction) {
+        console.log("Share dismissed");
+      }
+    } catch (e) {
+      console.error("Error sharing view:", e);
+      Alert.alert("Error", "Failed to share the recipe. Please try again.");
+    }
+  };
 
   if (!data) {
     return (
@@ -66,6 +96,9 @@ const Recipe = () => {
         <Text style={styles.textBold}>Garnish: </Text>
         {recipe.garnish}
       </Text>
+      <TouchableOpacity onPress={shareRecipe}>
+        <Text>Share</Text>
+      </TouchableOpacity>
     </View>
   );
 };
