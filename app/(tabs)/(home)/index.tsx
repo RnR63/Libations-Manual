@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, FONTS, SIZES } from "../../../src/styles/theme";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { Cocktail } from "../../../src/types";
-import CocktailsBySpirit from "../../../src/components/cocktailsBySpirit";
+import CocktailsBySpiritButton from "../../../src/components/cocktailsBySpiritButton";
 
 const SPIRITS: string[] = [
   "Vodka",
@@ -36,7 +36,6 @@ export default function App(): JSX.Element {
     return JSON.stringify(filterArr);
   };
 
-
   return (
     <SafeAreaView style={styles.container}>
       <View>
@@ -49,7 +48,7 @@ export default function App(): JSX.Element {
         data={SPIRITS}
         keyExtractor={(item) => item}
         renderItem={({ item }) => (
-          <CocktailsBySpirit
+          <CocktailsBySpiritButton
             item={item}
             handlePress={(): void => {
               router.navigate({

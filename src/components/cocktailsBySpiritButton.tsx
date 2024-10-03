@@ -6,7 +6,7 @@ interface Props {
   handlePress: () => void;
 }
 
-const CocktailsBySpirit: React.FC<Props> = ({ item, handlePress }) => {
+const CocktailsBySpiritButton: React.FC<Props> = ({ item, handlePress }) => {
   return (
     <TouchableOpacity
       style={styles.itemBox}
@@ -21,7 +21,7 @@ const CocktailsBySpirit: React.FC<Props> = ({ item, handlePress }) => {
   );
 };
 
-export default CocktailsBySpirit;
+export default CocktailsBySpiritButton;
 
 const styles = StyleSheet.create({
   cocktailText: {

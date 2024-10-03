@@ -2,12 +2,13 @@ import { View, FlatList, TextInput, StyleSheet } from "react-native";
 import { FONTS, COLORS, SIZES } from "../../../src/styles/theme";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { debounce } from "lodash";
-import { useCallback, useState, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Cocktail } from "../../../src/types";
-import CocktailsBySpirit from "../../../src/components/cocktailsBySpirit";
+import CocktailsBySpiritButton from "../../../src/components/cocktailsBySpiritButton";
 
 const SpiritCategory: React.FC = () => {
   const router = useRouter();
+  const [cocktails, setCocktails] = useState<Cocktail[]>([]);
   const [search, setSearch] = useState<string>("");
 
   const { spirit, data } = useLocalSearchParams<{
@@ -18,10 +19,11 @@ const SpiritCategory: React.FC = () => {
   const dataArr: Cocktail[] = JSON.parse(data);
   console.log(`\n spiritCategory: ${spirit}\n`, "dataArr: ", dataArr[0].name);
 
-  const filterCocktails = (spirit: string): string => {
-    const filterArr = dataArr.filter((cocktail) => cocktail.spirit === spirit);
-    return JSON.stringify(filterArr);
-  };
+  const filterCocktails = useMemo(() => {
+    return dataArr.filter((cocktail) =>
+      cocktail.name.toLowerCase().startsWith(search.toLowerCase()),
+    );
+  }, [search]);
 
   // const filterListMemo: Cocktail[] = useMemo(() => {
   //   return cocktails.filter((cocktail) =>
@@ -31,23 +33,33 @@ const SpiritCategory: React.FC = () => {
 
   const debouncedHandleTextChange = useCallback(
     debounce((text: string) => {
+      console.log("debouncedHandleTextChange");
       setSearch(text);
     }, 200),
     [],
   );
 
+  useEffect(() => {
+    if (search === "") {
+      setCocktails(dataArr);
+    } else {
+      console.log("search is: ", search);
+      setCocktails(filterCocktails);
+    }
+  }, [search]);
+
   return (
     <View>
       <FlatList
-        data={dataArr}
+        data={cocktails}
         keyExtractor={(item) => item.name} //each element in array
         renderItem={({ item }) => (
-          <CocktailsBySpirit
+          <CocktailsBySpiritButton
             item={item.name}
             handlePress={(): void => {
               router.navigate({
-                pathname: "/spiritCategory",
-                params: { spirit: item.name, data: filterCocktails(item.name) },
+                pathname: "/recipe",
+                params: { data: JSON.stringify(item) },
               });
             }}
           />
