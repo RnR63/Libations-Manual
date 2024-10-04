@@ -37,6 +37,7 @@ export default function Layout(): JSX.Element {
         name="recipe"
         options={{
           title: "Current Recipe",
+          headerShown: false,
           tabBarShowLabel: false,
           tabBarIcon: ({ color, size }) => (
             <Entypo name="list" size={size} color={color} />

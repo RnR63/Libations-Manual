@@ -43,7 +43,7 @@ export default function App(): JSX.Element {
           Choose a Spirit
         </Text>
       </View>
-      <StatusBar style="auto" />
+      {/* <StatusBar style="auto" /> */}
       <FlatList
         data={SPIRITS}
         keyExtractor={(item) => item}
@@ -57,14 +57,6 @@ export default function App(): JSX.Element {
               });
             }}
           />
-          // <TouchableOpacity
-          //   style={styles.spiritBox}
-          //   onPress={() => {
-          //     handlePress(item);
-          //   }}
-          // >
-          //   <Text style={styles.text}>{item}</Text>
-          // </TouchableOpacity>
         )}
       />
     </SafeAreaView>

@@ -11,6 +11,8 @@ import {
 import { COLORS, FONTS, SIZES } from "../../src/styles/theme";
 import { useLocalSearchParams } from "expo-router";
 import { Cocktail } from "../../src/types";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Recipe = () => {
   const [recipe, setRecipe] = useState<Cocktail | null>(null);
@@ -62,48 +64,66 @@ const Recipe = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        style={styles.list}
-        data={recipe.ingredients}
-        keyExtractor={(item) => item}
-        ListHeaderComponent={
-          <Text style={styles.textBold} accessibilityRole="header">
-            Ingredients:
-          </Text>
-        }
-        renderItem={({ item }) => (
-          <Text
-            style={[styles.text, styles.listItem]}
-            accessibilityLabel={`Ingredient: ${item}`}
-          >
-            {item}
-          </Text>
-        )}
-        ItemSeparatorComponent={() => <View style={styles.separator} />}
-      />
-      <Text style={styles.text}>
-        <Text style={styles.textBold} accessibilityLabel="Method">
-          Method:{" "}
+    <SafeAreaView style={styles.safeAreaContainer}>
+      <View>
+        <Text style={styles.heading} accessibilityRole="header">
+          Dynamic cocktail name
         </Text>
-        {recipe.method}
-      </Text>
-      <Text style={styles.text} accessibilityLabel="Glassware">
-        <Text style={styles.textBold}>Glassware: </Text>
-        {recipe.glassware}
-      </Text>
-      <Text style={styles.text} accessibilityLabel="Garnish">
-        <Text style={styles.textBold}>Garnish: </Text>
-        {recipe.garnish}
-      </Text>
-      <TouchableOpacity onPress={shareRecipe}>
-        <Text>Share</Text>
-      </TouchableOpacity>
-    </View>
+      </View>
+      <View style={styles.container}>
+        <FlatList
+          style={styles.list}
+          data={recipe.ingredients}
+          keyExtractor={(item) => item}
+          ListHeaderComponent={
+            <Text style={styles.textBold} accessibilityRole="header">
+              Ingredients:
+            </Text>
+          }
+          renderItem={({ item }) => (
+            <Text
+              style={[styles.text, styles.listItem]}
+              accessibilityLabel={`Ingredient: ${item}`}
+            >
+              {item}
+            </Text>
+          )}
+          ItemSeparatorComponent={() => <View style={styles.separator} />}
+        />
+        <Text style={styles.text}>
+          <Text style={styles.textBold} accessibilityLabel="Method">
+            Method:{" "}
+          </Text>
+          {recipe.method}
+        </Text>
+        <Text style={styles.text} accessibilityLabel="Glassware">
+          <Text style={styles.textBold}>Glassware: </Text>
+          {recipe.glassware}
+        </Text>
+        <Text style={styles.text} accessibilityLabel="Garnish">
+          <Text style={styles.textBold}>Garnish: </Text>
+          {recipe.garnish}
+        </Text>
+        <TouchableOpacity style={styles.shareContainer} onPress={shareRecipe}>
+          <FontAwesome name="share" size={24} color={"black"} />
+          <Text>Share</Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  safeAreaContainer: {
+    flex: 1,
+    backgroundColor: COLORS.background,
+  },
+  heading: {
+    fontFamily: FONTS.peralta,
+    fontSize: SIZES.heading,
+    alignSelf: "center",
+    marginVertical: 4,
+  },
   container: {
     backgroundColor: COLORS.background,
     flex: 1,
@@ -132,6 +152,9 @@ const styles = StyleSheet.create({
   textBold: {
     fontFamily: FONTS.latoBold,
     fontSize: SIZES.body_bold,
+  },
+  shareContainer: {
+    flexDirection: "row",
   },
 });
 
