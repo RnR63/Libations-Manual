@@ -1,64 +1,63 @@
-import { useLocalSearchParams, useRouter } from "expo-router";
-import { View, Text, StyleSheet, FlatList, TextInput } from "react-native";
-import { Cocktail } from "../../src/types";
+import { useRouter } from "expo-router";
+import { View, Text, StyleSheet, FlatList } from "react-native";
+import { Store } from "../../src/types";
 import { COLORS, FONTS, SIZES } from "../../src/styles/theme";
 import CocktailsBySpiritButton from "../../src/components/cocktailsBySpiritButton";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import SearchBar from "../../src/components/searchBar";
-import { debounce } from "lodash";
+import useStore from "../../src/data/store/cocktailStore";
 
 export default function Search() {
   const router = useRouter();
-  const [cocktails, setCocktails] = useState<Cocktail[]>([]);
+  const cocktails = useStore((state: Store) => state.cocktails);
+  const [localCocktails, setLocalCocktails] = useState<string[]>([]);
   const [search, setSearch] = useState<string>("");
 
-  const { serializedCocktails } = useLocalSearchParams<{
-    serializedCocktails: string;
-  }>();
-  console.log("serializedCocktails in search.tsx:", Date.now());
-
-  const parsedList: Cocktail[] = useMemo(
-    () => JSON.parse(serializedCocktails),
-    [],
+  // console.log("Cocktails in search.tsx:", parsedList[0].name, Date.now());
+  const listNames = useMemo(
+    () => (cocktails ? Array.from(cocktails.keys()) : []),
+    [cocktails],
   );
-  console.log("Cocktails in search.tsx:", parsedList[0].name, Date.now());
 
   const filteredCocktails = useMemo(() => {
-    return parsedList.filter((cocktail) => {
-      const nameWithoutThe = cocktail.name
-        .replace(/^the\s+/i, "")
-        .toLowerCase();
-      return nameWithoutThe.includes(search.toLowerCase());
+    return listNames.filter((cocktail) => {
+      return cocktail.toLowerCase().includes(search.toLowerCase());
     });
   }, [search]);
 
+  const handleSelect = (item: string) => {
+    const value = cocktails?.get(item);
+    router.navigate({
+      pathname: "/recipe",
+      params: {
+        data: item,
+        value: JSON.stringify(value),
+      },
+    });
+  };
+
   useEffect(() => {
     if (search === "") {
-      setCocktails(parsedList);
+      setLocalCocktails(listNames);
     } else {
-      setCocktails(filteredCocktails);
+      setLocalCocktails(filteredCocktails);
     }
   }, [search]);
 
   return (
     <View>
       <SearchBar search={search} setSearch={setSearch} />
-      {cocktails.length === 0 ? (
+      {!cocktails || localCocktails.length === 0 ? (
         <Text style={styles.notFoundText}>No cocktails found</Text>
       ) : (
         <FlatList
-          data={cocktails}
-          keyExtractor={(item) => item.name} //each element in array
+          data={localCocktails}
+          keyExtractor={(item) => item} //each element in array
           renderItem={({ item }) => (
             <CocktailsBySpiritButton
-              item={item.name}
+              item={item}
               handlePress={(): void => {
-                router.navigate({
-                  pathname: "/recipe",
-                  params: {
-                    data: JSON.stringify(item),
-                  },
-                });
+                handleSelect(item);
               }}
             />
           )}

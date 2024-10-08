@@ -1,13 +1,11 @@
 // import { useEffect, useCallback } from "react";
 import Feather from "@expo/vector-icons/Feather";
 import Entypo from "@expo/vector-icons/Entypo";
-import { Tabs, useLocalSearchParams } from "expo-router";
+import { Tabs } from "expo-router";
 import { COLORS } from "../../src/styles/theme";
 
 export default function Layout(): JSX.Element {
-  const { serializedCocktails } = useLocalSearchParams<{
-    serializedCocktails: string;
-  }>();
+
   return (
     <Tabs screenOptions={{ tabBarActiveTintColor: COLORS.primary }}>
       <Tabs.Screen
@@ -20,7 +18,6 @@ export default function Layout(): JSX.Element {
             <Entypo name="home" size={size} color={color} />
           ),
         }}
-        initialParams={{ serializedCocktails }}
       />
       <Tabs.Screen
         name="search"
@@ -31,7 +28,6 @@ export default function Layout(): JSX.Element {
             <Feather name="search" size={size} color={color} />
           ),
         }}
-        initialParams={{ serializedCocktails }}
       />
       <Tabs.Screen
         name="recipe"
