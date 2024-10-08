@@ -56,14 +56,24 @@ const Recipe = () => {
 
   if (!data) {
     return (
-      <Text style={styles.text}>
-        Please select a drink from the Home or Search Tabs
-      </Text>
+      <SafeAreaView style={styles.safeAreaContainer}>
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>
+            Please select a drink from the Home or Search Tabs
+          </Text>
+        </View>
+      </SafeAreaView>
     );
   }
 
   if (!recipe) {
-    return <Text style={styles.text}>Error with Recipe</Text>;
+    return (
+      <SafeAreaView style={styles.safeAreaContainer}>
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>Error with recipe</Text>
+        </View>
+      </SafeAreaView>
+    );
   }
 
   return (
@@ -133,6 +143,18 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     padding: 28,
     gap: 28,
+  },
+  errorContainer: {
+    backgroundColor: COLORS.background,
+    flex: 1,
+    justifyContent: "center",
+    padding: 28,
+    gap: 28,
+  },
+  errorText: {
+    fontFamily: FONTS.latoRegular,
+    fontSize: SIZES.body_reg,
+    textAlign: "center",
   },
   list: {
     margin: 0,
