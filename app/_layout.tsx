@@ -27,7 +27,6 @@ export default function Layout(): JSX.Element {
         // Fetch cocktails
         const fetchedCocktails = await getCocktails();
         fetchedCocktails.forEach((cocktail) => {
-          // localCocktails.set(cocktail.name, cocktail);
           cocktailsMap.set(cocktail.name, cocktail);
         });
         await setCocktails(cocktailsMap);
