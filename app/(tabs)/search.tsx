@@ -4,6 +4,7 @@ import { Cocktail } from "../../src/types";
 import { COLORS, FONTS, SIZES } from "../../src/styles/theme";
 import CocktailsBySpiritButton from "../../src/components/cocktailsBySpiritButton";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import SearchBar from "../../src/components/searchBar";
 import { debounce } from "lodash";
 
 export default function Search() {
@@ -14,73 +15,55 @@ export default function Search() {
   const { serializedCocktails } = useLocalSearchParams<{
     serializedCocktails: string;
   }>();
-  console.log("serializedCocktails in search.tsx:", !!serializedCocktails);
+  console.log("serializedCocktails in search.tsx:", Date.now());
 
-  const parsedList: Cocktail[] = JSON.parse(serializedCocktails);
-  console.log("Cocktails in search.tsx:", parsedList[0].name);
-
-  const filterCocktails = useMemo(() => {
-    return parsedList.filter((cocktail) =>
-      cocktail.name.toLowerCase().startsWith(search.toLowerCase()),
-    );
-  }, [search]);
-
-  const debouncedHandleTextChange = useCallback(
-    debounce((text: string) => {
-      console.log("debouncedHandleTextChange");
-      setSearch(text);
-    }, 200),
+  const parsedList: Cocktail[] = useMemo(
+    () => JSON.parse(serializedCocktails),
     [],
   );
+  console.log("Cocktails in search.tsx:", parsedList[0].name, Date.now());
+
+  const filteredCocktails = useMemo(() => {
+    return parsedList.filter((cocktail) => {
+      const nameWithoutThe = cocktail.name
+        .replace(/^the\s+/i, "")
+        .toLowerCase();
+      return nameWithoutThe.includes(search.toLowerCase());
+    });
+  }, [search]);
 
   useEffect(() => {
     if (search === "") {
       setCocktails(parsedList);
     } else {
-      setCocktails(filterCocktails);
+      setCocktails(filteredCocktails);
     }
   }, [search]);
 
-  if (cocktails.length === 0) {
-    return <Text style={styles.notFoundText}>No cocktails found</Text>;
-  }
-
   return (
     <View>
-      <FlatList
-        data={cocktails}
-        keyExtractor={(item) => item.name} //each element in array
-        renderItem={({ item }) => (
-          <CocktailsBySpiritButton
-            item={item.name}
-            handlePress={(): void => {
-              router.navigate({
-                pathname: "/recipe",
-                params: {
-                  data: JSON.stringify(item),
-                },
-              });
-            }}
-          />
-          // <TouchableOpacity style={styles.spiritButton}>
-          //   <Text>{item.name}</Text>
-          // </TouchableOpacity>
-        )}
-        ListHeaderComponent={
-          <View style={styles.searchContainer}>
-            <TextInput
-              style={styles.searchContainer}
-              placeholder="Search"
-              onChangeText={debouncedHandleTextChange}
-              clearButtonMode="while-editing"
-              accessibilityLabel="Search for cocktails"
-              accessibilityHint="Type to search for cocktails"
+      <SearchBar search={search} setSearch={setSearch} />
+      {cocktails.length === 0 ? (
+        <Text style={styles.notFoundText}>No cocktails found</Text>
+      ) : (
+        <FlatList
+          data={cocktails}
+          keyExtractor={(item) => item.name} //each element in array
+          renderItem={({ item }) => (
+            <CocktailsBySpiritButton
+              item={item.name}
+              handlePress={(): void => {
+                router.navigate({
+                  pathname: "/recipe",
+                  params: {
+                    data: JSON.stringify(item),
+                  },
+                });
+              }}
             />
-          </View>
-        }
-        stickyHeaderIndices={[0]}
-        // ListHeaderComponentStyle={styles.searchContainer}
-      />
+          )}
+        />
+      )}
     </View>
   );
 }
