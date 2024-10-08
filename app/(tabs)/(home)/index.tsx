@@ -1,10 +1,11 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import { StatusBar } from "expo-status-bar";
+// import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, FONTS, SIZES } from "../../../src/styles/theme";
-import { useLocalSearchParams, useRouter } from "expo-router";
-import { Cocktail } from "../../../src/types";
+import { useRouter } from "expo-router";
+import { Store } from "../../../src/types";
 import CocktailsBySpiritButton from "../../../src/components/cocktailsBySpiritButton";
+import useStore from "../../../src/data/store/cocktailStore";
 
 const SPIRITS: string[] = [
   "Vodka",
@@ -21,20 +22,9 @@ const SPIRITS: string[] = [
 ];
 export default function App(): JSX.Element {
   const router = useRouter();
-  const { serializedCocktails } = useLocalSearchParams<{
-    serializedCocktails: string;
-  }>();
-  // console.log("serializedCocktails in index.tsx:", !!serializedCocktails);
 
-  const cocktails: Cocktail[] = JSON.parse(serializedCocktails);
-  console.log("Cocktails in index.tsx:", cocktails[1].name);
-
-  const filterCocktails = (spirit: string): string => {
-    const filterArr = cocktails.filter(
-      (cocktail) => cocktail.spirit === spirit,
-    );
-    return JSON.stringify(filterArr);
-  };
+  const cocktails = useStore((state: Store) => state.cocktails);
+  console.log("Cocktails in index.tsx:", cocktails?.get("agave bravo"));
 
   return (
     <SafeAreaView style={styles.container}>
@@ -43,7 +33,6 @@ export default function App(): JSX.Element {
           Choose a Spirit
         </Text>
       </View>
-      {/* <StatusBar style="auto" /> */}
       <FlatList
         data={SPIRITS}
         keyExtractor={(item) => item}
@@ -53,7 +42,7 @@ export default function App(): JSX.Element {
             handlePress={(): void => {
               router.navigate({
                 pathname: "/spiritCategory",
-                params: { spirit: item, data: filterCocktails(item) },
+                params: { spirit: item },
               });
             }}
           />
@@ -81,7 +70,6 @@ const styles = StyleSheet.create({
     borderColor: COLORS.primary,
     borderWidth: 1,
     borderRadius: 12,
-    // paddingHorizontal: 16,
     paddingVertical: 12,
     marginHorizontal: 16,
     marginVertical: 18,

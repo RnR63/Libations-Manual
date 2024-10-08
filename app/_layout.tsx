@@ -7,6 +7,7 @@ import LatoBold from "../assets/fonts/Lato-Bold.ttf";
 import { Stack } from "expo-router";
 import getCocktails from "../src/api/getCocktails";
 import { Cocktail } from "../src/types";
+import useStore from "../src/data/store/cocktailStore";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -16,15 +17,24 @@ export default function Layout(): JSX.Element {
     "Lato-Regular": LatoRegular,
     "Lato-Bold": LatoBold,
   });
-  const [cocktails, setCocktails] = useState<Cocktail[]>([]);
   const [appIsReady, setAppIsReady] = useState<boolean>(false);
+  const cocktailsMap = new Map<string, Cocktail>();
+  const setCocktails = useStore((state) => state.updateCocktails);
 
   useEffect(() => {
     async function prepare() {
       try {
         // Fetch cocktails
         const fetchedCocktails = await getCocktails();
-        setCocktails(fetchedCocktails);
+        fetchedCocktails.forEach((cocktail) => {
+          // localCocktails.set(cocktail.name, cocktail);
+          cocktailsMap.set(cocktail.name, cocktail);
+        });
+        await setCocktails(cocktailsMap);
+        console.log(
+          "Cocktails in Layout.tsx:",
+          cocktailsMap?.get("Agave Bravo"),
+        );
         await new Promise((resolve) => setTimeout(resolve, 3000)); //lengthen the splash screen time
       } catch (e) {
         console.warn(e);
@@ -54,7 +64,6 @@ export default function Layout(): JSX.Element {
               headerShown: false,
               animation: "fade",
             }}
-            initialParams={{ serializedCocktails: JSON.stringify(cocktails) }}
           />
         </Stack>
       ) : null}

@@ -16,11 +16,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const Recipe = () => {
   const [recipe, setRecipe] = useState<Cocktail | null>(null);
-  const { data } = useLocalSearchParams<{ data: string }>();
+  const { data, value } = useLocalSearchParams<{
+    data: string;
+    value: string;
+  }>();
 
   const parsedRecipe: Cocktail | null = useMemo(() => {
-    return data ? JSON.parse(data) : null;
-  }, [data]);
+    return data ? JSON.parse(value) : null;
+  }, [data, value]);
 
   useEffect(() => {
     if (parsedRecipe) setRecipe(parsedRecipe);
@@ -67,7 +70,7 @@ const Recipe = () => {
     <SafeAreaView style={styles.safeAreaContainer}>
       <View>
         <Text style={styles.heading} accessibilityRole="header">
-          Dynamic cocktail name
+          {data}
         </Text>
       </View>
       <View style={styles.container}>

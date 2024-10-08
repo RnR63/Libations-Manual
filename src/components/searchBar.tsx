@@ -7,13 +7,9 @@ import { debounce } from "lodash";
 interface Props {
   search: string;
   setSearch: (search: string) => void;
-  // cocktails: Cocktail[];
-  // setCocktails: (cocktails: Cocktail[]) => void;
-  // debouncedHandleTextChange: (text: string) => void;
 }
 
 const SearchBar: React.FC<Props> = ({ search, setSearch }) => {
-  // const [localSearch, setLocalSearch] = useState(search);
   const inputRef = useRef<TextInput>(null);
 
   const debouncedHandleTextChange = useCallback(
@@ -25,7 +21,6 @@ const SearchBar: React.FC<Props> = ({ search, setSearch }) => {
   );
 
   const handleTextChange = (text: string) => {
-    // setLocalSearch(text);
     debouncedHandleTextChange(text);
   };
 
@@ -39,7 +34,6 @@ const SearchBar: React.FC<Props> = ({ search, setSearch }) => {
         ref={inputRef}
         style={styles.searchContainer}
         placeholder="Search"
-        // value={localSearch}
         onChangeText={handleTextChange}
         clearButtonMode="while-editing"
         accessibilityLabel="Search for cocktails"
