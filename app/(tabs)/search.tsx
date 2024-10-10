@@ -45,7 +45,7 @@ export default function Search() {
   }, [search]);
 
   return (
-    <View>
+    <View style={styles.container}>
       <SearchBar search={search} setSearch={setSearch} />
       {!cocktails || localCocktails.length === 0 ? (
         <Text style={styles.notFoundText}>No cocktails found</Text>
