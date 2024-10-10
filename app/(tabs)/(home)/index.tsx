@@ -2,9 +2,7 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, FONTS, SIZES } from "../../../src/styles/theme";
 import { useRouter } from "expo-router";
-import { Store } from "../../../src/types";
 import CocktailsBySpiritButton from "../../../src/components/cocktailsBySpiritButton";
-import useStore from "../../../src/data/store/cocktailStore";
 
 const SPIRITS: string[] = [
   "Vodka",
@@ -22,9 +20,6 @@ const SPIRITS: string[] = [
 
 export default function App(): JSX.Element {
   const router = useRouter();
-
-  const cocktails = useStore((state: Store) => state.cocktails);
-  console.log("Cocktails in index.tsx:", cocktails?.get("agave bravo"));
 
   return (
     <SafeAreaView edges={["right", "top", "left"]} style={styles.container}>

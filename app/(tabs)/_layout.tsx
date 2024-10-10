@@ -5,7 +5,6 @@ import { Tabs } from "expo-router";
 import { COLORS } from "../../src/styles/theme";
 
 export default function Layout(): JSX.Element {
-
   return (
     <Tabs screenOptions={{ tabBarActiveTintColor: COLORS.primary }}>
       <Tabs.Screen

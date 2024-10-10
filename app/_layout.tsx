@@ -7,7 +7,6 @@ import LatoBold from "../assets/fonts/Lato-Bold.ttf";
 import { Stack } from "expo-router";
 import getCocktails from "../src/api/getCocktails";
 import { Cocktail, CocktailsMapType } from "../src/types";
-// import useStore from "../src/data/store/cocktailStore";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -23,7 +22,6 @@ export default function Layout(): JSX.Element {
   const [cocktailsContext, setCocktailsContext] =
     useState<CocktailsMapType>(null);
   const cocktailsMap = new Map<string, Cocktail>();
-  // const setCocktails = useStore((state) => state.updateCocktails);
 
   useEffect(() => {
     async function prepare() {
