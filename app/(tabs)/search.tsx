@@ -1,15 +1,15 @@
 import { useRouter } from "expo-router";
 import { View, Text, StyleSheet, FlatList } from "react-native";
-import { Store } from "../../src/types";
+import { CocktailsMapType } from "../../src/types";
 import { COLORS, FONTS, SIZES } from "../../src/styles/theme";
 import CocktailsBySpiritButton from "../../src/components/cocktailsBySpiritButton";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useContext } from "react";
 import SearchBar from "../../src/components/searchBar";
-import useStore from "../../src/data/store/cocktailStore";
+import { cocktailProvider } from "../_layout";
 
 export default function Search() {
   const router = useRouter();
-  const cocktails = useStore((state: Store) => state.cocktails);
+  const cocktails = useContext<CocktailsMapType>(cocktailProvider);
   const [localCocktails, setLocalCocktails] = useState<string[]>([]);
   const [search, setSearch] = useState<string>("");
 
