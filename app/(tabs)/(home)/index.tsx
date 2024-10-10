@@ -19,6 +19,7 @@ const SPIRITS: string[] = [
   "Japanese",
   "Misc",
 ];
+
 export default function App(): JSX.Element {
   const router = useRouter();
 
