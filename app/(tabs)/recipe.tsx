@@ -24,6 +24,7 @@ const Recipe = () => {
   const parsedRecipe: Cocktail | null = useMemo(() => {
     return data ? JSON.parse(value) : null;
   }, [data, value]);
+  console.log("in recipe.tsx");
 
   useEffect(() => {
     if (parsedRecipe) setRecipe(parsedRecipe);

@@ -1,5 +1,6 @@
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 import { COLORS, FONTS, SIZES } from "../styles/theme";
+import Entypo from "@expo/vector-icons/Entypo";
 
 interface Props {
   item: string;
@@ -16,7 +17,8 @@ const CocktailsBySpiritButton: React.FC<Props> = ({ item, handlePress }) => {
       accessibilityHint="Tap to view details"
     >
       <Text style={styles.cocktailText}>{item}</Text>
-      <Text style={styles.cocktailText}>{">"}</Text>
+      {/* <Text style={styles.cocktailText}>{">"}</Text> */}
+      <Entypo name="chevron-thin-right" size={18} color={COLORS.text_white} />
     </TouchableOpacity>
   );
 };
@@ -32,6 +34,7 @@ const styles = StyleSheet.create({
   itemBox: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     backgroundColor: COLORS.primary,
     borderRadius: 12,
     marginHorizontal: 16,

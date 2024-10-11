@@ -13,7 +13,7 @@ export default function Search() {
   const [localCocktails, setLocalCocktails] = useState<string[]>([]);
   const [search, setSearch] = useState<string>("");
 
-  // console.log("Cocktails in search.tsx:", parsedList[0].name, Date.now());
+  console.log("in search.tsx");
   const listNames = useMemo(
     () => (cocktails ? Array.from(cocktails.keys()) : []),
     [cocktails],
@@ -27,11 +27,13 @@ export default function Search() {
 
   const handleSelect = (item: string) => {
     const value = cocktails?.get(item);
+
     router.navigate({
       pathname: "/recipe",
       params: {
         data: item,
         value: JSON.stringify(value),
+        from: "search",
       },
     });
   };

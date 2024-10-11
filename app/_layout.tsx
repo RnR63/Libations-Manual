@@ -13,6 +13,7 @@ SplashScreen.preventAutoHideAsync();
 export const cocktailProvider = createContext<CocktailsMapType>(null);
 
 export default function Layout(): JSX.Element {
+  console.log("in app layout");
   const [fontsLoaded, fontError]: [boolean, Error | null] = useFonts({
     "Peralta-Regular": PeraltaRegular,
     "Lato-Regular": LatoRegular,
@@ -52,6 +53,7 @@ export default function Layout(): JSX.Element {
 
   useEffect(() => {
     if (appIsReady && fontsLoaded) {
+      console.log("Hiding splash screen");
       SplashScreen.hideAsync();
     }
   }, [appIsReady, fontsLoaded]);

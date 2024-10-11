@@ -6,6 +6,7 @@ import { CocktailsMapType } from "../../../src/types";
 import CocktailsBySpiritButton from "../../../src/components/cocktailsBySpiritButton";
 import SearchBar from "../../../src/components/searchBar";
 import { cocktailProvider } from "../../_layout";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const SpiritCategory: React.FC = () => {
   const router = useRouter();
@@ -42,6 +43,7 @@ const SpiritCategory: React.FC = () => {
       params: {
         data: item,
         value: JSON.stringify(value),
+        from: "spiritCategory",
       },
     });
   };
@@ -56,25 +58,27 @@ const SpiritCategory: React.FC = () => {
   }, [search]);
 
   return (
-    <View>
-      <SearchBar search={search} setSearch={setSearch} />
-      {!cocktails || localCocktails.length === 0 ? (
-        <Text style={styles.notFoundText}>No cocktails found</Text>
-      ) : (
-        <FlatList
-          data={localCocktails}
-          keyExtractor={(item) => item} //each element in array
-          renderItem={({ item }) => (
-            <CocktailsBySpiritButton
-              item={item}
-              handlePress={(): void => {
-                handleSelect(item);
-              }}
-            />
-          )}
-        />
-      )}
-    </View>
+    <SafeAreaView edges={["right", "left"]} style={styles.container}>
+      <View>
+        <SearchBar search={search} setSearch={setSearch} />
+        {!cocktails || localCocktails.length === 0 ? (
+          <Text style={styles.notFoundText}>No cocktails found</Text>
+        ) : (
+          <FlatList
+            data={localCocktails}
+            keyExtractor={(item) => item} //each element in array
+            renderItem={({ item }) => (
+              <CocktailsBySpiritButton
+                item={item}
+                handlePress={(): void => {
+                  handleSelect(item);
+                }}
+              />
+            )}
+          />
+        )}
+      </View>
+    </SafeAreaView>
   );
 };
 
