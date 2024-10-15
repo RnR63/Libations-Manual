@@ -13,7 +13,17 @@ const AdaptiveText: React.FC<AdaptiveTextProps> = ({
   maxFontSize = SIZES.heading,
 }) => {
   return (
-    <View style={[style, { overflow: "hidden", alignContent: "center" }]}>
+    <View
+      style={[
+        style,
+        {
+          overflow: "hidden",
+          alignContent: "center",
+          borderWidth: 1,
+          borderColor: "blue",
+        },
+      ]}
+    >
       <Text
         style={[
           style,
@@ -24,6 +34,9 @@ const AdaptiveText: React.FC<AdaptiveTextProps> = ({
             padding: 0,
             textAlignVertical: "center",
             alignSelf: "baseline",
+            borderWidth: 1,
+            borderColor: "red",
+            // margin: 0,
           },
         ]}
         numberOfLines={2}

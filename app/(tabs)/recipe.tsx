@@ -13,6 +13,7 @@ import { useLocalSearchParams } from "expo-router";
 import { Cocktail } from "../../src/types";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { SafeAreaView } from "react-native-safe-area-context";
+import ShareButton from "../../src/components/shareButton";
 
 const Recipe = () => {
   const [recipe, setRecipe] = useState<Cocktail | null>(null);
@@ -78,13 +79,14 @@ const Recipe = () => {
   }
 
   return (
-    <SafeAreaView style={styles.safeAreaContainer}>
-      <View>
-        <Text style={styles.heading} accessibilityRole="header">
+    <SafeAreaView edges={["left", "right"]} style={styles.safeAreaContainer}>
+      <View style={styles.recipeContainer}>
+        <Text style={styles.text}>
+          <Text style={styles.textBold} accessibilityLabel="Cocktail_Name">
+            Cocktail:{" "}
+          </Text>
           {data}
         </Text>
-      </View>
-      <View style={styles.container}>
         <FlatList
           style={styles.list}
           data={recipe.ingredients}
@@ -103,6 +105,7 @@ const Recipe = () => {
             </Text>
           )}
           ItemSeparatorComponent={() => <View style={styles.separator} />}
+          initialNumToRender={3}
         />
         <Text style={styles.text}>
           <Text style={styles.textBold} accessibilityLabel="Method">
@@ -118,10 +121,9 @@ const Recipe = () => {
           <Text style={styles.textBold}>Garnish: </Text>
           {recipe.garnish}
         </Text>
-        <TouchableOpacity style={styles.shareContainer} onPress={shareRecipe}>
-          <FontAwesome name="share" size={24} color={"black"} />
-          <Text>Share</Text>
-        </TouchableOpacity>
+      </View>
+      <View>
+        <ShareButton item={data} handlePress={shareRecipe} />
       </View>
     </SafeAreaView>
   );
@@ -131,6 +133,9 @@ const styles = StyleSheet.create({
   safeAreaContainer: {
     flex: 1,
     backgroundColor: COLORS.background,
+    paddingBottom: 16,
+    // borderWidth: 1,
+    // borderColor: "red",
   },
   heading: {
     fontFamily: FONTS.peralta,
@@ -138,12 +143,14 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginVertical: 4,
   },
-  container: {
+  recipeContainer: {
     backgroundColor: COLORS.background,
     flex: 1,
     justifyContent: "flex-start",
-    padding: 28,
+    padding: 20,
     gap: 28,
+    // borderWidth: 1,
+    // borderColor: "blue",
   },
   errorContainer: {
     backgroundColor: COLORS.background,
@@ -161,6 +168,8 @@ const styles = StyleSheet.create({
     margin: 0,
     padding: 0,
     flexGrow: 0,
+    maxHeight: 250,
+    // overflow: "scroll",
   },
   listItem: {
     marginVertical: 12,
