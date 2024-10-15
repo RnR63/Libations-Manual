@@ -22,12 +22,12 @@ export default function App(): JSX.Element {
   const router = useRouter();
 
   return (
-    <SafeAreaView edges={["right", "top", "left"]} style={styles.container}>
-      <View style={styles.view}>
+    <SafeAreaView edges={["right", "left"]} style={styles.container}>
+      {/* <View style={styles.view}>
         <Text style={styles.heading} accessibilityRole="header">
           Choose a Spirit
         </Text>
-      </View>
+      </View> */}
       <FlatList
         style={styles.flatList}
         contentContainerStyle={styles.flatListContainer}

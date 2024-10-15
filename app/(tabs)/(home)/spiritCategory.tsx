@@ -44,6 +44,7 @@ const SpiritCategory: React.FC = () => {
         data: item,
         value: JSON.stringify(value),
         from: "spiritCategory",
+        spirit: spirit,
       },
     });
   };

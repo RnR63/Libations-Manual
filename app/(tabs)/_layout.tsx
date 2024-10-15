@@ -4,32 +4,45 @@ import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import Entypo from "@expo/vector-icons/Entypo";
 import { Tabs, useGlobalSearchParams, useRouter } from "expo-router";
-import { COLORS, SIZES, FONTS } from "../../src/styles/theme";
+import { COLORS } from "../../src/styles/theme";
 import { useCallback } from "react";
+import HeaderTitle from "../../src/components/headerTitle";
 
 export default function Layout(): JSX.Element {
   const router = useRouter();
   console.log("in tabs layout");
 
-  const { data, from } = useGlobalSearchParams<{
+  const { data, from, spirit } = useGlobalSearchParams<{
     data: string;
     from: string;
+    spirit: string;
   }>();
 
-  // console.log("from: ", from);
+  // console.log("from: ", from, "data: ", data, "spirit: ", spirit);
 
   const handleBack = useCallback(() => {
     if (from === "search") {
       router.navigate({
         pathname: "/search",
+        params: { spirit: spirit },
       });
-    } else {
+    } else if (from === "spiritCategory") {
       router.navigate({
         pathname: "/spiritCategory",
-        // params: { spirit: data },
+        params: { spirit: spirit },
       });
+    } else {
+      router.back();
     }
   }, [from]);
+
+  const toggleBack = () => {
+    return (
+      <TouchableOpacity onPress={() => handleBack()}>
+        <Entypo name="chevron-thin-left" size={18} color={COLORS.primary} />
+      </TouchableOpacity>
+    );
+  };
 
   return (
     <Tabs screenOptions={{ tabBarActiveTintColor: COLORS.primary }}>
@@ -52,26 +65,24 @@ export default function Layout(): JSX.Element {
           tabBarIcon: ({ color }) => (
             <Fontisto name="search" size={22} color={color} />
           ),
+          headerTitle: () => <HeaderTitle search={true} />,
+          headerShadowVisible: false,
         }}
       />
       <Tabs.Screen
         name="recipe"
         options={{
           title: "Current Recipe",
-          // headerShown: false,
+          headerTitle: () => <HeaderTitle recipe={data} />,
+          headerShadowVisible: false,
           tabBarShowLabel: false,
           tabBarIcon: ({ color }) => (
             <FontAwesome5 name="list" size={22} color={color} />
           ),
-          headerLeft: () => (
-            <TouchableOpacity onPress={() => handleBack()}>
-              <Entypo
-                name="chevron-thin-left"
-                size={18}
-                color={COLORS.primary}
-              />
-            </TouchableOpacity>
-          ),
+          headerLeft:
+            from === "search" || from === "spiritCategory"
+              ? toggleBack
+              : undefined,
         }}
       />
     </Tabs>

@@ -40,11 +40,13 @@ export default function Search() {
 
   useEffect(() => {
     if (search === "") {
+      console.log("setting local cocktails to list names");
       setLocalCocktails(listNames);
     } else {
+      console.log("setting local cocktails to filtered cocktails");
       setLocalCocktails(filteredCocktails);
     }
-  }, [search]);
+  }, [search, cocktails]);
 
   return (
     <View style={styles.container}>
