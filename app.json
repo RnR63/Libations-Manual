@@ -1,31 +1,21 @@
 {
   "expo": {
-    "name": "Libations Manual",
-    "slug": "libationsmanual",
-    "version": "1.0.1",
+    "name": "LMTS",
+    "slug": "LMTS",
+    "scheme": "LMTS",
+    "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/libations_manual_icon.png",
+    "icon": "./assets/libations_manual_icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/assets/Logo_Bull.png",
+      "image": "./assets/Logo_Bull.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "web": {
-      "favicon": "./src/assets/favicon.png"
+      "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      [
-        "expo-font",
-        {
-          "fonts": [
-            "./src/assets/fonts/Lato-Regular.ttf",
-            "./src/assets/fonts/Lato-Bold.ttf",
-            "./src/assets/fonts/Peralta-Regular.ttf"
-          ]
-        }
-      ]
-    ],
+    "plugins": ["expo-router"],
     "extra": {
       "eas": {
         "projectId": "898dac73-87e1-4552-b018-970d12c38935"
@@ -33,11 +23,16 @@
     },
     "android": {
       "package": "com.grncoder6.libationsmanual",
-      "versionCode": 2
+      "versionCode": 2,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
     },
     "ios": {
       "bundleIdentifier": "com.grncoder6.libationsmanual",
-      "buildNumber": "2"
+      "buildNumber": "2",
+      "supportsTablet": true
     },
     "runtimeVersion": {
       "policy": "appVersion"

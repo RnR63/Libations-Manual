@@ -15,5 +15,5 @@ export const FONTS = {
 export const SIZES = {
   body_reg: 18,
   body_bold: 22,
-  heading: 32,
+  heading: 24,
 };
