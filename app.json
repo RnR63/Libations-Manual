@@ -2,7 +2,7 @@
   "expo": {
     "name": "LMTS",
     "slug": "LMTS",
-    "scheme": "LMTS",
+    "scheme": "lmts",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/libations_manual_icon.png",
