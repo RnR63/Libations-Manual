@@ -1,12 +1,12 @@
+import CocktailsBySpiritButton from "../../../src/components/cocktailsBySpiritButton";
+import SearchBar from "../../../src/components/searchBar";
 import { View, FlatList, StyleSheet, Text } from "react-native";
 import { FONTS, COLORS, SIZES } from "../../../src/styles/theme";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useContext, useEffect, useMemo, useState } from "react";
 import { CocktailsMapType } from "../../../src/types";
-import CocktailsBySpiritButton from "../../../src/components/cocktailsBySpiritButton";
-import SearchBar from "../../../src/components/searchBar";
-import { cocktailProvider } from "../../_layout";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { cocktailProvider } from "../../_layout";
 
 const SpiritCategory: React.FC = () => {
   const router = useRouter();
@@ -76,6 +76,7 @@ const SpiritCategory: React.FC = () => {
                 }}
               />
             )}
+            ListFooterComponent={<View style={styles.listFooter} />}
           />
         )}
       </View>
@@ -88,12 +89,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.background,
   },
-  heading: {
-    fontFamily: FONTS.peralta,
-    fontSize: SIZES.heading,
-    alignSelf: "center",
-    marginVertical: 4,
+  listFooter: {
+    height: 100,
   },
+  // heading: {
+  //   fontFamily: FONTS.peralta,
+  //   fontSize: SIZES.heading,
+  //   alignSelf: "center",
+  //   marginVertical: 4,
+  // },
   searchContainer: {
     flexDirection: "row",
     fontSize: SIZES.body_reg,

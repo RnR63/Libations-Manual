@@ -11,7 +11,7 @@ import {
 import { COLORS, FONTS, SIZES } from "../../src/styles/theme";
 import { useLocalSearchParams } from "expo-router";
 import { Cocktail } from "../../src/types";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Entypo from "@expo/vector-icons/Entypo";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ShareButton from "../../src/components/shareButton";
 
@@ -56,6 +56,14 @@ const Recipe = () => {
     }
   };
 
+  const listStyle = useMemo(() => {
+    const ingredientCount = recipe?.ingredients?.length ?? 0;
+    return {
+      ...styles.list,
+      maxHeight: ingredientCount > 4 ? 286 : 250,
+    };
+  }, [recipe?.ingredients]);
+
   if (!data) {
     return (
       <SafeAreaView style={styles.safeAreaContainer}>
@@ -88,7 +96,7 @@ const Recipe = () => {
           {data}
         </Text>
         <FlatList
-          style={styles.list}
+          style={[styles.list, listStyle]}
           data={recipe.ingredients}
           keyExtractor={(item) => item}
           ListHeaderComponent={
@@ -96,6 +104,7 @@ const Recipe = () => {
               Ingredients:
             </Text>
           }
+          // renderItem={toggleScrollIndicator}
           renderItem={({ item }) => (
             <Text
               style={[styles.text, styles.listItem]}
@@ -105,8 +114,15 @@ const Recipe = () => {
             </Text>
           )}
           ItemSeparatorComponent={() => <View style={styles.separator} />}
-          initialNumToRender={3}
         />
+        {/* <Text style={styles.scrollIndicator}>
+          <Entypo
+            name="chevron-thin-down"
+            size={24}
+            color={COLORS.primary}
+            accessibilityLabel="Scroll down for more ingredients"
+          />
+        </Text> */}
         <Text style={styles.text}>
           <Text style={styles.textBold} accessibilityLabel="Method">
             Method:{" "}
@@ -149,8 +165,6 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     padding: 20,
     gap: 28,
-    // borderWidth: 1,
-    // borderColor: "blue",
   },
   errorContainer: {
     backgroundColor: COLORS.background,
@@ -168,8 +182,14 @@ const styles = StyleSheet.create({
     margin: 0,
     padding: 0,
     flexGrow: 0,
-    maxHeight: 250,
-    // overflow: "scroll",
+    // maxHeight: 250,
+    // borderWidth: 1,
+    // borderColor: "blue",
+  },
+  scrollIndicator: {
+    borderWidth: 1,
+    borderColor: "red",
+    alignSelf: "flex-end",
   },
   listItem: {
     marginVertical: 12,
