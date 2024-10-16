@@ -41,8 +41,8 @@ export default function Layout(): JSX.Element {
   const toggleBack = () => {
     return (
       <TouchableOpacity
-        // style={{ borderWidth: 1, borderColor: "green", margin: 0 }}
         onPress={() => handleBack()}
+        hitSlop={{ top: 20, bottom: 20, right: 20 }}
       >
         <Entypo name="chevron-thin-left" size={18} color={COLORS.primary} />
       </TouchableOpacity>

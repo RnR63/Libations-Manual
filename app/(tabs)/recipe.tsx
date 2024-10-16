@@ -115,14 +115,6 @@ const Recipe = () => {
           )}
           ItemSeparatorComponent={() => <View style={styles.separator} />}
         />
-        {/* <Text style={styles.scrollIndicator}>
-          <Entypo
-            name="chevron-thin-down"
-            size={24}
-            color={COLORS.primary}
-            accessibilityLabel="Scroll down for more ingredients"
-          />
-        </Text> */}
         <Text style={styles.text}>
           <Text style={styles.textBold} accessibilityLabel="Method">
             Method:{" "}

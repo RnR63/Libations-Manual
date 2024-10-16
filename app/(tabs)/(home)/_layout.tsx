@@ -49,7 +49,10 @@ export default function Layout(): JSX.Element {
           headerTitle: () => <HeaderTitle spirit={spirit} />,
           headerShadowVisible: false,
           headerLeft: () => (
-            <TouchableOpacity onPress={() => router.back()}>
+            <TouchableOpacity
+              hitSlop={{ top: 20, bottom: 20, right: 20 }}
+              onPress={() => router.back()}
+            >
               <Entypo
                 name="chevron-thin-left"
                 size={18}
