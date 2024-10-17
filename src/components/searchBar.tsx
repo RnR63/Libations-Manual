@@ -25,9 +25,9 @@ const SearchBar: React.FC<Props> = ({ search, setSearch }) => {
     debouncedHandleTextChange(text);
   };
 
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
+  // useEffect(() => {
+  //   inputRef.current?.focus();
+  // }, []);
 
   // to not have search focused, not helpful when going from recipe back to search tab
   // useEffect(() => {
@@ -37,7 +37,7 @@ const SearchBar: React.FC<Props> = ({ search, setSearch }) => {
   return (
     <View>
       <TextInput
-        ref={inputRef}
+        // ref={inputRef}
         style={styles.searchContainer}
         placeholder="Search"
         onChangeText={handleTextChange}

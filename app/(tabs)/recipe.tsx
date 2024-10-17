@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Alert,
   Share,
+  ScrollView,
 } from "react-native";
 import { COLORS, FONTS, SIZES } from "../../src/styles/theme";
 import { useLocalSearchParams } from "expo-router";
@@ -14,6 +15,7 @@ import { Cocktail } from "../../src/types";
 import Entypo from "@expo/vector-icons/Entypo";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ShareButton from "../../src/components/shareButton";
+import IngredientsList from "../../src/components/ingredientsList";
 
 const Recipe = () => {
   const [recipe, setRecipe] = useState<Cocktail | null>(null);
@@ -88,14 +90,18 @@ const Recipe = () => {
 
   return (
     <SafeAreaView edges={["left", "right"]} style={styles.safeAreaContainer}>
-      <View style={styles.recipeContainer}>
+      <ScrollView
+        style={styles.recipeContainer}
+        contentContainerStyle={styles.scrollViewContent}
+      >
         <Text style={styles.text}>
           <Text style={styles.textBold} accessibilityLabel="Cocktail_Name">
             Cocktail:{" "}
           </Text>
           {data}
         </Text>
-        <FlatList
+        <IngredientsList ingredients={recipe.ingredients} />
+        {/* <FlatList
           style={[styles.list, listStyle]}
           data={recipe.ingredients}
           keyExtractor={(item) => item}
@@ -114,7 +120,7 @@ const Recipe = () => {
             </Text>
           )}
           ItemSeparatorComponent={() => <View style={styles.separator} />}
-        />
+        /> */}
         <Text style={styles.text}>
           <Text style={styles.textBold} accessibilityLabel="Method">
             Method:{" "}
@@ -129,8 +135,9 @@ const Recipe = () => {
           <Text style={styles.textBold}>Garnish: </Text>
           {recipe.garnish}
         </Text>
-      </View>
-      <View>
+      </ScrollView>
+      <View style={styles.horizontalLine} />
+      <View style={styles.shareContainer}>
         <ShareButton item={data} handlePress={shareRecipe} />
       </View>
     </SafeAreaView>
@@ -154,7 +161,9 @@ const styles = StyleSheet.create({
   recipeContainer: {
     backgroundColor: COLORS.background,
     flex: 1,
-    justifyContent: "flex-start",
+  },
+  scrollViewContent: {
+    justifyContent: "flex-start", // Move justifyContent here
     padding: 20,
     gap: 28,
   },
@@ -200,8 +209,20 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.latoBold,
     fontSize: SIZES.body_bold,
   },
+  horizontalLine: {
+    borderBottomColor: "rgba(255, 255, 255, 0.4)", // Line color
+    borderBottomWidth: 1, // Line width
+    marginVertical: 10, // Optional: Add some vertical margin
+    shadowColor: COLORS.text_dark, // Shadow color
+    shadowOffset: { width: 0, height: -3 }, // Shadow offset (negative height for top shadow)
+    shadowOpacity: 0.9, // Shadow opacity
+    shadowRadius: 4.4, // Shadow radius
+    elevation: 3, // Elevation for Android
+  },
   shareContainer: {
-    flexDirection: "row",
+    padding: 0,
+    backgroundColor: COLORS.background,
+    elevation: 3, // Elevation for Android
   },
 });
 
