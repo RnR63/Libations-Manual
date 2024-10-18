@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollViewContent: {
-    justifyContent: "flex-start", // Move justifyContent here
+    justifyContent: "flex-start",
     padding: 20,
     gap: 28,
   },
