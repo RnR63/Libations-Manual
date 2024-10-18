@@ -17,7 +17,6 @@ const CocktailsBySpiritButton: React.FC<Props> = ({ item, handlePress }) => {
       accessibilityHint="Tap to view details"
     >
       <Text style={styles.cocktailText}>{item}</Text>
-      {/* <Text style={styles.cocktailText}>{">"}</Text> */}
       <Entypo name="chevron-thin-right" size={18} color={COLORS.text_white} />
     </TouchableOpacity>
   );

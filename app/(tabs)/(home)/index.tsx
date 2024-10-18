@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, FONTS, SIZES } from "../../../src/styles/theme";
 import { useRouter } from "expo-router";
@@ -23,11 +23,6 @@ export default function App(): JSX.Element {
 
   return (
     <SafeAreaView edges={["right", "left"]} style={styles.container}>
-      {/* <View style={styles.view}>
-        <Text style={styles.heading} accessibilityRole="header">
-          Choose a Spirit
-        </Text>
-      </View> */}
       <FlatList
         style={styles.flatList}
         contentContainerStyle={styles.flatListContainer}

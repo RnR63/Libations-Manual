@@ -18,7 +18,6 @@ const SpiritCategory: React.FC = () => {
     spirit: string;
   }>();
 
-  // filtering by spirit
   const singleSpiritList: string[] = useMemo(() => {
     const tempList: string[] = [];
     cocktails?.forEach((value, key) => {
@@ -29,7 +28,6 @@ const SpiritCategory: React.FC = () => {
     return tempList;
   }, []);
 
-  // filter same spirit cocktails by search
   const filterCocktails = useMemo(() => {
     return singleSpiritList.filter((cocktail) =>
       cocktail.toLowerCase().includes(search.toLowerCase()),
@@ -53,7 +51,6 @@ const SpiritCategory: React.FC = () => {
     if (search === "") {
       setLocalCocktails(singleSpiritList);
     } else {
-      console.log("search is: ", search);
       setLocalCocktails(filterCocktails);
     }
   }, [search]);
@@ -67,7 +64,7 @@ const SpiritCategory: React.FC = () => {
         ) : (
           <FlatList
             data={localCocktails}
-            keyExtractor={(item) => item} //each element in array
+            keyExtractor={(item) => item}
             renderItem={({ item }) => (
               <CocktailsBySpiritButton
                 item={item}
@@ -92,12 +89,6 @@ const styles = StyleSheet.create({
   listFooter: {
     height: 100,
   },
-  // heading: {
-  //   fontFamily: FONTS.peralta,
-  //   fontSize: SIZES.heading,
-  //   alignSelf: "center",
-  //   marginVertical: 4,
-  // },
   searchContainer: {
     flexDirection: "row",
     fontSize: SIZES.body_reg,

@@ -13,7 +13,6 @@ export default function Search() {
   const [localCocktails, setLocalCocktails] = useState<string[]>([]);
   const [search, setSearch] = useState<string>("");
 
-  console.log("in search.tsx");
   const listNames = useMemo(
     () => (cocktails ? Array.from(cocktails.keys()) : []),
     [cocktails],
@@ -40,10 +39,8 @@ export default function Search() {
 
   useEffect(() => {
     if (search === "") {
-      console.log("setting local cocktails to list names");
       setLocalCocktails(listNames);
     } else {
-      console.log("setting local cocktails to filtered cocktails");
       setLocalCocktails(filteredCocktails);
     }
   }, [search, cocktails]);
@@ -56,7 +53,7 @@ export default function Search() {
       ) : (
         <FlatList
           data={localCocktails}
-          keyExtractor={(item) => item} //each element in array
+          keyExtractor={(item) => item}
           renderItem={({ item }) => (
             <CocktailsBySpiritButton
               item={item}

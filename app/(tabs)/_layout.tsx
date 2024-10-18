@@ -1,5 +1,4 @@
-// import { useEffect, useCallback } from "react";
-import { Dimensions, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import Entypo from "@expo/vector-icons/Entypo";
@@ -7,20 +6,14 @@ import { Tabs, useGlobalSearchParams, useRouter } from "expo-router";
 import { COLORS } from "../../src/styles/theme";
 import { useCallback } from "react";
 import HeaderTitle from "../../src/components/headerTitle";
-import AdaptiveText from "../../src/components/AdaptiveText";
 
 export default function Layout(): JSX.Element {
   const router = useRouter();
-  console.log("in tabs layout");
 
-  const { data, from, spirit } = useGlobalSearchParams<{
-    data: string;
+  const { from, spirit } = useGlobalSearchParams<{
     from: string;
     spirit: string;
   }>();
-
-  // console.log("from: ", from, "data: ", data, "spirit: ", spirit);
-  const screenWidth = Dimensions.get("window").width;
 
   const handleBack = useCallback(() => {
     if (from === "search") {
@@ -89,13 +82,8 @@ export default function Layout(): JSX.Element {
               ? toggleBack
               : undefined,
           headerLeftContainerStyle: {
-            // margin: 0,
-            // padding: 0,
             paddingLeft: 16,
             marginRight: -16,
-            // marginRight: 0,
-            // borderWidth: 1,
-            // borderColor: "red",
           },
         }}
       />

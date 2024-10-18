@@ -13,7 +13,6 @@ SplashScreen.preventAutoHideAsync();
 export const cocktailProvider = createContext<CocktailsMapType>(null);
 
 export default function Layout(): JSX.Element {
-  console.log("in app layout");
   const [fontsLoaded, fontError]: [boolean, Error | null] = useFonts({
     "Peralta-Regular": PeraltaRegular,
     "Lato-Regular": LatoRegular,
@@ -28,17 +27,12 @@ export default function Layout(): JSX.Element {
     async function prepare() {
       try {
         if (!cocktailsContext) {
-          // Fetch cocktails
           const fetchedCocktails = await getCocktails();
           fetchedCocktails.forEach((cocktail) => {
             cocktailsMap.set(cocktail.name, cocktail);
           });
           await setCocktailsContext(cocktailsMap);
-          console.log(
-            "Cocktails in Layout.tsx:",
-            cocktailsMap?.get("Agave Bravo"),
-          );
-          await new Promise((resolve) => setTimeout(resolve, 3000)); //lengthen the splash screen time
+          await new Promise((resolve) => setTimeout(resolve, 3000));
         }
       } catch (e) {
         console.error(e);
@@ -53,7 +47,6 @@ export default function Layout(): JSX.Element {
 
   useEffect(() => {
     if (appIsReady && fontsLoaded) {
-      console.log("Hiding splash screen");
       SplashScreen.hideAsync();
     }
   }, [appIsReady, fontsLoaded]);

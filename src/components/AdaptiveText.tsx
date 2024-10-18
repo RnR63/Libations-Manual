@@ -36,7 +36,6 @@ const AdaptiveText: React.FC<AdaptiveTextProps> = ({
             alignSelf: "baseline",
             borderWidth: 1,
             borderColor: "red",
-            // margin: 0,
           },
         ]}
         numberOfLines={2}

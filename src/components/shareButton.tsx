@@ -1,6 +1,5 @@
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 import { COLORS, FONTS, SIZES } from "../styles/theme";
-import Entypo from "@expo/vector-icons/Entypo";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 interface Props {
@@ -19,7 +18,6 @@ const ShareButton: React.FC<Props> = ({ item, handlePress }) => {
     >
       <FontAwesome name="share" size={18} color={COLORS.text_white} />
       <Text style={styles.cocktailText}>Share</Text>
-      {/* <Text style={styles.cocktailText}>{">"}</Text> */}
     </TouchableOpacity>
   );
 };
