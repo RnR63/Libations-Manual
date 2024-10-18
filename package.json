@@ -1,5 +1,5 @@
 {
-  "name": "lmts",
+  "name": "libationsmanual",
   "version": "1.1.0",
   "main": "expo-router/entry",
   "author": "RnR63inc",
@@ -15,11 +15,14 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "format": "prettier --write .",
+    "wipe": "rm -rf node_modules package-lock.json && npm install",
     "lint": "eslint ."
   },
   "dependencies": {
     "expo": "~51.0.28",
     "expo-constants": "~16.0.2",
+    "expo-font": "^12.0.10",
     "expo-linking": "~6.3.1",
     "expo-router": "~3.5.23",
     "expo-status-bar": "~1.12.1",
