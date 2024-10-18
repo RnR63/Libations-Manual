@@ -6,4 +6,3 @@ Comprehensive cocktail recipe database
 Fast, intuitive search functionality
 Responsive design for various iOS devices
 Efficient state management for optimal performance
-User-friendly interface with custom components like AdaptiveText
