@@ -7,6 +7,7 @@ import LatoBold from "../assets/fonts/Lato-Bold.ttf";
 import { Stack } from "expo-router";
 import getCocktails from "../src/api/getCocktails";
 import { Cocktail, CocktailsMapType } from "../src/types";
+import "nativewind";
 
 SplashScreen.preventAutoHideAsync();
 
