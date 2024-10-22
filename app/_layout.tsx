@@ -31,9 +31,9 @@ export default function Layout(): JSX.Element {
           fetchedCocktails.forEach((cocktail) => {
             cocktailsMap.set(cocktail.name, cocktail);
           });
-          await setCocktailsContext(cocktailsMap);
-          await new Promise((resolve) => setTimeout(resolve, 3000));
+          setCocktailsContext(cocktailsMap);
         }
+        await new Promise((resolve) => setTimeout(resolve, 3000));
       } catch (e) {
         console.error(e);
         throw e;
