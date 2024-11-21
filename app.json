@@ -7,10 +7,9 @@
     "orientation": "portrait",
     "newArchEnabled": true,
     "icon": "./assets/libations_manual_icon.png",
-    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/Logo_Bull.png",
-      "resizeMode": "cover",
+      "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "web": {
@@ -35,9 +34,7 @@
       "buildNumber": "2",
       "supportsTablet": true
     },
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
+    "runtimeVersion": "1.0.0",
     "updates": {
       "url": "https://u.expo.dev/898dac73-87e1-4552-b018-970d12c38935"
     }

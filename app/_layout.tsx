@@ -9,6 +9,10 @@ import getCocktails from "../src/api/getCocktails";
 import { Cocktail, CocktailsMapType } from "../src/types";
 
 SplashScreen.preventAutoHideAsync();
+SplashScreen.setOptions({
+  duration: 1000,
+  fade: true,
+})
 
 export const cocktailProvider = createContext<CocktailsMapType>(null);
 
