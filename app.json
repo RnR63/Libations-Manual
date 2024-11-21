@@ -5,11 +5,12 @@
     "scheme": "libationsmanual",
     "version": "1.1.1",
     "orientation": "portrait",
+    "newArchEnabled": true,
     "icon": "./assets/libations_manual_icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/Logo_Bull.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "web": {
