@@ -3,16 +3,15 @@ import SearchBar from "../../../src/components/searchBar";
 import { View, FlatList, StyleSheet, Text } from "react-native";
 import { FONTS, COLORS, SIZES } from "../../../src/styles/theme";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { useContext, useEffect, useMemo, useState } from "react";
-import { CocktailsMapType } from "../../../src/types";
+import { useEffect, useMemo, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { cocktailProvider } from "../../_layout";
+import { useCocktailContext } from "../../../src/context/CocktailContext";
 
 const SpiritCategory: React.FC = () => {
   const router = useRouter();
-  const cocktails = useContext<CocktailsMapType>(cocktailProvider);
   const [localCocktails, setLocalCocktails] = useState<string[]>([]);
   const [search, setSearch] = useState<string>("");
+  const { cocktails } = useCocktailContext();
 
   const { spirit } = useLocalSearchParams<{
     spirit: string;
